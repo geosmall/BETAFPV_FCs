@@ -1,0 +1,18 @@
+# Editor / IDE
+.idea
+.vscode
+
+# Shell & environment dotfiles (sandbox/tooling, not repo content)
+.bash_profile
+.bashrc
+.profile
+.zprofile
+.zshrc
+.gitconfig
+.gitmodules
+.ripgreprc
+.mcp.json
+
+# Claude Code: ignore local/personal config, allow shared project settings
+.claude/
+!.claude/settings.json
