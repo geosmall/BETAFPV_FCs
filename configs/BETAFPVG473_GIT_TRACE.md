@@ -64,8 +64,12 @@ than fully diagnose it, because the V1 board is effectively end-of-life:
   `.hex` worked, stock 4.5.2+ did not). Reverting to HSI (`0`) fixed it.
 - The contributor who added *and* reverted the HSE define first suspected BetaFPV fitted an
   8 **kHz** crystal instead of 8 **MHz**, but **retracted that** in the same comment ("I take
-  that back. I was probing the wrong pin"). So the wrong-crystal theory was withdrawn — V1
-  does have a crystal; it just isn't reliable as the system clock.
+  that back. I was probing the wrong pin") and posted scope traces without stating a follow-up
+  conclusion. So the wrong-crystal theory was withdrawn and **no replacement root cause was
+  ever published** — the thread establishes only the behaviour (HSE=8 breaks ESC reading,
+  revert fixes it), not the underlying electrical reason. The earlier #737 rationale assumed a
+  usable HSE crystal was simply not being selected; whether one is actually present/correct on
+  the MCU's HSE pins was never confirmed either way.
 - Maintainer rationale for the revert was pragmatic, not forensic: the V1 board "has been
   replaced with new versions (V2 and V3) and assume is out of production," so HSI (the safe
   default, at slightly lower clock accuracy) was restored instead of chasing the root cause.

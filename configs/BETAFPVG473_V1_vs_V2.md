@@ -47,11 +47,12 @@ Corroborated by the CLI `status` output:
 - V1 reports `Clock=168MHz (PLLR-HSI)`
 - V2 reports `Clock=168MHz (PLLR-HSE)`
 
-This is **not** simply "V2 added a crystal V1 lacks." V1 has a crystal too, but its HSE proved
-unreliable: upstream briefly set V1 to `HSE=8` and reverted it to `0` because HSE broke
-ESC/DSHOT reading (no confirmed hardware fault — disabled as the safe default on an EOL
-board). V2's HSE was added and tested working, and was never reverted, so V2 runs the more
-accurate external clock. Full history in `BETAFPVG473_GIT_TRACE.md`.
+This is **not** simply "V2 added a crystal V1 lacks." Upstream briefly set V1 to `HSE=8` and
+then reverted it to `0` because HSE broke ESC/DSHOT reading — the underlying hardware reason
+was never published (a wrong-crystal theory was raised and retracted), so HSI was restored as
+the safe default on an EOL board rather than diagnosed. V2's HSE was added and tested working,
+and was never reverted, so V2 runs the more accurate external clock. Full history in
+`BETAFPVG473_GIT_TRACE.md`.
 
 ### 2. Secondary IMU support changed
 
