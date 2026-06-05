@@ -1,0 +1,168 @@
+Entering CLI Mode, type 'exit' to return, or 'help'
+
+# version
+# Betaflight / STM32G47X (SG47) 4.5.0 May 16 2024 / 01:17:04 (c155f5830) MSP API: 1.46
+# config rev: 93dfc69
+# board: manufacturer_id: BEFH, board_name: BETAFPVG473
+
+# status
+MCU G474 Clock=168MHz (PLLR-HSI), Vref=3.29V, Core temp=69degC
+Stack size: 2048, Stack address: 0x2001fff0
+Configuration: CONFIGURED, size: 3820, max available: 8192
+Devices detected: SPI:1, I2C:0
+Gyros detected: gyro 1 locked dma
+GYRO=ICM42688P, ACC=ICM42688P
+OSD: MAX7456 (30 x 13)
+BUILD KEY: 967872c55132db8fe6b44d2a88e2da44 (4.5.0)
+System Uptime: 278 seconds, Current Time: 2026-05-19T09:28:04.561+00:00
+CPU:43%, cycle time: 126, GYRO rate: 7936, RX rate: 15, System rate: 9
+Voltage: 66 * 0.01V (0S battery - INIT)
+I2C Errors: 0
+FLASH: JEDEC ID=0x00852018 16M
+GPS: NOT ENABLED
+Arming disable flags: RXLOSS CLI MSP DSHOT_TELEM
+
+
+
+Entering CLI Mode, type 'exit' to return, or 'help'
+
+# 
+# Building AutoComplete Cache ... Done!
+# 
+# version
+# Betaflight / STM32G47X (SG47) 4.5.0 May 16 2024 / 01:17:04 (c155f5830) MSP API: 1.46
+# config rev: 93dfc69
+# board: manufacturer_id: BEFH, board_name: BETAFPVG473
+
+# status
+MCU G474 Clock=168MHz (PLLR-HSI), Vref=3.29V, Core temp=60degC
+Stack size: 2048, Stack address: 0x2001fff0DREHM_DSHOT_CRSF_PLAN.md
+Configuration: CONFIGURED, size: 3820, max available: 8192
+Devices detected: SPI:1, I2C:0
+Gyros detected: gyro 1 locked dma
+GYRO=ICM42688P, ACC=ICM42688P
+OSD: MAX7456 (30 x 13)
+BUILD KEY: 967872c55132db8fe6b44d2a88e2da44 (4.5.0)
+System Uptime: 136 seconds, Current Time: 2026-05-19T10:01:54.779+00:00
+CPU:45%, cycle time: 125, GYRO rate: 8000, RX rate: 15, System rate: 9
+Voltage: 69 * 0.01V (0S battery - INIT)
+I2C Errors: 0
+FLASH: JEDEC ID=0x00852018 16M
+GPS: NOT ENABLED
+Arming disable flags: RXLOSS CLI MSP DSHOT_TELEM
+
+
+
+Entering CLI Mode, type 'exit' to return, or 'help'
+
+# 
+# Building AutoComplete Cache ... Done!
+# 
+# version
+# Betaflight / STM32G47X (SG47) 4.5.3 Nov 24 2025 / 17:38:09 (0e533ba76) MSP API: 1.46
+# config rev: 2c5a8b5
+# board: manufacturer_id: BEFH, board_name: BETAFPVG473_V2
+
+# status
+MCU G474 Clock=168MHz (PLLR-HSE), Vref=3.30V, Core temp=65degC
+Stack size: 2048, Stack address: 0x2001fff0
+Configuration: CONFIGURED, size: 3806, max available: 8192
+Devices detected: SPI:1, I2C:0
+Gyros detected: gyro 1 locked dma
+GYRO=ICM42688P, ACC=ICM42688P
+OSD: MAX7456 (30 x 13)
+BUILD KEY: 1d5d775c887a0e16763189c3ffad5a52 (4.5.3)
+System Uptime: 111 seconds, Current Time: 2026-05-20T10:12:17.238+00:00
+CPU:43%, cycle time: 124, GYRO rate: 8064, RX rate: 15, System rate: 9
+Voltage: 76 * 0.01V (0S battery - NOT PRESENT)
+I2C Errors: 0
+FLASH: JEDEC ID=0x00852018 16M
+GPS: NOT ENABLED
+Arming disable flags: RXLOSS CLI MSP DSHOT_TELEM
+
+
+
+Entering CLI Mode, type 'exit' to return, or 'help'
+
+# 
+# Building AutoComplete Cache ... Done!
+# 
+# version
+# Betaflight / STM32G47X (SG47) 4.5.3 Nov 24 2025 / 17:38:09 (0e533ba76) MSP API: 1.46
+# config rev: 2c5a8b5
+# board: manufacturer_id: BEFH, board_name: BETAFPVG473_V2
+
+# status
+MCU G474 Clock=168MHz (PLLR-HSE), Vref=3.29V, Core temp=58degC
+Stack size: 2048, Stack address: 0x2001fff0
+Configuration: CONFIGURED, size: 3806, max available: 8192
+Devices detected: SPI:1, I2C:0
+Gyros detected: gyro 1 locked dma
+GYRO=ICM42688P, ACC=ICM42688P
+OSD: MAX7456 (30 x 13)
+BUILD KEY: 1d5d775c887a0e16763189c3ffad5a52 (4.5.3)
+System Uptime: 86 seconds, Current Time: 2026-05-20T10:23:45.510+00:00
+CPU:43%, cycle time: 124, GYRO rate: 8064, RX rate: 15, System rate: 9
+Voltage: 75 * 0.01V (0S battery - NOT PRESENT)
+I2C Errors: 0
+FLASH: JEDEC ID=0x00852018 16M
+GPS: NOT ENABLED
+Arming disable flags: RXLOSS CLI MSP DSHOT_TELEM
+
+
+
+Entering CLI Mode, type 'exit' to return, or 'help'
+
+# 
+# Building AutoComplete Cache ... Done!
+# 
+# version
+# Betaflight / STM32F405 (S405) 4.5.0 Dec 25 2024 / 08:01:31 (c155f5830) MSP API: 1.46
+# config rev: 16ac022
+# board: manufacturer_id: BEFH, board_name: BETAFPVF405
+
+# status
+MCU F40X Clock=168MHz (PLLP-HSE), Vref=3.28V, Core temp=41degC
+Stack size: 2048, Stack address: 0x1000fff0
+Configuration: CONFIGURED, size: 4134, max available: 16384
+Devices detected: SPI:1, I2C:0
+Gyros detected: gyro 1 locked
+GYRO=ICM42688P, ACC=ICM42688P
+OSD: MSP (53 x 20)
+BUILD KEY: ffd60ff7b9d214fc4db89c10e28a59e2 (4.5.0)
+System Uptime: 67 seconds, Current Time: 2026-05-22T20:29:42.087+00:00
+CPU:43%, cycle time: 127, GYRO rate: 7874, RX rate: 15, System rate: 9
+Voltage: 2 * 0.01V (0S battery - INIT)
+I2C Errors: 0
+FLASH: JEDEC ID=0x00852018 16M
+GPS: NOT ENABLED
+Arming disable flags: RXLOSS CLI MSP
+
+
+
+Entering CLI Mode, type 'exit' to return, or 'help'
+
+
+# Building AutoComplete Cache ... Done!
+# 
+# version
+# Betaflight / STM32G47X (SG47) 4.5.0 May 16 2024 / 01:17:04 (c155f5830) MSP API: 1.46
+# config rev: 93dfc69
+# board: manufacturer_id: BEFH, board_name: BETAFPVG473
+
+# status
+MCU G474 Clock=168MHz (PLLR-HSI), Vref=3.29V, Core temp=62degC
+Stack size: 2048, Stack address: 0x2001fff0
+Configuration: CONFIGURED, size: 3820, max available: 8192
+Devices detected: SPI:1, I2C:0
+Gyros detected: gyro 1 locked dma
+GYRO=ICM42688P, ACC=ICM42688P
+OSD: MAX7456 (30 x 13)
+BUILD KEY: 967872c55132db8fe6b44d2a88e2da44 (4.5.0)
+System Uptime: 86 seconds, Current Time: 2026-05-24T15:04:08.747+00:00
+CPU:43%, cycle time: 124, GYRO rate: 8064, RX rate: 15, System rate: 9
+Voltage: 70 * 0.01V (0S battery - INIT)
+I2C Errors: 6
+FLASH: JEDEC ID=0x00852018 16M
+GPS: NOT ENABLED
+Arming disable flags: RXLOSS CLI MSP DSHOT_TELEM
