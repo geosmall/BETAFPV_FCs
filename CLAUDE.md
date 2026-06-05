@@ -55,7 +55,12 @@ differs by revision: V1 (and the F405 targets) use `BMI270`, while **V2 and V3 u
 Match the target's `BOARD_NAME` to a board exactly — the revisions are not interchangeable.
 
 `configs/BETAFPVG473_V1_vs_V2.md` documents the full V1↔V2 target differences (clock source,
-IMU, barometer, motor/LED/gyro/flash pin map).
+IMU, barometer, motor/LED/gyro/flash pin map). `configs/BETAFPVG473_GIT_TRACE.md` traces the
+upstream `betaflight/config` history behind the G473 gyro/HSE changes and stamps the exact
+commit each archived `config.h` matches. Two things to know when working with these targets:
+the V1 HSE was reverted to HSI upstream (it broke ESC reading; not a confirmed hardware
+fault), and the archived V2/V3 `config.h` predate upstream PR #1101, so they lack the later
+BMI270/ICM42622P IMU options — keep them as dated snapshots, don't silently refresh.
 
 ### Scratch log
 

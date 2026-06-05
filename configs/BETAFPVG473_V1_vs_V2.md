@@ -7,11 +7,11 @@ Compares:
 
 ## Summary
 
-V2 is a board respin, not just a config tweak: it adds an 8 MHz external clock crystal
-(HSI → HSE), swaps the secondary IMU (BMI270 → LSM6DSK320X), drops the barometer, and reworks
-the motor/LED/gyro/flash pin map (notably moving all four motors onto TIM1). **The targets
-are NOT interchangeable** — flashing the wrong one will mis-map motors, LEDs, the gyro, and
-the system clock.
+V2 is a board respin, not just a config tweak: it runs a working 8 MHz external clock
+(HSE; V1 was reverted to internal HSI — see §1), swaps the secondary IMU
+(BMI270 → LSM6DSK320X), drops the barometer, and reworks the motor/LED/gyro/flash pin map
+(notably moving all four motors onto TIM1). **The targets are NOT interchangeable** — flashing
+the wrong one will mis-map motors, LEDs, the gyro, and the system clock.
 
 | Area | V1 | V2 |
 | --- | --- | --- |
@@ -35,10 +35,10 @@ omitted.
 
 ## Details
 
-### 1. Clock source — external crystal added (most significant)
+### 1. Clock source — HSI on V1, working HSE on V2 (most significant)
 
 ```
-V1:  #define SYSTEM_HSE_MHZ 0     (no external crystal; runs off internal HSI)
+V1:  #define SYSTEM_HSE_MHZ 0     (internal HSI oscillator)
 V2:  #define SYSTEM_HSE_MHZ 8     (8 MHz external crystal)
 ```
 
@@ -47,7 +47,11 @@ Corroborated by the CLI `status` output:
 - V1 reports `Clock=168MHz (PLLR-HSI)`
 - V2 reports `Clock=168MHz (PLLR-HSE)`
 
-V2 gains a hardware oscillator for a more accurate/stable system clock.
+This is **not** simply "V2 added a crystal V1 lacks." V1 has a crystal too, but its HSE proved
+unreliable: upstream briefly set V1 to `HSE=8` and reverted it to `0` because HSE broke
+ESC/DSHOT reading (no confirmed hardware fault — disabled as the safe default on an EOL
+board). V2's HSE was added and tested working, and was never reverted, so V2 runs the more
+accurate external clock. Full history in `BETAFPVG473_GIT_TRACE.md`.
 
 ### 2. Secondary IMU support changed
 

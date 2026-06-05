@@ -83,6 +83,9 @@ Not every target has a matching CLI backup, and vice versa.
 
 `configs/BETAFPVG473_V1_vs_V2.md` documents the hardware differences between the `BETAFPVG473`
 and `BETAFPVG473_V2` targets (clock source, IMU, barometer, motor/LED/gyro pin map).
+`configs/BETAFPVG473_GIT_TRACE.md` traces the upstream `betaflight/config` history behind the
+G473 gyro and HSE changes, and records the exact commit each archived `config.h` was captured
+at (and how it has since drifted from upstream).
 
 ## Scratch log
 
