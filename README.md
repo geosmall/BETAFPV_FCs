@@ -80,6 +80,30 @@ Connect the FC, open the Betaflight Configurator, and go to the **CLI** tab.
 > board, MCU, or firmware version can produce an unflyable or unsafe craft. Match the
 > board name and Betaflight version before applying.
 
+## Optional: enable HSE (external clock) on BETAFPVG473
+
+The `BETAFPVG473` target ships with the internal oscillator (`SYSTEM_HSE_MHZ 0`, HSI). If your
+specific board has a working 8 MHz crystal, you can switch it to the more accurate external
+clock from the CLI:
+
+```
+set system_hse_mhz = 8
+save
+```
+
+After it reboots, run `status` and check the clock source:
+
+- `Clock=168MHz (PLLR-HSE)` → the crystal works; HSE is now active.
+- `Clock=168MHz (PLLR-HSI)` → no usable crystal; it fell back. Revert with `set system_hse_mhz = 0` → `save`.
+
+Notes:
+- **Verify the crystal first** — not every board on this shared target has one; the command
+  above is also the test (HSE vs HSI in `status`).
+- It's a saved setting, so a full erase / reflash-to-defaults reverts it to HSI — re-apply or
+  restore from a `.diff`.
+- For working ESC reading too, run Betaflight **4.5.0/4.5.1 or ≥ 2025.12.1** (avoid 4.5.2–4.5.4).
+- Full background and rationale: `configs/BETAFPVG473_GIT_TRACE.md`.
+
 ## Firmware build targets (`configs/`)
 
 `configs/<BOARD_NAME>/config.h` holds the Betaflight **unified target definition** for each
