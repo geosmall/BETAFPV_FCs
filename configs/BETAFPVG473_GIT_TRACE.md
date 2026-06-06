@@ -142,9 +142,11 @@ contribution to ESC reading is unconfirmed.
 - **Not a manufacturer-side investigation.** #737 (add) and #1075 (revert) were Betaflight
   community volunteers (ot0tot, haslinghuis), not BetaFPV. BetaFPV's own 4.5.0/4.5.1 `.hex` works
   and is the known-good fallback.
-- **No confirmed hardware defect.** Whether the board carries an HSE crystal, and at what
-  frequency, was never documented; bench investigation was attempted but invalidated (wrong probe
-  pin) and not resumed.
+- **No confirmed hardware defect.** Whether each board variant carries an HSE crystal was never
+  documented upstream (a scope probe was attempted but invalidated — wrong pin). A later bench
+  test on one variant (see "Bench finding" below) confirmed a working crystal *is* present there,
+  so for that board the absent-crystal theory is disproven; other variants on the shared target
+  remain unverified.
 - **The revert is a reasonable default**, not a diagnosis — HSI is the safe universal setting for
   a shared, superseded target. The avoidable error is upstream of the revert: #737 added HSE=8 to
   a multi-board target assuming every variant carries an 8 MHz crystal, without verifying.
@@ -181,6 +183,21 @@ whether a specific V1-target board carries an HSE crystal — a question the ups
 left unresolved. (The `betafpv_75mm.txt` AIR75 capture shows `PLLR-HSI`, but it was taken with
 HSE=0, so it does not answer this; forcing HSE=8 and re-reading `status` would.)
 
+### Bench finding: BetaFPV Air G4 4in1 V1.1 has a working crystal
+
+On 2026-06-06 the test above was run on a **BetaFPV Air G4 4in1 (V1.1 hardware)** — which flashes
+the `BETAFPVG473` target — on the OEM 4.5.0 build:
+
+- Baseline (`system_hse_mhz = 0`): `status` → `Clock=168MHz (PLLR-HSI)`.
+- After `set system_hse_mhz = 8` + `save`: `status` → `Clock=168MHz (PLLR-HSE)`, board stable
+  (GYRO=ICM42688P, gyro rate 8064, CPU ~44%, USB connected).
+
+So this board carries a working **8 MHz HSE crystal**, and HSE=8 is valid on it — the
+absent-/wrong-crystal hypothesis is disproven *for this variant*. It does **not** generalize:
+`BETAFPVG473` is a shared target, so the other products on it (the archived AIR75, Matrix 3in1
+HD, Air Brushless 5in1, …) are separate PCBs and remain unverified — each needs its own test.
+The upstream HSI revert stays correct as a shared-target safety default.
+
 ### Corroboration from this repo's own captures
 
 `betafpv_75mm.txt` bench logs match the upstream end state exactly:
@@ -202,8 +219,9 @@ HSE=0, so it does not answer this; forcing HSE=8 and re-reading `status` would.)
   timer).
 - **HSE:** V1 toggled HSI → HSE → HSI. The final state is HSI because `BETAFPVG473` is a
   *shared* target across several physical boards, so HSE=8 couldn't be guaranteed correct on all
-  of them — HSI is the safe universal default. No confirmed hardware fault; root cause never
-  bench-confirmed (use the CLI test above to check a specific board). V1 is the only one of 21
+  of them — HSI is the safe universal default. No upstream-confirmed hardware fault; a bench test
+  did confirm one variant (Air G4 4in1 V1.1) has a working crystal, but the others on the shared
+  target are unverified (use the CLI test to check a specific board). V1 is the only one of 21
   G47X targets forced to HSE=0. V2/V3 keep a working, tested HSE because they're narrower
   targets with consistent crystals. The HSE revert (#1075) was a parallel cleanup tagged to
   #14427, not the substantive ESC fix. Our archived V1 reflects the post-revert (HSI) state.
