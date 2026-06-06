@@ -180,6 +180,21 @@ voltage; HSE is crystal-accurate). The obstacle is the shared target:
   MCU's HSE pins, set `SYSTEM_HSE_MHZ 8` in a local custom build for working, more-accurate HSE.
   You must verify the crystal first — the whole problem is that the shared target couldn't.
 
+#### Running HSE in practice (firmware choice)
+
+HSE and the ESC-reading bug are **independent** — HSE is a config setting that works on any
+firmware version that has the board; the ESC bug is a separate firmware defect (see above). So
+the firmware-version choice below is driven entirely by ESC reading, not by HSE.
+
+To get HSE **and** working ESC reading on a `BETAFPVG473`-target board with a confirmed crystal:
+
+1. **Firmware:** run **≥ 2025.12.1** (recommended — modern and maintained) or 4.5.0/4.5.1
+   (pre-bug). Avoid **4.5.2 / 4.5.3 / 4.5.4** — those read ESCs incorrectly regardless of clock
+   source.
+2. **Enable HSE:** the target defaults to HSI (`SYSTEM_HSE_MHZ 0`) on *all* of these, so set it
+   yourself — `set system_hse_mhz = 8` → `save` — and confirm `status` shows `(PLLR-HSE)`.
+3. Re-apply step 2 after any full erase / reflash-to-defaults (it reverts to the HSI default).
+
 ### How to test whether a board has a working HSE crystal
 
 `system_hse_mhz` is a runtime CLI setting (it appears as `set system_hse_mhz = 8` in the V2
