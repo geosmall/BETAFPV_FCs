@@ -103,6 +103,22 @@ attributed to HSE. The HSE flip-flop is a parallel change that was tagged to the
 The STM32G4 clock fixes that also shipped in 4.5.2 (#14161/#14215 SPI clock, #13991 bidir-DSHOT
 timer) are unrelated to #14427, despite the shared release.
 
+**Release coverage of the fix** (verified via the GitHub compare API — does each release tag
+contain the #14794 merge commit):
+
+| Release | Has #14794 fix |
+| --- | --- |
+| 4.5.0 / 4.5.1 | n/a — predate the bug (regression entered in 4.5.2) |
+| 4.5.2 / 4.5.3 / 4.5.4 | **no** — bug present, never backported to `4.5-maintenance` |
+| 2025.12.0-RC1…RC3 | no (predate the 2025-11-27 merge) |
+| 2025.12.0-RC4 | yes (first build with it) |
+| 2025.12.1 / .2 / .4 | yes (first *stable* is 2025.12.1) |
+
+So the fix lives only on the 2025.12 (master) line — **2025.12.1 or later**. The entire 4.5.x
+maintenance line still carries the bug: a 4.5-targeted attempt ([#14878 "Fix G4 ESC read"](https://github.com/betaflight/betaflight/pull/14878),
+2026-01) was closed unmerged, so it was fixed on master only. Net: ESC reading works on **4.5.0,
+4.5.1, and ≥2025.12.1**; it is broken on **4.5.2 / 4.5.3 / 4.5.4**.
+
 ### Cross-board comparison: V1 is the lone HSE outlier
 
 Across all 21 `STM32G47X` targets in `betaflight/config` (HEAD, June 2026):
@@ -215,8 +231,9 @@ The upstream HSI revert stays correct as a shared-target safety default.
   set their auto-detect list holds all four chips.
 - **ESC-reading regression (#14427):** root cause was an ESC-driver timer-allocation bug, not a
   clock issue. The 4.5.2 "Fix kiss passthrough" (#13922) made `openEscSerial` need a dedicated
-  TX timer that G4 can't always spare; fixed in the 2025.12 line by #14794 (fall back to the RX
-  timer).
+  TX timer that G4 can't always spare; fixed by #14794 (fall back to the RX timer) in 2025.12.1+
+  only — **not** backported to 4.5.x, so 4.5.2/4.5.3/4.5.4 still carry the bug (4.5.0/4.5.1
+  predate it).
 - **HSE:** V1 toggled HSI → HSE → HSI. The final state is HSI because `BETAFPVG473` is a
   *shared* target across several physical boards, so HSE=8 couldn't be guaranteed correct on all
   of them — HSI is the safe universal default. No upstream-confirmed hardware fault; a bench test
