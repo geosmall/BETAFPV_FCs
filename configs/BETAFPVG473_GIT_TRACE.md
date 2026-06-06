@@ -54,11 +54,17 @@ validated supported target, consistent with the board being superseded.)
 | 2025-05-30 | [#693](https://github.com/betaflight/config/pull/693)  | `BETAFPVG473_V2` target added |
 | 2025-12-04 | [#928](https://github.com/betaflight/config/pull/928)  | `BETAFPVG473_V3` target added |
 | 2026-02-24 | [#1027](https://github.com/betaflight/config/pull/1027) | Add **LSM6DSK320X** to V2, V3 (and H725) |
-| 2026-05-14 | [#1101](https://github.com/betaflight/config/pull/1101) | Add **BMI270** and **ICM42622P** as additional selectable IMUs on V2 & V3 |
+| 2026-05-14 | [#1101](https://github.com/betaflight/config/pull/1101) | Add **BMI270** and **ICM42622P** to the recognized-IMU list on V2 & V3 |
 
-Throughout, `ICM42688P` remains the primary SPI gyro/acc on every revision; these PRs only
-add/replace the alternate `USE_ACCGYRO_*` drivers. (V1 carries `ICM42688P` + `BMI270`; the
-V1↔V2 differences are detailed in `BETAFPVG473_V1_vs_V2.md`.)
+These boards have a **single gyro socket** (`GYRO_1` on SPI1, one CS/EXTI pin). The firmware
+compiles in several gyro drivers and **auto-detects whichever chip is actually fitted** —
+manufacturers second-source the IMU, so one firmware binary must cover them all (the user does
+not pick the chip). `ICM42688P` is the reference/default part: it's wired via the explicit
+`USE_ACC_SPI_ICM42688P` / `USE_GYRO_SPI_ICM42688P` defines and is what every board in this repo
+reports in `status`. The `USE_ACCGYRO_*` entries are the alternates the firmware will also
+recognize in that same socket. So #1101 did **not** change the primary or add a second gyro —
+it only grew the auto-detect list. (V1's list is just `ICM42688P` + `BMI270`; V1↔V2
+differences are in `BETAFPVG473_V1_vs_V2.md`.)
 
 ## HSE (system clock) timeline — the V1 flip-flop
 
@@ -189,9 +195,10 @@ would.)
 
 ## Summary
 
-- **Gyro:** ICM42688P is primary on all G473 revisions. V2/V3 gained LSM6DSK320X (#1027) and
-  later BMI270 + ICM42622P (#1101); the archived files match the 2025.12.4 set, so V2/V3 carry
-  all four IMU options.
+- **Gyro:** every G473 revision has a single gyro socket with ICM42688P as the reference part;
+  the other `USE_ACCGYRO_*` entries are auto-detect alternates for second-sourced chips, not a
+  second gyro. V2/V3 gained LSM6DSK320X (#1027) then BMI270 + ICM42622P (#1101); at the 2025.12.4
+  set their auto-detect list holds all four chips.
 - **ESC-reading regression (#14427):** root cause was an ESC-driver timer-allocation bug, not a
   clock issue. The 4.5.2 "Fix kiss passthrough" (#13922) made `openEscSerial` need a dedicated
   TX timer that G4 can't always spare; fixed in the 2025.12 line by #14794 (fall back to the RX
