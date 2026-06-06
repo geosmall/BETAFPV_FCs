@@ -45,6 +45,14 @@ AIR75 4.5.0 OEM build.
 > trailing `save` then commits everything to flash at once. Because it is `nosave`, the
 > reset is harmless on its own — powering off before `save` leaves the board unchanged.
 
+## Bench safety: the VTX is powered over USB
+
+On these BetaFPV G4 AIO boards the onboard 5.8 GHz VTX is powered over **USB**, not just from a
+battery — so it transmits whenever the board is connected, even with no battery. **Attach the
+VTX antenna (or set VTX power to 0 / pit) before you plug in USB**, or you can burn out the VTX
+chip (transmitting into no antenna reflects RF back into the amplifier). A `status` line showing
+`0S battery` does **not** mean the VTX is off — that only means no battery; USB still powers it.
+
 ## Generate and save your backup
 
 Connect the FC, open the Betaflight Configurator, and go to the **CLI** tab.
