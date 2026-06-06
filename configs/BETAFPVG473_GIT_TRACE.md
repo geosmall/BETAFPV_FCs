@@ -80,31 +80,28 @@ Betaflight release dates for cross-reference: 4.5.0 (2024-04-28), 4.5.1 (2024-07
 **4.5.2 (2025-03-19)**, 4.5.3 (2025-11-23), 4.5.4 (2026-05-31); the date-based line —
 2025.12.0-RC4 (2025-12-10), 2025.12.1 (2025-12-25), 2025.12.4 (2026-06-02).
 
-### What actually broke ESC reading (real root cause — not HSE)
+### ESC-reading regression (#14427): root cause
 
-The popular "HSE broke 4.5.2" story is wrong, and the maintainers ultimately traced and fixed
-a **different** cause. The HSE flip-flop is a parallel cleanup that got tagged to the same
-issue (#14427).
+[betaflight#14427](https://github.com/betaflight/betaflight/issues/14427) (esc-configurator
+fails to read ESCs after 4.5.1) is an ESC-driver bug, not a clock issue — though it is commonly
+attributed to HSE. The HSE flip-flop is a parallel change that was tagged to the same issue.
 
-- **The regression bisects to 4.5.2 (2025-03-19), but HSE=8 didn't exist yet** — config #737
-  added it 2025-04-01, *after* 4.5.2. So HSE cannot be the 4.5.1→4.5.2 trigger.
-- **The real trigger was an ESC-driver change, not a clock change.**
-  [betaflight #13922 "Fix kiss passthrough"](https://github.com/betaflight/betaflight/pull/13922)
+- **The regression bisects to 4.5.2 (2025-03-19), and HSE=8 postdates it.** Config #737 added
+  HSE on 2025-04-01, *after* 4.5.2, so HSE cannot be the 4.5.1→4.5.2 trigger.
+- **Trigger:**
+  [betaflight#13922 "Fix kiss passthrough"](https://github.com/betaflight/betaflight/pull/13922)
   (merged 2024-09, shipped in 4.5.2) reworked the serial ESC passthrough driver
-  (`openEscSerial`) to require a **dedicated TX timer** — which STM32G4 boards can't always
-  allocate. Passthrough then hard-failed, so esc-configurator couldn't read the ESCs (users hit
-  ESC 3/4 first — the timer-starved outputs).
-- **The authoritative fix is**
-  [betaflight #14794 "Fix openEscSerial"](https://github.com/betaflight/betaflight/pull/14794)
-  (merged 2025-11-27, **milestone 2025.12** — i.e. in the 2025.12.x line our config now tracks).
-  It removes the hard failure and **falls back to reusing the RX timer for TX** when no
-  dedicated TX timer is free. Maintainer goal, verbatim: "preserve the KISS passthrough fix but
-  restore G4 ESC compatibility."
+  (`openEscSerial`) to require a **dedicated TX timer**, which STM32G4 boards cannot always
+  allocate. Passthrough then hard-failed, so esc-configurator could not read the ESCs (ESC 3/4 —
+  the timer-starved outputs — fail first).
+- **Fix:**
+  [betaflight#14794 "Fix openEscSerial"](https://github.com/betaflight/betaflight/pull/14794)
+  (merged 2025-11-27, milestone 2025.12, so present in 2025.12.4) removes the hard failure and
+  **falls back to reusing the RX timer for TX** when no dedicated TX timer is free. Stated goal:
+  "preserve the KISS passthrough fix but restore G4 ESC compatibility."
 
-So #14427 was an ESC-driver timer-allocation bug fixed in the firmware (#14794), **not** a
-clock bug. The earlier guess in this doc — that 4.5.2's STM32G4 SPI-clock fixes (#14161/#14215)
-or the bidir-DSHOT timer fix (#13991) caused it — was wrong; those are unrelated G4 changes
-that happened to ship in the same release.
+The STM32G4 clock fixes that also shipped in 4.5.2 (#14161/#14215 SPI clock, #13991 bidir-DSHOT
+timer) are unrelated to #14427, despite the shared release.
 
 ### Cross-board comparison: V1 is the lone HSE outlier
 
@@ -121,42 +118,42 @@ Two conclusions:
 
 - **Not a general G4/HSE/DSHOT incompatibility.** 12 other G47X targets — including BetaFPV's
   own V2 and V3 — run HSE=8 without a forced revert. V1's problem is board-specific.
-- **Crystal frequency genuinely varies** (MERCURYG4 = 16 MHz, not 8), which matters next.
+- **Crystal frequency varies across boards** (MERCURYG4 = 16 MHz, not 8).
 
-### Why HSE=8 was reverted on V1: it's a *shared* target
+### Why HSE=8 was reverted on V1: a shared target
 
-Even though HSE wasn't the ESC bug, reverting HSE=8→0 on V1 was still sound — because
-`BETAFPVG473` is flashed to **several distinct physical products** (Matrix 1S 5in1, Matrix 1S
-3in1 HD, Air Brushless 5in1, and the AIR75 archived here). A single `SYSTEM_HSE_MHZ` must be
-correct for *every* one of those PCBs at once. If even one variant lacks an 8 MHz crystal (or
-uses another value), HSE=8 yields a wrong system clock on that variant, and anything derived
-from it (DSHOT bit timing, USB, serial bauds) goes off. HSI gives the correct *nominal* 168 MHz
-on every variant (just less accurate), so **HSI is the only clock setting guaranteed safe
-across all boards sharing the target.**
+The HSE revert is independently justified, separate from the ESC bug. `BETAFPVG473` is flashed
+to **several distinct physical products** (Matrix 1S 5in1, Matrix 1S 3in1 HD, Air Brushless
+5in1, and the AIR75 archived here). A single `SYSTEM_HSE_MHZ` must be correct for *every* one of
+those PCBs at once. If any variant lacks an 8 MHz crystal (or uses another value), HSE=8 yields
+a wrong system clock on that variant, and anything derived from it (DSHOT bit timing, USB,
+serial bauds) drifts. HSI gives the correct *nominal* 168 MHz on every variant (just less
+accurate), so HSI is the only clock setting guaranteed safe across all boards sharing the
+target.
 
-This reframes the retracted wrong-crystal theory: the contributor's *scope measurement* was
-invalid ("probing the wrong pin"), but the underlying idea — HSE=8 doesn't match the hardware
-on at least some variants — was never disproven, just never bench-confirmed. Note #1075 cited
-#14427, but the substantive ESC fix was the firmware driver change (#14794); the HSE revert was
-a parallel, board-specific cleanup whose actual contribution to ESC reading is unconfirmed.
+On the retracted wrong-crystal theory (a contributor suspected an 8 kHz crystal, then withdrew
+it as a bad scope measurement — "probing the wrong pin"): the underlying possibility — that
+HSE=8 doesn't match the hardware on some variants — was neither confirmed nor disproven. #1075
+cited #14427, but the substantive ESC fix was the firmware change (#14794); the HSE revert's
+contribution to ESC reading is unconfirmed.
 
-### Was it lazy / a hardware fault? (assessment)
+### Assessment: hardware fault, or process gap?
 
-- **It wasn't the OEM debugging.** #737 (add) and #1075 (revert) were Betaflight *volunteers*
-  (ot0tot, haslinghuis), not BetaFPV. BetaFPV's own shipped 4.5.0/4.5.1 `.hex` works and is the
-  known-good fallback.
-- **No confirmed hardware defect.** Root cause (crystal present? what frequency?) was never
-  documented; bench investigation was started but botched (wrong probe pin) and not resumed.
-- **The revert was pragmatic, arguably correct** — HSI is the defensible universal default for
-  a shared, superseded target. If anything is "lazy," it's *upstream* of the revert: #737 added
-  HSE=8 to a multi-board target on the assumption all variants carry an 8 MHz crystal, without
-  verifying.
+- **Not a manufacturer-side investigation.** #737 (add) and #1075 (revert) were Betaflight
+  community volunteers (ot0tot, haslinghuis), not BetaFPV. BetaFPV's own 4.5.0/4.5.1 `.hex` works
+  and is the known-good fallback.
+- **No confirmed hardware defect.** Whether the board carries an HSE crystal, and at what
+  frequency, was never documented; bench investigation was attempted but invalidated (wrong probe
+  pin) and not resumed.
+- **The revert is a reasonable default**, not a diagnosis — HSI is the safe universal setting for
+  a shared, superseded target. The avoidable error is upstream of the revert: #737 added HSE=8 to
+  a multi-board target assuming every variant carries an 8 MHz crystal, without verifying.
 
-### Could a fix have kept HSE on V1?
+### Keeping HSE on V1
 
-Yes — and HSE is *preferable* for timing-sensitive bidir DSHOT, since a crystal is far more
-accurate than HSI (ST: trimmed HSI still drifts ~0.3%/step with temp/voltage; HSE is
-crystal-accurate). The catch is the shared target:
+Keeping HSE is possible and preferable for timing-sensitive bidir DSHOT, since a crystal is far
+more accurate than HSI (per ST, trimmed HSI still drifts ~0.3%/step with temperature and
+voltage; HSE is crystal-accurate). The obstacle is the shared target:
 
 - **Proper fix:** split the target per board variant, each with its verified crystal value —
   which is exactly what V2/V3 are. Betaflight effectively did this going forward; V2's HSE was
@@ -178,12 +175,11 @@ diff), so the firmware's own clock-init can tell you — no instruments needed:
      multiple).
 3. Restore: `set system_hse_mhz = 0` then `save`.
 
-Betaflight's G4 clock init has HSE-fail fallback to HSI, so the normal failure mode is "reports
-HSI," not a brick; recover via DFU/reflash if needed. This is the concrete test that would
-finally settle whether any given V1-target board carries an HSE crystal — the question the
-upstream thread left open. (Our `betafpv_75mm.txt` AIR75 capture shows `PLLR-HSI`, but that was
-taken with HSE=0, so it doesn't answer the question; forcing HSE=8 and re-reading `status`
-would.)
+Betaflight's G4 clock init falls back to HSI if HSE fails to start, so the normal failure mode
+is "reports HSI," not an unbootable board; recover via DFU/reflash if needed. This determines
+whether a specific V1-target board carries an HSE crystal — a question the upstream discussion
+left unresolved. (The `betafpv_75mm.txt` AIR75 capture shows `PLLR-HSI`, but it was taken with
+HSE=0, so it does not answer this; forcing HSE=8 and re-reading `status` would.)
 
 ### Corroboration from this repo's own captures
 
