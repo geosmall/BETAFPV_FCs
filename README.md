@@ -56,16 +56,17 @@ Connect the FC, open the Betaflight Configurator, and go to the **CLI** tab.
 
 ## Restore or apply settings
 
-1. Open the diff text file you saved on your computer.
-2. Select all text (**Ctrl+A** / **Cmd+A**) and copy it (**Ctrl+C** / **Cmd+C**).
-3. Connect your drone to Betaflight and enter the **CLI** tab.
-4. Click the input box at the bottom and paste the text (**Ctrl+V** / **Cmd+V**).
-5. Press **Enter** and wait a few seconds for the commands to execute.
-6. Type `save` in the input box and press **Enter** to finalize the changes and reboot.
+1. Connect your drone to Betaflight and enter the **CLI** tab.
+2. Click **Load from file** (bottom of the CLI tab) and select the `.diff` to apply.
+3. Press **Enter** to run the loaded commands, and wait a few seconds for them to execute.
+4. Type `save` and press **Enter** to finalize the changes and reboot.
 
 > **Note:** the `.diff` files in this repo already end with a `save` command, so they
-> normally finalize and reboot on their own. Step 6 is a catch-all — run it if the board
+> normally finalize and reboot on their own. Step 4 is a catch-all — run it if the board
 > didn't save for you (e.g. a diff saved without the trailing `save`).
+>
+> No **Load from file** button? Open the `.diff` in a text editor, copy all of it, paste into
+> the CLI input box, then continue from step 3.
 
 > **Warning:** these configs target specific hardware. Restoring a `.diff` to the wrong
 > board, MCU, or firmware version can produce an unflyable or unsafe craft. Match the
