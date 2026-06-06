@@ -61,7 +61,7 @@ documents the full V1↔V2 target differences (clock source, IMU, barometer, mot
 pin map). `configs/BETAFPVG473_GIT_TRACE.md` traces the upstream history behind the G473
 gyro/HSE changes and stamps the exact commit each archived `config.h` matches. One thing to
 know when working with these targets: the V1 HSE was reverted to HSI upstream (it broke ESC
-reading; not a confirmed hardware fault). To refresh to a newer release, diff each
+reading; not a confirmed hardware fault). To update to a newer release, diff each
 `config.h` against the `src/config` submodule SHA pinned by that release tag in
 `betaflight/betaflight`.
 

@@ -61,11 +61,9 @@ V1 alternates:  USE_ACCGYRO_BMI270
 V2 alternates:  USE_ACCGYRO_BMI270, USE_ACCGYRO_ICM42622P, USE_ACCGYRO_LSM6DSK320X
 ```
 
-Both retain `USE_ACC_SPI_ICM42688P` / `USE_GYRO_SPI_ICM42688P` as the primary. V2 (as of the
-2025.12.4 set) carries three alternate IMU drivers vs V1's one — it keeps BMI270 and adds
-ICM42622P and LSM6DSK320X, covering the range of second-source gyro/acc parts fitted across V2
-boards. (The archived V2 `config.h` was refreshed to add ICM42622P/LSM6DSK320X; see
-`BETAFPVG473_GIT_TRACE.md`.)
+Both retain `USE_ACC_SPI_ICM42688P` / `USE_GYRO_SPI_ICM42688P` as the primary. In the 2025.12.4
+set, V2 carries three alternate IMU drivers vs V1's one — it keeps BMI270 and adds ICM42622P and
+LSM6DSK320X, covering the range of second-source gyro/acc parts fitted across V2 boards.
 
 ### 3. Barometer dropped on V2
 

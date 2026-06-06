@@ -29,7 +29,7 @@ To re-verify or move to a newer release, diff each archived `config.h` against
 
 ### The "SUPPORTED TARGET" comment in V2/V3
 
-The refreshed V2/V3 files carry an upstream block like:
+The V2/V3 files carry an upstream block like:
 
 ```
 /*
@@ -188,8 +188,8 @@ would.)
 ## Summary
 
 - **Gyro:** ICM42688P is primary on all G473 revisions. V2/V3 gained LSM6DSK320X (#1027) and
-  later BMI270 + ICM42622P (#1101); our archive is now refreshed to the 2025.12.4 set, so V2/V3
-  carry all four IMU options.
+  later BMI270 + ICM42622P (#1101); the archived files match the 2025.12.4 set, so V2/V3 carry
+  all four IMU options.
 - **ESC-reading regression (#14427):** root cause was an ESC-driver timer-allocation bug, not a
   clock issue. The 4.5.2 "Fix kiss passthrough" (#13922) made `openEscSerial` need a dedicated
   TX timer that G4 can't always spare; fixed in 2025.12.0 by #14794 (fall back to the RX timer).
