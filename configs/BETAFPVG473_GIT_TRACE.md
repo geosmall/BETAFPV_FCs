@@ -10,12 +10,12 @@ Source repo: <https://github.com/betaflight/config> — `configs/BETAFPVG473*/co
 
 ## Snapshot provenance (what our archived files match)
 
-All five archived targets now match the `betaflight/config` commit pinned by the
+All five archived targets match the `betaflight/config` commit pinned by the
 **Betaflight 2025.12.4** release (the latest stable, 2026-06-02). That release's firmware repo
 pins `config` as a git submodule at commit **`1359bbecb`** (2026-05-31, config PR
 [#1098](https://github.com/betaflight/config/pull/1098)).
 
-| Archived file | Last meaningful change in this snapshot |
+| Archived file | Last meaningful change |
 | --- | --- |
 | `BETAFPVF405/config.h`      | unchanged since before 2025.12.x |
 | `BETAFPVF405_ELRS/config.h` | unchanged since before 2025.12.x |
@@ -23,16 +23,28 @@ pins `config` as a git submodule at commit **`1359bbecb`** (2026-05-31, config P
 | `BETAFPVG473_V2/config.h`   | BMI270 + ICM42622P added ([#1101](https://github.com/betaflight/config/pull/1101), 2026-05-14) |
 | `BETAFPVG473_V3/config.h`   | BMI270 + ICM42622P added ([#1101](https://github.com/betaflight/config/pull/1101), 2026-05-14) |
 
-### Refresh history
+To re-verify or move to a newer release, diff each archived `config.h` against
+`configs/<BOARD>/config.h` at the submodule SHA pinned by the desired Betaflight release tag
+(`src/config` in `betaflight/betaflight`).
 
-These files were originally archived as an older dated snapshot (V2/V3 from the Feb 2026
-`#1027` era, before the #1101 IMU additions) and deliberately kept frozen. That decision was
-**later reversed**: the targets were refreshed to the 2025.12.4 released set (commit
-`1359bbecb`). Only V2 and V3 changed in that refresh — they gained the `BMI270` and
-`ICM42622P` IMU options plus an upstream "SUPPORTED TARGET" provenance comment; F405,
-F405_ELRS, and G473 were already current. To re-verify or re-refresh, diff each archived
-`config.h` against `configs/<BOARD>/config.h` at the submodule SHA pinned by the desired
-Betaflight release tag (`src/config` in `betaflight/betaflight`).
+### The "SUPPORTED TARGET" comment in V2/V3
+
+The refreshed V2/V3 files carry an upstream block like:
+
+```
+/*
+SUPPORTED TARGET - THANK YOU
+REFERENCE: sha256_92fef4e6...
+DATE: 2025-12-01
+*/
+```
+
+This is Betaflight's **manufacturer-validation marker**, not something we add. Under the
+unified-target scheme (config.h replaced the old per-board targets from 4.5.0), a manufacturer
+must submit and maintain the target to keep it "supported." The `sha256`/`DATE` stamp records
+that this config was validated and accepted into the official supported-target set. Keep it
+verbatim — it's part of the released file. (V1's file doesn't carry one; it predates the marker
+and wasn't re-submitted, consistent with the board being superseded.)
 
 ## Gyro / IMU timeline (V2 & V3)
 
@@ -59,23 +71,31 @@ V1↔V2 differences are detailed in `BETAFPVG473_V1_vs_V2.md`.)
 Betaflight release dates for cross-reference: 4.5.0 (2024-04-28), 4.5.1 (2024-07-27),
 **4.5.2 (2025-03-19)**, 4.5.3 (2025-11-23), 4.5.4 (2026-05-31).
 
-### Two separate clock problems, conflated in one issue thread
+### What actually broke ESC reading (real root cause — not HSE)
 
-The dates show the popular "HSE=8 broke 4.5.2" story is wrong — there are **two distinct
-regressions** that issue #14427 ran together:
+The popular "HSE broke 4.5.2" story is wrong, and the maintainers ultimately traced and fixed
+a **different** cause. The HSE flip-flop is a parallel cleanup that got tagged to the same
+issue (#14427).
 
-1. **The 4.5.2 trigger (not HSE).** Users reported ESC reading broke going 4.5.1 → 4.5.2, but
-   HSE=8 did not exist yet — #737 merged **2025-04-01, after 4.5.2 shipped (2025-03-19)**. What
-   4.5.2 actually changed was a cluster of STM32G4 clock-domain fixes: "Fix STM32G4 SPI2/SPI3
-   busses running at double intended clock rate" (betaflight #14161), "Fix G4 SPI clock being
-   double what it should be" (#14215), and "fix timer based bidirectional dshot command not
-   working" (#13991). One of these is the real 4.5.1→4.5.2 trigger.
-2. **HSE=8 (added later).** #737 added it after 4.5.2; it first shipped in 4.5.3 (2025-11-23)
-   and dev builds, *compounding* the timing problem rather than fixing it. #1075 then reverted
-   HSE→HSI and was accepted as the fix (tested on real hardware by the contributor).
+- **The regression bisects to 4.5.2 (2025-03-19), but HSE=8 didn't exist yet** — config #737
+  added it 2025-04-01, *after* 4.5.2. So HSE cannot be the 4.5.1→4.5.2 trigger.
+- **The real trigger was an ESC-driver change, not a clock change.**
+  [betaflight #13922 "Fix kiss passthrough"](https://github.com/betaflight/betaflight/pull/13922)
+  (merged 2024-09, shipped in 4.5.2) reworked the serial ESC passthrough driver
+  (`openEscSerial`) to require a **dedicated TX timer** — which STM32G4 boards can't always
+  allocate. Passthrough then hard-failed, so esc-configurator couldn't read the ESCs (users hit
+  ESC 3/4 first — the timer-starved outputs).
+- **The authoritative fix is**
+  [betaflight #14794 "Fix openEscSerial"](https://github.com/betaflight/betaflight/pull/14794)
+  (merged 2025-11-27, **milestone 2025.12** — i.e. in the 2025.12.x line our config now tracks).
+  It removes the hard failure and **falls back to reusing the RX timer for TX** when no
+  dedicated TX timer is free. Maintainer goal, verbatim: "preserve the KISS passthrough fix but
+  restore G4 ESC compatibility."
 
-So the maintainer-accepted resolution is "revert to HSI," but the original 4.5.2 trigger was a
-separate G4 clock change — the thread never cleanly separated them.
+So #14427 was an ESC-driver timer-allocation bug fixed in the firmware (#14794), **not** a
+clock bug. The earlier guess in this doc — that 4.5.2's STM32G4 SPI-clock fixes (#14161/#14215)
+or the bidir-DSHOT timer fix (#13991) caused it — was wrong; those are unrelated G4 changes
+that happened to ship in the same release.
 
 ### Cross-board comparison: V1 is the lone HSE outlier
 
@@ -94,20 +114,22 @@ Two conclusions:
   own V2 and V3 — run HSE=8 with bidir DSHOT fine. V1's problem is board-specific.
 - **Crystal frequency genuinely varies** (MERCURYG4 = 16 MHz, not 8), which matters next.
 
-### Likely real root cause: `BETAFPVG473` is a *shared* target
+### Why HSE=8 was reverted on V1: it's a *shared* target
 
-The V1 target is flashed to **several distinct physical products** — Matrix 1S 5in1, Matrix 1S
-3in1 HD, Air Brushless 5in1, and the AIR75 archived here. A single `SYSTEM_HSE_MHZ` must be
+Even though HSE wasn't the ESC bug, reverting HSE=8→0 on V1 was still sound — because
+`BETAFPVG473` is flashed to **several distinct physical products** (Matrix 1S 5in1, Matrix 1S
+3in1 HD, Air Brushless 5in1, and the AIR75 archived here). A single `SYSTEM_HSE_MHZ` must be
 correct for *every* one of those PCBs at once. If even one variant lacks an 8 MHz crystal (or
-uses another value), HSE=8 yields a wrong system clock on that variant — and since bitbanged
-bidir DSHOT (which the AIR75 diff uses) derives its bit timing directly from the system clock,
-telemetry decode / ESC passthrough breaks. HSI gives the correct *nominal* 168 MHz on every
-variant (just less accurate), so **reverting to HSI is the only setting guaranteed safe across
-all boards sharing the target.**
+uses another value), HSE=8 yields a wrong system clock on that variant, and anything derived
+from it (DSHOT bit timing, USB, serial bauds) goes off. HSI gives the correct *nominal* 168 MHz
+on every variant (just less accurate), so **HSI is the only clock setting guaranteed safe
+across all boards sharing the target.**
 
 This reframes the retracted wrong-crystal theory: the contributor's *scope measurement* was
 invalid ("probing the wrong pin"), but the underlying idea — HSE=8 doesn't match the hardware
-on at least some variants — was never disproven, just never bench-confirmed.
+on at least some variants — was never disproven, just never bench-confirmed. Note #1075 cited
+#14427, but the substantive ESC fix was the firmware driver change (#14794); the HSE revert was
+a parallel, board-specific cleanup whose actual contribution to ESC reading is unconfirmed.
 
 ### Was it lazy / a hardware fault? (assessment)
 
@@ -134,6 +156,26 @@ crystal-accurate). The catch is the shared target:
   MCU's HSE pins, set `SYSTEM_HSE_MHZ 8` in a local custom build for working, more-accurate HSE.
   You must verify the crystal first — the whole problem is that the shared target couldn't.
 
+### How to test whether a board has a working HSE crystal
+
+`system_hse_mhz` is a runtime CLI setting (it appears as `set system_hse_mhz = 8` in the V2
+diff), so the firmware's own clock-init can tell you — no instruments needed:
+
+1. CLI: `set system_hse_mhz = 8` then `save` (board reboots).
+2. Reconnect, run `status`, read the **Clock** line:
+   - `Clock=168MHz (PLLR-HSE)` → a working 8 MHz crystal **is present** (HSE started, PLL locked).
+   - `Clock=168MHz (PLLR-HSI)` → **no usable HSE crystal** (HSE didn't start; fell back to HSI).
+   - won't enumerate / unstable → likely a crystal of the *wrong* frequency (PLL targets a wrong
+     multiple).
+3. Restore: `set system_hse_mhz = 0` then `save`.
+
+Betaflight's G4 clock init has HSE-fail fallback to HSI, so the normal failure mode is "reports
+HSI," not a brick; recover via DFU/reflash if needed. This is the concrete test that would
+finally settle whether any given V1-target board carries an HSE crystal — the question the
+upstream thread left open. (Our `betafpv_75mm.txt` AIR75 capture shows `PLLR-HSI`, but that was
+taken with HSE=0, so it doesn't answer the question; forcing HSE=8 and re-reading `status`
+would.)
+
 ### Corroboration from this repo's own captures
 
 `betafpv_75mm.txt` bench logs match the upstream end state exactly:
@@ -148,13 +190,16 @@ crystal-accurate). The catch is the shared target:
 - **Gyro:** ICM42688P is primary on all G473 revisions. V2/V3 gained LSM6DSK320X (#1027) and
   later BMI270 + ICM42622P (#1101); our archive is now refreshed to the 2025.12.4 set, so V2/V3
   carry all four IMU options.
+- **ESC-reading regression (#14427):** root cause was an ESC-driver timer-allocation bug, not a
+  clock issue. The 4.5.2 "Fix kiss passthrough" (#13922) made `openEscSerial` need a dedicated
+  TX timer that G4 can't always spare; fixed in 2025.12.0 by #14794 (fall back to the RX timer).
 - **HSE:** V1 toggled HSI → HSE → HSI. The final state is HSI because `BETAFPVG473` is a
-  *shared* target across several physical boards, so HSE=8 couldn't be guaranteed correct on
-  all of them — HSI is the safe universal default. No confirmed hardware fault; root cause never
-  bench-confirmed. V1 is the only one of 21 G47X targets forced to HSE=0. V2/V3 keep a working,
-  tested HSE because they're narrower targets with consistent crystals. The 4.5.2 ESC-reading
-  regression was a *separate* G4 clock change, not HSE (HSE postdates 4.5.2). Our archived V1
-  reflects the post-revert (HSI) state.
+  *shared* target across several physical boards, so HSE=8 couldn't be guaranteed correct on all
+  of them — HSI is the safe universal default. No confirmed hardware fault; root cause never
+  bench-confirmed (use the CLI test above to check a specific board). V1 is the only one of 21
+  G47X targets forced to HSE=0. V2/V3 keep a working, tested HSE because they're narrower
+  targets with consistent crystals. The HSE revert (#1075) was a parallel cleanup tagged to
+  #14427, not the substantive ESC fix. Our archived V1 reflects the post-revert (HSI) state.
 
 ## Sources
 
@@ -167,7 +212,9 @@ crystal-accurate). The catch is the shared target:
   [#1075](https://github.com/betaflight/config/pull/1075),
   [#1101](https://github.com/betaflight/config/pull/1101)
 - `betaflight/betaflight`: [issue #14427](https://github.com/betaflight/betaflight/issues/14427);
-  4.5.2 clock fixes #14161, #14215, #13991 ([releases](https://github.com/betaflight/betaflight/releases))
+  ESC-driver regression [#13922](https://github.com/betaflight/betaflight/pull/13922) (cause) and
+  [#14794](https://github.com/betaflight/betaflight/pull/14794) (fix, in 2025.12);
+  unrelated 4.5.2 G4 changes #14161/#14215/#13991 ([releases](https://github.com/betaflight/betaflight/releases))
 - BetaFPV firmware pages (shared `BETAFPVG473` target across Matrix 1S / Air / AIR75 products)
 - ST: [STM32G4 RCC training](https://www.st.com/resource/en/product_training/STM32G4-System-Reset_and_clock_control_RCC.pdf),
   [HSI accuracy AN](https://www.st.com/resource/en/application_note/dm00425536-how-to-optimize-stm32-mcus-internal-rc-oscillator-accuracy-stmicroelectronics.pdf)
