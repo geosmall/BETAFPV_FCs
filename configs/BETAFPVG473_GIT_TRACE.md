@@ -1,4 +1,4 @@
-# BETAFPVG473 family — upstream git trace (gyro & HSE)
+# BETAFPVG473 family — upstream git trace (gyro, HSE, ESC-reading)
 
 Trace of the relevant `betaflight/config` history behind the `BETAFPVG473`,
 `BETAFPVG473_V2`, and `BETAFPVG473_V3` unified targets archived in this repo, plus the exact
@@ -12,13 +12,13 @@ Source repo: <https://github.com/betaflight/config> — `configs/BETAFPVG473*/co
 
 All five archived targets match the `betaflight/config` commit pinned by the
 **Betaflight 2025.12.4** release (the latest stable, 2026-06-02). That release's firmware repo
-pins `config` as a git submodule at commit **`1359bbecb`** (2026-05-31, config PR
-[#1098](https://github.com/betaflight/config/pull/1098)).
+pins `config` as a git submodule at commit **`1359bbecb`** (2026-05-31 — the then-current
+`config` HEAD; the commit itself is an unrelated target addition).
 
-| Archived file | Last meaningful change |
+| Archived file | Last `config.h` change at this snapshot |
 | --- | --- |
-| `BETAFPVF405/config.h`      | unchanged since before 2025.12.x |
-| `BETAFPVF405_ELRS/config.h` | unchanged since before 2025.12.x |
+| `BETAFPVF405/config.h`      | [#886](https://github.com/betaflight/config/pull/886) (2025-08-29) |
+| `BETAFPVF405_ELRS/config.h` | [#993](https://github.com/betaflight/config/pull/993) (2025-12-24) |
 | `BETAFPVG473/config.h`      | HSE reverted to 0 ([#1075](https://github.com/betaflight/config/pull/1075), 2026-04-29) |
 | `BETAFPVG473_V2/config.h`   | BMI270 + ICM42622P added ([#1101](https://github.com/betaflight/config/pull/1101), 2026-05-14) |
 | `BETAFPVG473_V3/config.h`   | BMI270 + ICM42622P added ([#1101](https://github.com/betaflight/config/pull/1101), 2026-05-14) |
@@ -43,8 +43,9 @@ This is Betaflight's **manufacturer-validation marker**, not something we add. U
 unified-target scheme (config.h replaced the old per-board targets from 4.5.0), a manufacturer
 must submit and maintain the target to keep it "supported." The `sha256`/`DATE` stamp records
 that this config was validated and accepted into the official supported-target set. Keep it
-verbatim — it's part of the released file. (V1's file doesn't carry one; it predates the marker
-and wasn't re-submitted, consistent with the board being superseded.)
+verbatim — it's part of the released file. (V1's file carries no marker even though it was last
+touched in 2026-04 — after the marker scheme existed — i.e. it simply isn't a submitted/
+validated supported target, consistent with the board being superseded.)
 
 ## Gyro / IMU timeline (V2 & V3)
 
@@ -69,7 +70,8 @@ V1↔V2 differences are detailed in `BETAFPVG473_V1_vs_V2.md`.)
 | 2026-04-29 | [#1075](https://github.com/betaflight/config/pull/1075) | V1: **revert HSE 8 → 0**, fixes [betaflight#14427](https://github.com/betaflight/betaflight/issues/14427) |
 
 Betaflight release dates for cross-reference: 4.5.0 (2024-04-28), 4.5.1 (2024-07-27),
-**4.5.2 (2025-03-19)**, 4.5.3 (2025-11-23), 4.5.4 (2026-05-31).
+**4.5.2 (2025-03-19)**, 4.5.3 (2025-11-23), 4.5.4 (2026-05-31); the date-based line —
+2025.12.0-RC4 (2025-12-10), 2025.12.1 (2025-12-25), 2025.12.4 (2026-06-02).
 
 ### What actually broke ESC reading (real root cause — not HSE)
 
@@ -103,15 +105,15 @@ Across all 21 `STM32G47X` targets in `betaflight/config` (HEAD, June 2026):
 
 | HSE setting | Count | Notable boards |
 | --- | --- | --- |
-| `8` (8 MHz crystal) | 13 | **BETAFPVG473_V2, _V3**, AOCODARCG473V1, SPEDIXG473, CRAZYBEE473, TAKERG4AIO, JHEG474, HYBRIDG4, HDZERO_GAMMA/AIO15, NEUTRONRCG4AIO, AIRBOTG4AIO |
+| `8` (8 MHz crystal) | 12 | **BETAFPVG473_V2, _V3**, AOCODARCG473V1, SPEDIXG473, CRAZYBEE473, TAKERG4AIO, JHEG474, HYBRIDG4, HDZERO_GAMMA, HDZERO_AIO15, NEUTRONRCG4AIO, AIRBOTG4AIO |
 | `16` (16 MHz crystal) | 1 | MERCURYG4 |
-| no define (implicit HSI) | 6 | MAMBAG4, KAKUTEG4AIO, LUX/AIO boards |
+| no define (implicit HSI) | 7 | MAMBAG4, KAKUTEG4AIO, GEPRC_TAKER_G473AIO, NUCLEOG474, SUB250_REDFOX_G473AIO, LUXHDAIO-G4, LUXMICROAIO |
 | **`0` (explicitly forced HSI)** | **1** | **BETAFPVG473 (V1) — the only forced-0 target** |
 
 Two conclusions:
 
-- **Not a general G4/HSE/DSHOT incompatibility.** 13 other G473 targets — including BetaFPV's
-  own V2 and V3 — run HSE=8 with bidir DSHOT fine. V1's problem is board-specific.
+- **Not a general G4/HSE/DSHOT incompatibility.** 12 other G47X targets — including BetaFPV's
+  own V2 and V3 — run HSE=8 without a forced revert. V1's problem is board-specific.
 - **Crystal frequency genuinely varies** (MERCURYG4 = 16 MHz, not 8), which matters next.
 
 ### Why HSE=8 was reverted on V1: it's a *shared* target
@@ -192,7 +194,8 @@ would.)
   all four IMU options.
 - **ESC-reading regression (#14427):** root cause was an ESC-driver timer-allocation bug, not a
   clock issue. The 4.5.2 "Fix kiss passthrough" (#13922) made `openEscSerial` need a dedicated
-  TX timer that G4 can't always spare; fixed in 2025.12.0 by #14794 (fall back to the RX timer).
+  TX timer that G4 can't always spare; fixed in the 2025.12 line by #14794 (fall back to the RX
+  timer).
 - **HSE:** V1 toggled HSI → HSE → HSI. The final state is HSI because `BETAFPVG473` is a
   *shared* target across several physical boards, so HSE=8 couldn't be guaranteed correct on all
   of them — HSI is the safe universal default. No confirmed hardware fault; root cause never
