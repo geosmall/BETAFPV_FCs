@@ -82,8 +82,9 @@ Each target uses the ICM42688P as its primary gyro/acc plus one or more alternat
 Not every target has a matching CLI backup, and vice versa. The `config.h` files are tracked
 to the **Betaflight 2025.12.4** released set (`betaflight/config` commit `1359bbecb`).
 
-`configs/BETAFPVG473_V1_vs_V2.md` documents the hardware differences between the `BETAFPVG473`
-and `BETAFPVG473_V2` targets (clock source, IMU, barometer, motor/LED/gyro pin map).
+`configs/BETAFPVG473_V1_vs_V2_vs_V3.md` documents the hardware differences across the
+`BETAFPVG473`, `_V2`, and `_V3` targets (clock source, IMU, barometer, gyro clock input, HD OSD,
+motor/LED/gyro/ADC pin map).
 `configs/BETAFPVG473_GIT_TRACE.md` traces the upstream `betaflight/config` history behind the
 G473 gyro and HSE changes, and records the exact commit each archived `config.h` matches.
 

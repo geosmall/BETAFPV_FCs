@@ -56,9 +56,9 @@ and USART3. Match the target's `BOARD_NAME` to a board exactly — the revisions
 interchangeable.
 
 The `config.h` files are tracked to the **Betaflight 2025.12.4** released set
-(`betaflight/config` submodule commit `1359bbecb`). `configs/BETAFPVG473_V1_vs_V2.md`
-documents the full V1↔V2 target differences (clock source, IMU, barometer, motor/LED/gyro/flash
-pin map). `configs/BETAFPVG473_GIT_TRACE.md` traces the upstream history behind the G473
+(`betaflight/config` submodule commit `1359bbecb`). `configs/BETAFPVG473_V1_vs_V2_vs_V3.md`
+documents the full V1/V2/V3 target differences (clock source, IMU, barometer, gyro clock input,
+HD OSD, motor/LED/gyro/ADC pin map). `configs/BETAFPVG473_GIT_TRACE.md` traces the upstream history behind the G473
 gyro/HSE changes and stamps the exact commit each archived `config.h` matches. One thing to
 know when working with these targets: the V1 HSE was reverted to HSI upstream (it broke ESC
 reading; not a confirmed hardware fault). To update to a newer release, diff each

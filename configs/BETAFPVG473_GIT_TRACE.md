@@ -64,8 +64,8 @@ cover them all (the user does not pick the chip). `ICM42688P` is the reference/d
 it's wired via the explicit `USE_ACC_SPI_ICM42688P` / `USE_GYRO_SPI_ICM42688P` defines and is
 what every board in this repo reports in `status`. The `USE_ACCGYRO_*` entries are the
 alternates the firmware will also recognize on that same `GYRO_1` device. So #1101 did **not**
-change the primary or add a second gyro — it only grew the auto-detect list. (V1's list is just `ICM42688P` + `BMI270`; V1↔V2
-differences are in `BETAFPVG473_V1_vs_V2.md`.)
+change the primary or add a second gyro — it only grew the auto-detect list. (V1's list is just
+`ICM42688P` + `BMI270`; full per-revision differences are in `BETAFPVG473_V1_vs_V2_vs_V3.md`.)
 
 ## HSE (system clock) timeline — the V1 flip-flop
 
