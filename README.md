@@ -69,23 +69,23 @@ board — the GPL-licensed source that describes the hardware (MCU, IMU, baro, O
 serial RX) so firmware can be built or a custom build configured for it. These are *not* CLI
 settings; they define the board, whereas the `.diff`/`.txt` files above tune it.
 
-Each target supports the ICM42688P as its primary gyro/acc plus one alternate IMU:
+Each target uses the ICM42688P as its primary gyro/acc plus one or more alternate IMUs:
 
-| Target               | MCU       | IMUs (primary + alt)    | Notes                             |
-| -------------------- | --------- | ----------------------- | --------------------------------- |
-| `BETAFPVF405`        | STM32F405 | ICM42688P + BMI270      | analog OSD (MAX7456)              |
-| `BETAFPVF405_ELRS`   | STM32F405 | ICM42688P + BMI270      | CRSF serial RX baked in on USART3 |
-| `BETAFPVG473`        | STM32G473 | ICM42688P + BMI270      | CRSF on USART3                    |
-| `BETAFPVG473_V2`     | STM32G473 | ICM42688P + LSM6DSK320X | newer revision; no barometer      |
-| `BETAFPVG473_V3`     | STM32G473 | ICM42688P + LSM6DSK320X | CRSF on USART1 **and** USART3     |
+| Target               | MCU       | IMUs (primary + alt)                       | Notes                             |
+| -------------------- | --------- | ------------------------------------------ | --------------------------------- |
+| `BETAFPVF405`        | STM32F405 | ICM42688P + BMI270                         | analog OSD (MAX7456)              |
+| `BETAFPVF405_ELRS`   | STM32F405 | ICM42688P + BMI270                         | CRSF serial RX baked in on USART3 |
+| `BETAFPVG473`        | STM32G473 | ICM42688P + BMI270                         | CRSF on USART3                    |
+| `BETAFPVG473_V2`     | STM32G473 | ICM42688P + BMI270 + ICM42622P + LSM6DSK320X | newer revision; no barometer    |
+| `BETAFPVG473_V3`     | STM32G473 | ICM42688P + BMI270 + ICM42622P + LSM6DSK320X | CRSF on USART1 **and** USART3   |
 
-Not every target has a matching CLI backup, and vice versa.
+Not every target has a matching CLI backup, and vice versa. The `config.h` files are tracked
+to the **Betaflight 2025.12.4** released set (`betaflight/config` commit `1359bbecb`).
 
 `configs/BETAFPVG473_V1_vs_V2.md` documents the hardware differences between the `BETAFPVG473`
 and `BETAFPVG473_V2` targets (clock source, IMU, barometer, motor/LED/gyro pin map).
 `configs/BETAFPVG473_GIT_TRACE.md` traces the upstream `betaflight/config` history behind the
-G473 gyro and HSE changes, and records the exact commit each archived `config.h` was captured
-at (and how it has since drifted from upstream).
+G473 gyro and HSE changes, and records the exact commit each archived `config.h` matches.
 
 ## Scratch log
 

@@ -49,18 +49,21 @@ Targets present (a superset of the CLI backups — some have no backup, and vice
 - `BETAFPVF405`, `BETAFPVF405_ELRS` (F405 with CRSF baked in on USART3)
 - `BETAFPVG473`, `BETAFPVG473_V2`, `BETAFPVG473_V3`
 
-All targets use `ICM42688P` as the primary gyro/acc plus one alternate IMU; the alternate
-differs by revision: V1 (and the F405 targets) use `BMI270`, while **V2 and V3 use
-`LSM6DSK320X`**. V2 also drops the barometer; V3 wires serial RX on both USART1 and USART3.
-Match the target's `BOARD_NAME` to a board exactly — the revisions are not interchangeable.
+All targets use `ICM42688P` as the primary gyro/acc plus one or more alternate IMUs. V1 and
+the F405 targets carry a single alternate (`BMI270`); **V2 and V3 carry three** (`BMI270`,
+`ICM42622P`, `LSM6DSK320X`). V2 also drops the barometer; V3 wires serial RX on both USART1
+and USART3. Match the target's `BOARD_NAME` to a board exactly — the revisions are not
+interchangeable.
 
-`configs/BETAFPVG473_V1_vs_V2.md` documents the full V1↔V2 target differences (clock source,
-IMU, barometer, motor/LED/gyro/flash pin map). `configs/BETAFPVG473_GIT_TRACE.md` traces the
-upstream `betaflight/config` history behind the G473 gyro/HSE changes and stamps the exact
-commit each archived `config.h` matches. Two things to know when working with these targets:
-the V1 HSE was reverted to HSI upstream (it broke ESC reading; not a confirmed hardware
-fault), and the archived V2/V3 `config.h` predate upstream PR #1101, so they lack the later
-BMI270/ICM42622P IMU options — keep them as dated snapshots, don't silently refresh.
+The `config.h` files are tracked to the **Betaflight 2025.12.4** released set
+(`betaflight/config` submodule commit `1359bbecb`). `configs/BETAFPVG473_V1_vs_V2.md`
+documents the full V1↔V2 target differences (clock source, IMU, barometer, motor/LED/gyro/flash
+pin map). `configs/BETAFPVG473_GIT_TRACE.md` traces the upstream history behind the G473
+gyro/HSE changes and stamps the exact commit each archived `config.h` matches. One thing to
+know when working with these targets: the V1 HSE was reverted to HSI upstream (it broke ESC
+reading; not a confirmed hardware fault). To refresh to a newer release, diff each
+`config.h` against the `src/config` submodule SHA pinned by that release tag in
+`betaflight/betaflight`.
 
 ### Scratch log
 

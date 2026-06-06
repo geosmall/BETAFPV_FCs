@@ -16,7 +16,7 @@ the wrong one will mis-map motors, LEDs, the gyro, and the system clock.
 | Area | V1 | V2 |
 | --- | --- | --- |
 | Clock source | internal HSI (`SYSTEM_HSE_MHZ 0`) | 8 MHz crystal (`SYSTEM_HSE_MHZ 8`) |
-| Secondary IMU | BMI270 | LSM6DSK320X |
+| Alternate IMU drivers | BMI270 | BMI270 + ICM42622P + LSM6DSK320X |
 | Barometer | BMP280 / DPS310 | none |
 | Motor timers | spread across TIM1/2/3 | all four on TIM1 |
 | MOTOR3 / MOTOR4 | PB6 / PC13 | PC6 / PA4 |
@@ -57,13 +57,15 @@ and was never reverted, so V2 runs the more accurate external clock. Full histor
 ### 2. Secondary IMU support changed
 
 ```
-V1:  USE_ACCGYRO_BMI270
-V2:  USE_ACCGYRO_LSM6DSK320X
+V1 alternates:  USE_ACCGYRO_BMI270
+V2 alternates:  USE_ACCGYRO_BMI270, USE_ACCGYRO_ICM42622P, USE_ACCGYRO_LSM6DSK320X
 ```
 
-Both retain `USE_ACC_SPI_ICM42688P` / `USE_GYRO_SPI_ICM42688P` as the primary. The alternate
-IMU the firmware can drive changed from BMI270 to LSM6DSK320X — reflecting a different
-second-source gyro/acc fitted on the V2 PCB.
+Both retain `USE_ACC_SPI_ICM42688P` / `USE_GYRO_SPI_ICM42688P` as the primary. V2 (as of the
+2025.12.4 set) carries three alternate IMU drivers vs V1's one — it keeps BMI270 and adds
+ICM42622P and LSM6DSK320X, covering the range of second-source gyro/acc parts fitted across V2
+boards. (The archived V2 `config.h` was refreshed to add ICM42622P/LSM6DSK320X; see
+`BETAFPVG473_GIT_TRACE.md`.)
 
 ### 3. Barometer dropped on V2
 

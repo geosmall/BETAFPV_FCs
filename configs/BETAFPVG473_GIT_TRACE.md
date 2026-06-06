@@ -1,36 +1,38 @@
 # BETAFPVG473 family — upstream git trace (gyro & HSE)
 
 Trace of the relevant `betaflight/config` history behind the `BETAFPVG473`,
-`BETAFPVG473_V2`, and `BETAFPVG473_V3` unified targets archived in this repo, plus the
-upstream commit each archived `config.h` was captured at. The `config.h` files here are
-upstream **source** (not device captures), so they have a canonical home and a moving HEAD;
-this doc stamps the snapshot and records why the archived values differ from current upstream.
+`BETAFPVG473_V2`, and `BETAFPVG473_V3` unified targets archived in this repo, plus the exact
+upstream commit each archived `config.h` matches. The `config.h` files here are upstream
+**source** (not device captures) with a canonical home and a moving HEAD; this doc stamps the
+snapshot so it's clear which release the archived files correspond to.
 
 Source repo: <https://github.com/betaflight/config> — `configs/BETAFPVG473*/config.h`
 
 ## Snapshot provenance (what our archived files match)
 
-| Archived file | Matches upstream commit | PR | Captured state |
-| --- | --- | --- | --- |
-| `BETAFPVG473/config.h`    | `4b320bcc6` (2026-04-29) | [#1075](https://github.com/betaflight/config/pull/1075) | after HSE reverted to 0 |
-| `BETAFPVG473_V2/config.h` | `af00bf93e` (2026-02-24) | [#1027](https://github.com/betaflight/config/pull/1027) | LSM6DSK320X added, **before** #1101 |
-| `BETAFPVG473_V3/config.h` | `af00bf93e` (2026-02-24) | [#1027](https://github.com/betaflight/config/pull/1027) | LSM6DSK320X added, **before** #1101 |
+All five archived targets now match the `betaflight/config` commit pinned by the
+**Betaflight 2025.12.4** release (the latest stable, 2026-06-02). That release's firmware repo
+pins `config` as a git submodule at commit **`1359bbecb`** (2026-05-31, config PR
+[#1098](https://github.com/betaflight/config/pull/1098)).
 
-Note the V1 snapshot is newer than the V2/V3 snapshots — V1 was captured after the Apr 2026
-HSE revert, while V2/V3 were captured in the Feb 2026 LSM6DSK320X era.
+| Archived file | Last meaningful change in this snapshot |
+| --- | --- |
+| `BETAFPVF405/config.h`      | unchanged since before 2025.12.x |
+| `BETAFPVF405_ELRS/config.h` | unchanged since before 2025.12.x |
+| `BETAFPVG473/config.h`      | HSE reverted to 0 ([#1075](https://github.com/betaflight/config/pull/1075), 2026-04-29) |
+| `BETAFPVG473_V2/config.h`   | BMI270 + ICM42622P added ([#1101](https://github.com/betaflight/config/pull/1101), 2026-05-14) |
+| `BETAFPVG473_V3/config.h`   | BMI270 + ICM42622P added ([#1101](https://github.com/betaflight/config/pull/1101), 2026-05-14) |
 
-### Known drift from current upstream
+### Refresh history
 
-`BETAFPVG473_V2` and `_V3` upstream have since gained two more selectable IMUs that our
-archived snapshots do **not** contain:
-
-- Upstream HEAD V2/V3 IMUs: `ICM42688P` (primary, SPI) + `LSM6DSK320X` + `BMI270` + `ICM42622P`
-- Our archived V2/V3 IMUs: `ICM42688P` (primary, SPI) + `LSM6DSK320X` only
-
-The `BMI270` and `ICM42622P` options were added by [#1101](https://github.com/betaflight/config/pull/1101)
-(2026-05-14), after our snapshot. Decision (intentional): keep the dated snapshot, document
-the drift here rather than refresh — the archived files match the 4.5.x firmware the boards
-are actually running.
+These files were originally archived as an older dated snapshot (V2/V3 from the Feb 2026
+`#1027` era, before the #1101 IMU additions) and deliberately kept frozen. That decision was
+**later reversed**: the targets were refreshed to the 2025.12.4 released set (commit
+`1359bbecb`). Only V2 and V3 changed in that refresh — they gained the `BMI270` and
+`ICM42622P` IMU options plus an upstream "SUPPORTED TARGET" provenance comment; F405,
+F405_ELRS, and G473 were already current. To re-verify or re-refresh, diff each archived
+`config.h` against `configs/<BOARD>/config.h` at the submodule SHA pinned by the desired
+Betaflight release tag (`src/config` in `betaflight/betaflight`).
 
 ## Gyro / IMU timeline (V2 & V3)
 
@@ -144,7 +146,8 @@ crystal-accurate). The catch is the shared target:
 ## Summary
 
 - **Gyro:** ICM42688P is primary on all G473 revisions. V2/V3 gained LSM6DSK320X (#1027) and
-  later BMI270 + ICM42622P (#1101); our V2/V3 archive predates #1101 and lacks the latter two.
+  later BMI270 + ICM42622P (#1101); our archive is now refreshed to the 2025.12.4 set, so V2/V3
+  carry all four IMU options.
 - **HSE:** V1 toggled HSI → HSE → HSI. The final state is HSI because `BETAFPVG473` is a
   *shared* target across several physical boards, so HSE=8 couldn't be guaranteed correct on
   all of them — HSI is the safe universal default. No confirmed hardware fault; root cause never
