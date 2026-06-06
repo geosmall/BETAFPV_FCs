@@ -30,6 +30,15 @@ Each board directory holds two CLI text exports:
 
 Filenames carry a `YYYYMMDD_HHMMSS` timestamp; the newest reflects the most recent capture.
 
+### OEM firmware
+
+A board may also include an `OEM Firmware and Diff/` folder holding the **as-shipped factory
+firmware** — the compiled Betaflight `.hex` BetaFPV flashes at the factory, plus its matching
+`diff all`. This is the known-good reference build (e.g. for re-flashing or comparing against
+later Betaflight versions). The `.hex` is the actual firmware binary; the paired `.diff` is the
+factory config that came with it (and may duplicate a CLI backup above). `BETAFPVG473/` has the
+AIR75 4.5.0 OEM build.
+
 > **Note:** each `.diff` begins with `defaults nosave`, which resets every setting back to
 > firmware defaults in RAM only — nothing is committed and the board does not reboot. This
 > gives the restore a clean baseline before the captured settings are applied on top; the

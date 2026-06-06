@@ -37,6 +37,13 @@ Each board directory holds two file types, both Betaflight CLI text:
 - `BTFL_<craft>_<timestamp>_<board>.diff` — pure `diff all`: only settings that differ from
   firmware defaults, wrapped in `batch start` … `save`.
 
+A board directory may also hold an `OEM Firmware and Diff/` subfolder: the as-shipped factory
+**compiled firmware** (`.hex`, an Intel HEX binary — a *third* artifact type, distinct from the
+CLI text and the `config.h` source) plus its matching factory `diff all`. This is BetaFPV's
+known-good reference build; the paired `.diff` may duplicate a CLI backup above. Do not treat
+the `.hex` as editable config. `BETAFPVG473/` carries the AIR75 4.5.0 OEM build (which, being
+4.5.0, predates the HSE define and so runs HSI).
+
 ### Firmware build targets
 
 `configs/<BOARD_NAME>/config.h` are Betaflight **unified target definitions** — GPL-licensed
