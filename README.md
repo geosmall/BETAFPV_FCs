@@ -97,8 +97,9 @@ After it reboots, run `status` and check the clock source:
 - `Clock=168MHz (PLLR-HSI)` → no usable crystal; it fell back. Revert with `set system_hse_mhz = 0` → `save`.
 
 Notes:
-- **Verify the crystal first** — not every board on this shared target has one; the command
-  above is also the test (HSE vs HSI in `status`).
+- **Verify the crystal first** — this target is shared across several different boards, and
+  whether they all carry a working crystal is unconfirmed, so don't assume yours matches another.
+  The command above is itself the test (HSE vs HSI in `status`).
 - It's a saved setting, so a full erase / reflash-to-defaults reverts it to HSI — re-apply or
   restore from a `.diff`.
 - For working ESC reading too, run Betaflight **4.5.0/4.5.1 or ≥ 2025.12.1** (avoid 4.5.2–4.5.4).
