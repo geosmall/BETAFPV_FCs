@@ -94,6 +94,9 @@ boards. Scratch notes, not a restorable backup.
   hardware state. Keep older backups rather than overwriting — they are the change history.
 - All boards are manufacturer `BEFH`, MSP API 1.46. Firmware is **Betaflight 4.5.0** except
   `BETAFPVG473_V2`, which is on **4.5.3**. The `# version` line in each file records the exact
-  firmware build; preserve it when editing.
+  firmware build; preserve it when editing. (4.5.3 falls in the 4.5.2–4.5.4 window of the G4
+  ESC-passthrough bug documented in `configs/BETAFPVG473_GIT_TRACE.md` — but that affects only
+  esc-configurator reading, not flight, and is unconfirmed on the V2 target; it does not affect
+  the archived backup.)
 - When diffing or comparing boards, expect per-board hardware fields to differ legitimately:
   `mcu_id`, `acc_calibration`, OSD element positions, and (G473) the `vtxtable`.
