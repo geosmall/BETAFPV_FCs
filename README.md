@@ -9,11 +9,19 @@ the exact firmware per board.
 
 ## Boards
 
-| Directory         | MCU       | Board name        | Craft        | Firmware |
-| ----------------- | --------- | ----------------- | ------------ | -------- |
-| `BETAFPVF405/`    | STM32F405 | `BETAFPVF405`     | Pavo Pico II | 4.5.0    |
-| `BETAFPVG473/`    | STM32G473 | `BETAFPVG473`     | AIR75        | 4.5.0    |
-| `BETAFPVG473_V2/` | STM32G473 | `BETAFPVG473_V2`  | Bare board   | 4.5.3    |
+| Directory         | MCU       | Board name        | Product                            | Firmware |
+| ----------------- | --------- | ----------------- | ---------------------------------- | -------- |
+| `BETAFPVF405/`    | STM32F405 | `BETAFPVF405`     | Pavo Pico II                       | 4.5.0    |
+| `BETAFPVG473/`    | STM32G473 | `BETAFPVG473`     | Air Brushless 4in1 FC (bare board) | 4.5.0    |
+| `AIR75_G473/`     | STM32G473 | `BETAFPVG473`     | AIR75 (complete drone)             | 4.5.0    |
+| `BETAFPVG473_V2/` | STM32G473 | `BETAFPVG473_V2`  | Bare board                         | 4.5.3    |
+
+`BETAFPVG473/` and `AIR75_G473/` both run the `BETAFPVG473` target but are **different
+products** — the standalone Air Brushless 4in1 flight controller vs the complete AIR75 75mm
+drone. BetaFPV's factory firmware sets `craft_name` to "AIR75" on the FC itself, so the craft
+name alone does **not** distinguish them; the folder does. The `AIR75_G473/` backup additionally
+has the external clock enabled (`system_hse_mhz = 8`); the `BETAFPVG473/` backups are factory
+(HSI).
 
 `BETAFPVG473_V2` is a newer hardware revision running Betaflight 4.5.3; its backup is at
 factory defaults (no craft name or tuned PID profiles).
@@ -36,8 +44,8 @@ A board may also include an `OEM Firmware and Diff/` folder holding the **as-shi
 firmware** — the compiled Betaflight `.hex` BetaFPV flashes at the factory, plus its matching
 `diff all`. This is the known-good reference build (e.g. for re-flashing or comparing against
 later Betaflight versions). The `.hex` is the actual firmware binary; the paired `.diff` is the
-factory config that came with it (and may duplicate a CLI backup above). `BETAFPVG473/` has the
-AIR75 4.5.0 OEM build.
+factory config that came with it (and may duplicate a CLI backup above). `AIR75_G473/` holds the
+AIR75 drone's 4.5.0 OEM build.
 
 > **Note:** each `.diff` begins with `defaults nosave`, which resets every setting back to
 > firmware defaults in RAM only — nothing is committed and the board does not reboot. This

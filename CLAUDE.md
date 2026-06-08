@@ -22,12 +22,19 @@ Two kinds of artifact live here, and they must not be confused:
 
 ### CLI config backups
 
-One directory per board, named by MCU/board:
+One directory per physical product (some share a `board_name`):
 
 - `BETAFPVF405/` — STM32F405 board (`board_name BETAFPVF405`), craft "Pavo Pico II", BF 4.5.0
-- `BETAFPVG473/` — STM32G473 board (`board_name BETAFPVG473`), craft "AIR75", BF 4.5.0
+- `BETAFPVG473/` — standalone **Air Brushless 4in1 flight controller** (bare board,
+  `board_name BETAFPVG473`), BF 4.5.0, factory config
+- `AIR75_G473/` — the complete **AIR75 75mm drone** (same `board_name BETAFPVG473`), BF 4.5.0,
+  backup with the external clock enabled (`system_hse_mhz = 8`)
 - `BETAFPVG473_V2/` — newer STM32G473 revision (`board_name BETAFPVG473_V2`), **BF 4.5.3**,
   captured at factory defaults (no craft name, no tuned profiles)
+
+`BETAFPVG473/` and `AIR75_G473/` are different products on the same `BETAFPVG473` target. The
+FC's factory firmware sets `craft_name` to "AIR75", so the craft name does **not** distinguish
+the bare 4in1 FC from the drone — the directory does.
 
 Each board directory holds two file types, both Betaflight CLI text:
 
@@ -41,8 +48,8 @@ A board directory may also hold an `OEM Firmware and Diff/` subfolder: the as-sh
 **compiled firmware** (`.hex`, an Intel HEX binary — a *third* artifact type, distinct from the
 CLI text and the `config.h` source) plus its matching factory `diff all`. This is BetaFPV's
 known-good reference build; the paired `.diff` may duplicate a CLI backup above. Do not treat
-the `.hex` as editable config. `BETAFPVG473/` carries the AIR75 4.5.0 OEM build (which, being
-4.5.0, predates the HSE define and so runs HSI).
+the `.hex` as editable config. `AIR75_G473/` carries the AIR75 drone's 4.5.0 OEM build (which,
+being 4.5.0, predates the HSE define and so runs HSI).
 
 ### Firmware build targets
 
