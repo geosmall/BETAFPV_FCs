@@ -51,6 +51,13 @@ known-good reference build; the paired `.diff` may duplicate a CLI backup above.
 the `.hex` as editable config. `AIR75_G473/` carries the AIR75 drone's 4.5.0 OEM build (which,
 being 4.5.0, predates the HSE define and so runs HSI).
 
+`AIR75_G473/` additionally holds a `GEO AIR75 Diff/` subfolder: the owner's **own tuning pass**
+over the AIR75 (CLI `.diff` + `.txt`, same `BETAFPVG473` board and `mcu_id`, HSE enabled), as
+opposed to a factory artifact. It is a delta from the dated AIR75 backup directly above it — the
+`2026-06-15` capture remaps the ANGLE mode switch (AUX2 → AUX4) and re-tunes rateprofile 0
+(throttle curve + roll/pitch/yaw expo/srate, throttle limit); master settings, profile 0 PIDs,
+vtxtable, and OSD layout are unchanged. Treat it as the newest, owner-preferred AIR75 state.
+
 ### Firmware build targets
 
 `configs/<BOARD_NAME>/config.h` are Betaflight **unified target definitions** — GPL-licensed
