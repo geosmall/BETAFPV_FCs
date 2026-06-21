@@ -38,14 +38,27 @@ Each board directory holds two CLI text exports:
 
 Filenames carry a `YYYYMMDD_HHMMSS` timestamp; the newest reflects the most recent capture.
 
-### OEM firmware
+### OEM firmware (`OEM/`)
 
-A board may also include an `OEM Firmware and Diff/` folder holding the **as-shipped factory
-firmware** — the compiled Betaflight `.hex` BetaFPV flashes at the factory, plus its matching
-`diff all`. This is the known-good reference build (e.g. for re-flashing or comparing against
-later Betaflight versions). The `.hex` is the actual firmware binary; the paired `.diff` is the
-factory config that came with it (and may duplicate a CLI backup above). `AIR75_G473/` holds the
-AIR75 drone's 4.5.0 OEM build.
+The top-level `OEM/` folder archives **as-shipped factory firmware packages** downloaded from
+BetaFPV support — one subfolder per product, each holding the compiled Betaflight `.hex` BetaFPV
+flashes at the factory plus its matching `diff all` (saved with a `.txt` extension; despite the
+name it is a pure `diff all`, not a full CLI backup). These are known-good reference builds for
+re-flashing or comparing against later Betaflight versions. The `.hex` is the actual firmware
+binary — do not treat it as editable config.
+
+| Folder (`OEM/…`)                                | Product          | Board         | Firmware                 | Source |
+| ----------------------------------------------- | ---------------- | ------------- | ------------------------ | ------ |
+| `A75_0802SE_…_4.5.0 0520/`                      | AIR75            | `BETAFPVG473` | 4.5.0                    | [BetaFPV](https://support.betafpv.com/hc/en-us/articles/32986946281113) |
+| `BF4.5.3 F405_20A_Pavo_Pico_ELRS 20260104/`     | Pavo Pico Ⅱ F405 | `BETAFPVF405` | 4.5.3 `.hex` / 4.5.0 `.txt` | [BetaFPV](https://support.betafpv.com/hc/en-us/articles/50758255044889) |
+| `BF4.5.3 G473 3in1_12A_M75 Pro P1_ELRS_BMI270/` | Meteor75 Pro P1  | `BETAFPVG473` | 4.5.3                    | [BetaFPV](https://support.betafpv.com/hc/en-us/articles/53664040865817) |
+
+The Pavo Pico Ⅱ package is internally inconsistent: the `.hex` binary is Betaflight **4.5.3**
+(verified from the embedded version string), but the bundled `diff all` was captured on a unit
+still running **4.5.0** (its `# version` line). The `.hex` is authoritative for the flashed
+firmware; the `# version` line legitimately records the older build the dump came from. Meteor75
+Pro P1 is a third product on the `BETAFPVG473` target (alongside the bare 4in1 FC and the AIR75
+drone); it has no CLI-backup directory of its own — only this OEM package.
 
 > **Note:** each `.diff` begins with `defaults nosave`, which resets every setting back to
 > firmware defaults in RAM only — nothing is committed and the board does not reboot. This

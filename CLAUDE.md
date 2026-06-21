@@ -44,12 +44,33 @@ Each board directory holds two file types, both Betaflight CLI text:
 - `BTFL_<craft>_<timestamp>_<board>.diff` — pure `diff all`: only settings that differ from
   firmware defaults, wrapped in `batch start` … `save`.
 
-A board directory may also hold an `OEM Firmware and Diff/` subfolder: the as-shipped factory
-**compiled firmware** (`.hex`, an Intel HEX binary — a *third* artifact type, distinct from the
-CLI text and the `config.h` source) plus its matching factory `diff all`. This is BetaFPV's
-known-good reference build; the paired `.diff` may duplicate a CLI backup above. Do not treat
-the `.hex` as editable config. `AIR75_G473/` carries the AIR75 drone's 4.5.0 OEM build (which,
-being 4.5.0, predates the HSE define and so runs HSI).
+The top-level `OEM/` folder archives **as-shipped factory firmware packages** downloaded from
+BetaFPV support, one subfolder per product. Each holds the factory **compiled firmware** (`.hex`,
+an Intel HEX binary — a *third* artifact type, distinct from the CLI text and the `config.h`
+source) plus its matching factory `diff all` saved with a `.txt` extension. **Inside `OEM/`, that
+`.txt` is a pure `diff all`** (no leading `status` block) — i.e. it means what `.diff` means in a
+board directory, despite the extension; do not assume it carries a status block. These are
+BetaFPV's known-good reference builds; the paired diff may duplicate a CLI backup elsewhere. Do
+not treat the `.hex` as editable config. (This `OEM/` folder replaces the older per-board
+`OEM Firmware and Diff/` subfolders.)
+
+The three archived packages (folder → product · board · firmware · BetaFPV source):
+
+- `A75_0802SE_..._4.5.0 0520/` → AIR75 drone · `BETAFPVG473` · 4.5.0 (predates the HSE define, so
+  runs HSI) · <https://support.betafpv.com/hc/en-us/articles/32986946281113>
+- `BF4.5.3 F405_20A_Pavo_Pico_ELRS 20260104/` → Pavo Pico Ⅱ F405 · `BETAFPVF405` · see wrinkle
+  below · <https://support.betafpv.com/hc/en-us/articles/50758255044889>
+- `BF4.5.3 G473 3in1_12A_M75 Pro P1_ELRS_BMI270/` → Meteor75 Pro P1 · `BETAFPVG473` · 4.5.3 (HSI,
+  `system_hse_mhz = 0`) · <https://support.betafpv.com/hc/en-us/articles/53664040865817>
+
+The Pavo Pico Ⅱ package is internally inconsistent, and this is **not** a labeling error: the
+`.hex` binary is Betaflight **4.5.3** (verified from the embedded version string via
+`objcopy -I ihex -O binary <hex> <bin>` then `strings`), but the bundled `diff all`'s `# version`
+line is **4.5.0** (`Dec 25 2024`). BetaFPV shipped a 4.5.3 firmware binary alongside a CLI dump
+captured on a 4.5.0 unit. Keep the `BF4.5.3` folder name (it matches the firmware) and do **not**
+edit the `# version` line (it correctly records the build the dump came from). Meteor75 Pro is a
+*new* product on the `BETAFPVG473` target — distinct from the bare 4in1 FC, the AIR75 drone, and
+the V2 board.
 
 `AIR75_G473/` additionally holds a `GEO AIR75 Diff/` subfolder: the owner's **own tuning pass**
 over the AIR75 (CLI `.diff` + `.txt`, same `BETAFPVG473` board and `mcu_id`, HSE enabled), as
@@ -99,9 +120,10 @@ boards. Scratch notes, not a restorable backup.
   only by the leading `status` block.
 - Timestamps in filenames (`YYYYMMDD_HHMMSS`) order backups; the newest reflects current
   hardware state. Keep older backups rather than overwriting — they are the change history.
-- All boards are manufacturer `BEFH`, MSP API 1.46. Firmware is **Betaflight 4.5.0** except
-  `BETAFPVG473_V2`, which is on **4.5.3**. The `# version` line in each file records the exact
-  firmware build; preserve it when editing. (4.5.3 falls in the 4.5.2–4.5.4 window of the G4
+- All boards are manufacturer `BEFH`, MSP API 1.46. Across the **board-directory CLI backups**,
+  firmware is **Betaflight 4.5.0** except `BETAFPVG473_V2`, which is on **4.5.3** (the `OEM/`
+  firmware packages carry their own versions — see *OEM firmware* above). The `# version` line in
+  each file records the exact firmware build; preserve it when editing. (4.5.3 falls in the 4.5.2–4.5.4 window of the G4
   ESC-passthrough bug documented in `configs/BETAFPVG473_GIT_TRACE.md` — but that affects only
   esc-configurator reading, not flight, and is unconfirmed on the V2 target; it does not affect
   the archived backup.)
