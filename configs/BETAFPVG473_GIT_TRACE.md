@@ -110,14 +110,15 @@ contain the #14794 merge commit):
 | --- | --- |
 | 4.5.0 / 4.5.1 | n/a — predate the bug (regression entered in 4.5.2) |
 | 4.5.2 / 4.5.3 / 4.5.4 | **no** — bug present, never backported to `4.5-maintenance` |
-| 2025.12.0-RC1…RC3 | no (predate the 2025-11-27 merge) |
-| 2025.12.0-RC4 | yes (first build with it) |
+| 2025.12.0-RC1 / RC2 | no (predate the 2025-11-27 merge) |
+| 2025.12.0-RC3 / RC4 | yes — **RC3** is the first build with it |
 | 2025.12.1 / .2 / .4 | yes (first *stable* is 2025.12.1) |
 
 So the fix lives only on the 2025.12 (master) line — **2025.12.1 or later**. The entire 4.5.x
-maintenance line still carries the bug: a 4.5-targeted attempt ([#14878 "Fix G4 ESC read"](https://github.com/betaflight/betaflight/pull/14878),
-2026-01) was closed unmerged, so it was fixed on master only. Net: ESC reading works on **4.5.0,
-4.5.1, and ≥2025.12.1**; it is broken on **4.5.2 / 4.5.3 / 4.5.4**.
+maintenance line still carries the bug — #14794 was never backported to `4.5-maintenance`. (A
+later follow-up, [#14878 "Fix G4 ESC read"](https://github.com/betaflight/betaflight/pull/14878)
+(2026-01), targeted master/milestone 2026.6, not 4.5-maintenance, and was closed unmerged.) Net:
+ESC reading works on **4.5.0, 4.5.1, and ≥2025.12.1**; it is broken on **4.5.2 / 4.5.3 / 4.5.4**.
 
 ### Cross-board comparison: V1 is the lone HSE outlier
 

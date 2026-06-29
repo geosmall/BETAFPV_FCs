@@ -60,8 +60,9 @@ firmware; the `# version` line legitimately records the older build the dump cam
 Pro P1 is a third product on the `BETAFPVG473` target (alongside the bare 4in1 FC and the AIR75
 drone); it has no CLI-backup directory of its own — only this OEM package.
 
-> **Note:** each `.diff` begins with `defaults nosave`, which resets every setting back to
-> firmware defaults in RAM only — nothing is committed and the board does not reboot. This
+> **Note:** each `.diff` opens with `batch start`, then `defaults nosave`, which resets every
+> setting back to firmware defaults in RAM only — nothing is committed and the board does not
+> reboot. This
 > gives the restore a clean baseline before the captured settings are applied on top; the
 > trailing `save` then commits everything to flash at once. Because it is `nosave`, the
 > reset is harmless on its own — powering off before `save` leaves the board unchanged.
@@ -137,8 +138,8 @@ Each target uses the ICM42688P as its primary gyro/acc plus one or more alternat
 
 | Target               | MCU       | IMUs (primary + alt)                       | Notes                             |
 | -------------------- | --------- | ------------------------------------------ | --------------------------------- |
-| `BETAFPVF405`        | STM32F405 | ICM42688P + BMI270                         | analog OSD (MAX7456)              |
-| `BETAFPVF405_ELRS`   | STM32F405 | ICM42688P + BMI270                         | CRSF serial RX baked in on USART3 |
+| `BETAFPVF405`        | STM32F405 | ICM42688P + BMI270 + MPU6000               | analog OSD (MAX7456)              |
+| `BETAFPVF405_ELRS`   | STM32F405 | ICM42688P + BMI270 + MPU6000               | CRSF serial RX baked in on USART3 |
 | `BETAFPVG473`        | STM32G473 | ICM42688P + BMI270                         | CRSF on USART3                    |
 | `BETAFPVG473_V2`     | STM32G473 | ICM42688P + BMI270 + ICM42622P + LSM6DSK320X | newer revision; no barometer    |
 | `BETAFPVG473_V3`     | STM32G473 | ICM42688P + BMI270 + ICM42622P + LSM6DSK320X | CRSF on USART1 **and** USART3   |

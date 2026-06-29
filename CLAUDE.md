@@ -91,11 +91,11 @@ Targets present (a superset of the CLI backups — some have no backup, and vice
 - `BETAFPVF405`, `BETAFPVF405_ELRS` (F405 with CRSF baked in on USART3)
 - `BETAFPVG473`, `BETAFPVG473_V2`, `BETAFPVG473_V3`
 
-All targets use `ICM42688P` as the primary gyro/acc plus one or more alternate IMUs. V1 and
-the F405 targets carry a single alternate (`BMI270`); **V2 and V3 carry three** (`BMI270`,
-`ICM42622P`, `LSM6DSK320X`). V2 also drops the barometer; V3 wires serial RX on both USART1
-and USART3. Match the target's `BOARD_NAME` to a board exactly — the revisions are not
-interchangeable.
+All targets use `ICM42688P` as the primary gyro/acc plus one or more alternate IMUs. The **V1
+G473** target carries a single alternate (`BMI270`); the **F405 targets carry two** (`BMI270`,
+`MPU6000`); **V2 and V3 carry three** (`BMI270`, `ICM42622P`, `LSM6DSK320X`). V2 also drops the
+barometer; V3 wires serial RX on both USART1 and USART3. Match the target's `BOARD_NAME` to a
+board exactly — the revisions are not interchangeable.
 
 The `config.h` files are tracked to the **Betaflight 2025.12.4** released set
 (`betaflight/config` submodule commit `1359bbecb`). `configs/BETAFPVG473_V1_vs_V2_vs_V3.md`
