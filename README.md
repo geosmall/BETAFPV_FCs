@@ -152,6 +152,10 @@ to the **Betaflight 2025.12.4** released set (`betaflight/config` commit `1359bb
 motor/LED/gyro/ADC pin map).
 `configs/BETAFPVG473_GIT_TRACE.md` traces the upstream `betaflight/config` history behind the
 G473 gyro and HSE changes, and records the exact commit each archived `config.h` matches.
+`configs/BETAFPVG473_IMU_ORIENTATION.md` establishes which physical directions the IMU's sensor
+axes point on the AIR75 (V1) board, deriving it twice — from `GYRO_1_ALIGN CW180_DEG` and from
+the OEM board photos plus the TDK datasheet — and tabulates the 90°-vs-180° offset that catches
+people reading a chip's marking rotation off a photograph.
 
 ## Scratch log
 

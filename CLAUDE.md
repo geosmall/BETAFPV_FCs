@@ -101,7 +101,11 @@ The `config.h` files are tracked to the **Betaflight 2025.12.4** released set
 (`betaflight/config` submodule commit `1359bbecb`). `configs/BETAFPVG473_V1_vs_V2_vs_V3.md`
 documents the full V1/V2/V3 target differences (clock source, IMU, barometer, gyro clock input,
 HD OSD, motor/LED/gyro/ADC pin map). `configs/BETAFPVG473_GIT_TRACE.md` traces the upstream history behind the G473
-gyro/HSE changes and stamps the exact commit each archived `config.h` matches. One thing to
+gyro/HSE changes and stamps the exact commit each archived `config.h` matches.
+`configs/BETAFPVG473_IMU_ORIENTATION.md` works out what the IMU axes physically point at on the
+AIR75 (V1) board — derived twice over, from `GYRO_1_ALIGN CW180_DEG` and from the OEM board
+photos plus the TDK datasheet — and records the 90°-vs-180° trap when reading a chip's marking
+rotation off a photograph. One thing to
 know when working with these targets: the V1 HSE was reverted to HSI upstream (it broke ESC
 reading; not a confirmed hardware fault). To update to a newer release, diff each
 `config.h` against the `src/config` submodule SHA pinned by that release tag in
