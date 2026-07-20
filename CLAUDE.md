@@ -105,7 +105,12 @@ gyro/HSE changes and stamps the exact commit each archived `config.h` matches.
 `configs/BETAFPVG473_IMU_ORIENTATION.md` works out what the IMU axes physically point at on the
 AIR75 (V1) board — derived twice over, from `GYRO_1_ALIGN CW180_DEG` and from the OEM board
 photos plus the TDK datasheet — and records the 90°-vs-180° trap when reading a chip's marking
-rotation off a photograph. One thing to
+rotation off a photograph.
+`configs/BETAFPVF405_IMU_ORIENTATION.md` does the same for the Pavo Pico II, where **both**
+alignment layers matter: `GYRO_1_ALIGN CW270_DEG` in the target *plus* `align_board_roll = 180`
+carried only in the CLI dumps (factory and owner's alike), which mounts the board inverted and
+flips sensor Z to point down. Reading that board's `config.h` alone gets its orientation wrong.
+One thing to
 know when working with these targets: the V1 HSE was reverted to HSI upstream (it broke ESC
 reading; not a confirmed hardware fault). To update to a newer release, diff each
 `config.h` against the `src/config` submodule SHA pinned by that release tag in

@@ -156,6 +156,9 @@ G473 gyro and HSE changes, and records the exact commit each archived `config.h`
 axes point on the AIR75 (V1) board, deriving it twice — from `GYRO_1_ALIGN CW180_DEG` and from
 the OEM board photos plus the TDK datasheet — and tabulates the 90°-vs-180° offset that catches
 people reading a chip's marking rotation off a photograph.
+`configs/BETAFPVF405_IMU_ORIENTATION.md` covers the Pavo Pico II, which needs both alignment
+layers: `GYRO_1_ALIGN CW270_DEG` from the target, plus `align_board_roll = 180` present only in
+the CLI dumps — the board is installed inverted, so the sensor's Z axis points down in flight.
 
 ## Scratch log
 

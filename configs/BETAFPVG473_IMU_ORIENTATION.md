@@ -29,11 +29,13 @@ bookkeeping below non-obvious.
 
 The IMU is the **LGA-14, 2.5 × 3.0 mm** package on the **top (component/VTX) side**, immediately
 left of the Winbond 25Q128 flash and just above the `+5V` pad. In
-`OEM/A75_0802SE_23000kv_GF 40mm_450mAh_4.5.0 0520/Images/front.png` it occupies roughly
+`OEM/A75_0802SE_23000kv_GF 40mm_450mAh_4.5.0 0520/Images/top.png` it occupies roughly
 x 515–572, y 843–906.
 
 Scale reference for that image: the STM32G473**CEU6** on the reverse is UFQFPN48, exactly
-7 × 7 mm, and measures ~130 px → **18.6 px/mm**. The IMU measures ~2.4 × 2.9 mm against that.
+7 × 7 mm, and measures ~130 px → **18.6 px/mm**. UFQFPN is a no-lead package, so body and
+overall dimensions are the same and there is no lead-span ambiguity in that reference. The IMU
+measures ~2.4 wide × 2.9 tall mm against it.
 
 The laser marking is **not legible** at the resolution of the OEM photos. The part is therefore
 identified by package alone, which cannot separate **ICM-42688-P** from **BMI270** — both are
@@ -89,6 +91,14 @@ rule readable straight off a photograph:
    Fig. 5. So in the as-photographed board view the **4-pad edges are top and bottom**, meaning
    the chip sits **±90°** from the datasheet pose. Pad geometry alone is symmetric under 180°
    and cannot distinguish CW from CCW.
+
+   **Aspect corroborates this**, but only once D and E are assigned correctly. In the §10.2
+   package drawing's TOP VIEW, **E = 3 mm is horizontal** (carrying pads 12–14 and 5–7, three
+   per edge) and **D = 2.5 mm is vertical** (carrying pads 1–4 and 8–11, four per edge). The
+   4-pad edges are therefore the **short** ones — counter-intuitive, and getting it backwards
+   makes the aspect appear to contradict the pad count. This chip measures 2.4 wide × 2.9 tall,
+   i.e. E vertical, so it is rotated ±90° from the datasheet pose, and its 4-pad (D) edges land
+   horizontal. Both observations agree.
 2. **Marking rotation.** The markings read rotated **90° CW** relative to the board's front-up
    orientation. This picks CW from the ±90° pair.
 
