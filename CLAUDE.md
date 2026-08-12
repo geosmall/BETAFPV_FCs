@@ -148,8 +148,11 @@ Phase 1 at the 550 default before the loss was caught in the post-flash `dump al
 BetaFPV factory value 1150 was then restored (ducted whoops need higher-than-default idle).
 After any migrated paste, re-run `diff all` and confirm every intended value took.
 
-Phase 2 (chirp) flight testing was completed with logs/results tracked outside this repo, so
-the folder's newest capture predates the final flown state.
+Phase 2 (chirp) flight testing was completed in the **Arduino workspace repo**
+(`geosmall/Arduino_dev`: `SYSID_CHIRP_PROCEDURE.md`, `ci/sysid_chirp_fit.py`,
+`test_logs/blackbox/`) — see the "Campaign outcome" section in the folder's `UPGRADE.md`. The
+folder's newest capture predates the final flown state (`motor_idle = 1150` restore) until a
+fresh backup is taken.
 
 ### Scratch log
 

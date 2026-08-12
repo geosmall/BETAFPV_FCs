@@ -1420,6 +1420,23 @@ Also record:
 
 ---
 
+# Campaign outcome — where the flight-test results live
+
+The Phase 2 CHIRP flight testing for this aircraft (the Betaflight-mule Pavo Pico II,
+`mcu_id 0036003f…`) was completed as part of the sysid campaign in the **Arduino workspace
+repo** (<https://github.com/geosmall/Arduino_dev>), not here. In that repo see:
+
+- `SYSID_CHIRP_PROCEDURE.md` (repo root) — the chirp system-identification procedure,
+  including the two-Pavo fleet context and campaign results propagation
+- `ci/sysid_chirp_fit.py` — the plant-fit tool run on the chirp blackbox logs
+- `test_logs/blackbox/` — banked campaign blackbox logs
+
+The captures in this folder therefore predate the final flown state (notably
+`motor_idle = 1150`, restored after the pre-chirp backups here were taken). Capture a fresh
+`diff all` from the mule to bring this archive current.
+
+---
+
 # References
 
 1. **BETAFPV — CLI and Firmware for Pavo Pico II (F405 2–3S 20A V1.0 FC)**  
