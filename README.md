@@ -180,8 +180,9 @@ self-contained campaign record, not a board backup directory:
   hand-written CLI paste blocks used for the migration.
 
 Notable migration gotcha documented there: 4.5's `dshot_idle_value` was renamed `motor_idle`
-in 2026.x, and pasting the old name fails silently — the BetaFPV factory idle (1150) had to be
-restored after the loss was found in the post-flash dump.
+in 2026.x, and pasting the old name fails silently — the loss was only found in the post-flash
+dump. The campaign was then flown at the 2026.6 default idle (550) without issue, making that
+the adopted value (BetaFPV's factory 4.5 config used 1150).
 
 ## Scratch log
 

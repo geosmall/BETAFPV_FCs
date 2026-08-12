@@ -1,6 +1,6 @@
-# motor idle: BetaFPV factory value (4.5 name: dshot_idle_value). Renamed motor_idle
-# in 2026.x, same units (0.01%); BF default 550 is too low for a ducted whoop.
-set motor_idle = 1150
+# motor idle: BetaFPV factory 4.5 value was dshot_idle_value = 1150 (renamed motor_idle
+# in 2026.x, same units). The 2026.6 default (550) was flight-validated through Phase 1
+# and the CHIRP campaign, so it is the adopted value — no set line needed.
 set dshot_bidir = ON
 set motor_pwm_protocol = DSHOT300
 set motor_poles = 12

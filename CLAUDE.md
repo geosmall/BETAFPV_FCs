@@ -143,16 +143,17 @@ flights for sysid purposes. Unlike a board directory, it mixes artifact types de
   dumped.
 
 Migration trap recorded there: 4.5's `dshot_idle_value` was renamed `motor_idle` in 2026.x
-(same units), so pasting the old name fails **silently** inside a batch — this aircraft flew
-Phase 1 at the 550 default before the loss was caught in the post-flash `dump all`. The
-BetaFPV factory value 1150 was then restored (ducted whoops need higher-than-default idle).
-After any migrated paste, re-run `diff all` and confirm every intended value took.
+(same units), so pasting the old name fails **silently** inside a batch — the loss was only
+caught in the post-flash `dump all`. The aircraft then flew Phase 1 and the whole CHIRP
+campaign at the 550 default without issue, so **550 is the adopted value** (BetaFPV's factory
+4.5 config used 1150, the fallback if low-throttle authority problems appear). After any
+migrated paste, re-run `diff all` and confirm every intended value took.
 
 Phase 2 (chirp) flight testing was completed in the **Arduino workspace repo**
 (`geosmall/Arduino_dev`: `SYSID_CHIRP_PROCEDURE.md`, `ci/sysid_chirp_fit.py`,
 `test_logs/blackbox/`) — see the "Campaign outcome" section in the folder's `UPGRADE.md`. The
-folder's newest capture predates the final flown state (`motor_idle = 1150` restore) until a
-fresh backup is taken.
+`20260812` capture is the post-campaign flown state (default idle, chirp config aboard, Aug 9
+rebuild of the same 2026.6.1 commit).
 
 ### Scratch log
 

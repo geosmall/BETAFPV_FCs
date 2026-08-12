@@ -526,11 +526,9 @@ set motor_output_reordering = 2,3,0,1,4,5,6,7
 
 Verify the actual aircraft's values in its saved `diff all` / `dump all`, and verify that the equivalent parameters still exist before applying them.
 
-**Parameter rename:** 4.5's `dshot_idle_value` was renamed `motor_idle` in 2026.x (same units, 0.01%; default 550 = 5.5%). Pasting the old name fails silently inside a batch, leaving the aircraft at half the OEM idle — this actually happened during the first pass of this upgrade and was only caught by inspecting the post-flash `dump all`. On 2026.6 use:
+**Parameter rename:** 4.5's `dshot_idle_value` was renamed `motor_idle` in 2026.x (same units, 0.01%; default 550 = 5.5%). Pasting the old name fails silently inside a batch, leaving the aircraft at half the OEM idle — this actually happened during the first pass of this upgrade and was only caught by inspecting the post-flash `dump all`.
 
-```text
-set motor_idle = 1150
-```
+**Outcome:** this aircraft then flew Phase 1 and the full CHIRP campaign at the 550 default without issue, so **550 is the adopted value**. The OEM 4.5 value (1150) remains the fallback if low-throttle authority or descent-desync problems ever appear.
 
 After pasting any migrated block, re-run `diff all` and confirm every intended non-default value actually appears.
 
@@ -846,7 +844,7 @@ All items below must pass:
 - [ ] DSHOT300 selected.
 - [ ] Bidirectional DShot enabled.
 - [ ] Motor poles = 12.
-- [ ] Motor idle restored (`motor_idle = 1150`, not the 550 default).
+- [ ] Motor idle confirmed (`motor_idle` — the 550 default is campaign-validated on this aircraft; OEM 4.5 used 1150).
 - [ ] RPM telemetry valid on all four motors.
 - [ ] Motor 1–4 physical numbering correct.
 - [ ] Motor directions correct.
@@ -1388,7 +1386,7 @@ Also record:
 - [ ] DSHOT300
 - [ ] bidirectional DShot
 - [ ] 12 motor poles
-- [ ] motor idle 1150 (`motor_idle`, renamed from `dshot_idle_value`)
+- [ ] motor idle confirmed (`motor_idle`, renamed from `dshot_idle_value`; 550 default campaign-validated, OEM 4.5 was 1150)
 - [ ] RPM telemetry healthy
 - [ ] battery calibration restored
 - [ ] O4/OSD working
@@ -1431,9 +1429,11 @@ repo** (<https://github.com/geosmall/Arduino_dev>), not here. In that repo see:
 - `ci/sysid_chirp_fit.py` — the plant-fit tool run on the chirp blackbox logs
 - `test_logs/blackbox/` — banked campaign blackbox logs
 
-The captures in this folder therefore predate the final flown state (notably
-`motor_idle = 1150`, restored after the pre-chirp backups here were taken). Capture a fresh
-`diff all` from the mule to bring this archive current.
+A fresh post-campaign capture (`BTFL_cli_PAVO_PICO II_20260812_062318_BETAFPVF405.txt` in
+this folder) records the flown state: the campaign was flown at the default `motor_idle`
+(550), with the full chirp configuration aboard, on an Aug 9 cloud rebuild of the same
+2026.6.1 commit (`6dbc4218f`; build key `5fc56e5a…`, superseding the Aug 8 build archived in
+the earlier captures).
 
 ---
 
