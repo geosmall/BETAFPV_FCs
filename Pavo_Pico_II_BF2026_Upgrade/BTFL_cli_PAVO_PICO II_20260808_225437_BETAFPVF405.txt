@@ -1,0 +1,112 @@
+# 
+
+# version
+# Betaflight / STM32F405 (F405) 2026.6.1 Aug  8 2026 / 18:40:40 (6dbc4218f) MSP API: 1.48
+# config rev: 749fff1
+# board: manufacturer_id: BEFH, board_name: BETAFPVF405
+
+# status
+MCU: STM32F405xx CLK=168MHz (PLLP-HSE), Vref=3.28V, Core temp=49degC
+STACK: 2048b (0x1000fff0)
+CONFIG: CONFIGURED (4055b / 16384b)
+
+DEVICES DETECTED: SPI=1, I2C=0 (0 errors)
+GYRO: (1) ICM42688P enabled locked
+ACC: ICM42688P
+OSD: MSP (53 x 20)
+FLASH: JEDEC ID=0x00852018 16M
+
+BUILD KEY: 2dd5c52fd2a073d14e19a441930ee556 (2026.6.1)
+
+System Uptime: 154 seconds, Current Time: 2026-08-09T02:54:24.715+00:00
+CPU:49%, cycle time: 126, GYRO rate: 7918, RX rate: 251, System rate: 10
+Voltage: 0.01V (0S battery - NOT PRESENT)
+Arming disable flags: CLI MSP
+
+# diff ll
+
+# version
+# Betaflight / STM32F405 (F405) 2026.6.1 Aug  8 2026 / 18:40:40 (6dbc4218f) MSP API: 1.48
+# config rev: 749fff1
+
+# start the command batch
+batch start
+
+board_name BETAFPVF405
+manufacturer_id BEFH
+
+# name: Pavo Pico II
+
+# feature
+feature TELEMETRY
+feature LED_STRIP
+feature OSD
+
+# serial
+serial UART3 64 115200 57600 0 115200
+serial UART4 131073 115200 57600 0 115200
+
+# beacon
+beacon RX_LOST
+beacon RX_SET
+
+# led
+led 0 0,0::CO:10
+led 1 1,0::CO:10
+
+# aux
+aux 0 0 0 1700 2100 0 0
+aux 1 1 1 900 1300 0 0
+aux 2 2 1 1300 1700 0 0
+aux 3 13 2 1700 2100 0 0
+aux 4 35 3 1650 2100 0 0
+
+# master
+set acc_calibration = 52,-16,19,1
+set dshot_bidir = ON
+set motor_pwm_protocol = DSHOT300
+set motor_poles = 12
+set motor_output_reordering = 2,3,0,1,4,5,6,7
+set align_board_roll = 180
+set ibata_scale = 510
+set ibata_offset = -300
+set small_angle = 180
+set pid_process_denom = 2
+set craft_name = Pavo Pico II
+
+profile 0
+
+# profile 0
+set profile_name = DJI O4
+set p_pitch = 67
+set d_pitch = 68
+set f_pitch = 80
+set p_roll = 56
+set i_roll = 70
+set d_roll = 50
+set f_roll = 67
+set p_yaw = 56
+set i_yaw = 70
+set f_yaw = 67
+set d_max_roll = 50
+set d_max_pitch = 68
+set simplified_master_multiplier = 125
+set simplified_i_gain = 70
+set simplified_d_gain = 135
+set simplified_d_max_gain = 0
+set simplified_feedforward_gain = 45
+set simplified_pitch_d_gain = 120
+set simplified_pitch_pi_gain = 115
+
+rateprofile 0
+
+battery_profile 0
+
+# battery_profile 0
+set vbat_max_cell_voltage = 440
+set vbat_min_cell_voltage = 340
+
+# end the command batch
+batch end
+
+# 

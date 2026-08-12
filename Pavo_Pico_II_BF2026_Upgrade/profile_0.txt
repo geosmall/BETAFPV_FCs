@@ -1,0 +1,27 @@
+aux 0 0 0 1700 2100 0 0
+aux 1 1 1 900 1300 0 0
+aux 2 2 1 1300 1700 0 0
+aux 3 13 2 1700 2100 0 0
+aux 4 35 3 1650 2100 0 0
+
+beacon RX_LOST
+beacon RX_SET
+
+led 0 0,0::CO:10
+led 1 1,0::CO:10
+
+profile 0
+
+set profile_name = DJI O4
+set simplified_master_multiplier = 125
+set simplified_i_gain = 70
+set simplified_d_gain = 135
+set simplified_pi_gain = 100
+set simplified_d_max_gain = 0
+set simplified_feedforward_gain = 45
+set simplified_pitch_d_gain = 120
+set simplified_pitch_pi_gain = 115
+
+simplified_tuning apply
+
+save

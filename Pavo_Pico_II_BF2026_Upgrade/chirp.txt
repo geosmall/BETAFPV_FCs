@@ -1,0 +1,12 @@
+set debug_mode = CHIRP
+set blackbox_high_resolution = ON
+set blackbox_sample_rate = 1/2
+set chirp_amplitude_roll = 150
+set chirp_amplitude_pitch = 150
+
+# start 10 deci-Hz = 1 Hz, end 1500 deci-Hz = 150 Hz
+set chirp_frequency_start_deci_hz = 10
+set chirp_frequency_end_deci_hz = 1500
+set chirp_time_seconds = 12
+
+save

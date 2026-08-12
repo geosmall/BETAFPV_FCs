@@ -1,0 +1,20 @@
+# motor idle: BetaFPV factory value (4.5 name: dshot_idle_value). Renamed motor_idle
+# in 2026.x, same units (0.01%); BF default 550 is too low for a ducted whoop.
+set motor_idle = 1150
+set dshot_bidir = ON
+set motor_pwm_protocol = DSHOT300
+set motor_poles = 12
+set motor_output_reordering = 2,3,0,1,4,5,6,7
+
+set align_board_roll = 180
+
+set vbat_max_cell_voltage = 440
+set vbat_min_cell_voltage = 340
+set ibata_scale = 510
+set ibata_offset = -300
+
+set small_angle = 180
+
+set craft_name = Pavo Pico II
+
+save
