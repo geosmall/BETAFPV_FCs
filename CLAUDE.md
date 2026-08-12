@@ -13,18 +13,25 @@ setting values — only transcribe what comes from an actual FC dump.
 
 ## Layout
 
-Two kinds of artifact live here, and they must not be confused:
+Three kinds of artifact live here, and they must not be confused:
 
 1. **CLI config backups** — one directory per board (`BETAFPV<board>/`), holding Betaflight
    CLI text that *tunes* a board.
 2. **Firmware build targets** — `configs/<BOARD_NAME>/config.h`, the source that *defines* a
    board for the firmware build. See "Firmware build targets" below.
+3. **Upgrade campaign archives** — self-contained directories recording a firmware migration
+   on one aircraft (procedure doc + before/after captures + flight logs). Currently one:
+   `Pavo_Pico_II_BF2026_Upgrade/`. See "Upgrade campaigns" below.
 
 ### CLI config backups
 
 One directory per physical product (some share a `board_name`):
 
-- `BETAFPVF405/` — STM32F405 board (`board_name BETAFPVF405`), craft "Pavo Pico II", BF 4.5.0
+- `BETAFPVF405/` — STM32F405 board (`board_name BETAFPVF405`), craft "Pavo Pico II", BF 4.5.0.
+  **The fleet has two Pavo Pico IIs** (distinguished only by `mcu_id`): this directory's
+  backups are the **dRehmFlight test aircraft** (`mcu_id 0037004c…`), still on 4.5.0. The
+  second unit, the **Betaflight mule** (`mcu_id 0036003f…`), was upgraded to 2026.6.1 and is
+  documented in `Pavo_Pico_II_BF2026_Upgrade/` — do not mix their configs
 - `BETAFPVG473/` — standalone **Air Brushless 4in1 flight controller** (bare board,
   `board_name BETAFPVG473`), BF 4.5.0, factory config
 - `AIR75_G473/` — the complete **AIR75 75mm drone** (same `board_name BETAFPVG473`), BF 4.5.0,
@@ -116,6 +123,34 @@ reading; not a confirmed hardware fault). To update to a newer release, diff eac
 `config.h` against the `src/config` submodule SHA pinned by that release tag in
 `betaflight/betaflight`.
 
+### Upgrade campaigns
+
+`Pavo_Pico_II_BF2026_Upgrade/` archives the migration of the **Betaflight-mule Pavo Pico II**
+(`mcu_id 0036003f…` — the fleet's second unit, *not* the dRehmFlight test aircraft backed up
+in `BETAFPVF405/`) from BF 4.5.0 to **2026.6.1** (Aug 2026), done to support CHIRP test
+flights for sysid purposes. Unlike a board directory, it mixes artifact types deliberately:
+
+- `UPGRADE.md` — the two-phase procedure (Phase 1 airworthiness on 2026.6 default filters,
+  Phase 2 CHIRP/Autotune). Read it before touching anything else in the folder.
+- `4.5.0/` — the pre-upgrade record: full CLI transcript (`version`/`status`/`diff all`/
+  `dump all`/`resource`), separate diff/dump captures, Modes screenshots, and the OEM rollback
+  `.hex` (byte-identical duplicate of the copy in `OEM/`, kept so the folder is a
+  self-contained rollback kit).
+- Root-level 2026.6.1 captures — post-flash diff+dump, post-Phase-1-flight pre-chirp diff,
+  latest backup — plus a Phase 1 blackbox log (`.BBL`, a binary flight log, not config).
+- CLI paste blocks (`2026.6.1_BETAFPVF405_CLI_PARAMS.txt`, `profile_0.txt`, `chirp.txt`) —
+  hand-built migration snippets, not FC captures; unlike `.diff` files they were written, not
+  dumped.
+
+Migration trap recorded there: 4.5's `dshot_idle_value` was renamed `motor_idle` in 2026.x
+(same units), so pasting the old name fails **silently** inside a batch — this aircraft flew
+Phase 1 at the 550 default before the loss was caught in the post-flash `dump all`. The
+BetaFPV factory value 1150 was then restored (ducted whoops need higher-than-default idle).
+After any migrated paste, re-run `diff all` and confirm every intended value took.
+
+Phase 2 (chirp) flight testing was completed with logs/results tracked outside this repo, so
+the folder's newest capture predates the final flown state.
+
 ### Scratch log
 
 `betafpv_75mm.txt` at the repo root is a raw, unstructured CLI session log: six
@@ -129,9 +164,10 @@ boards. Scratch notes, not a restorable backup.
   only by the leading `status` block.
 - Timestamps in filenames (`YYYYMMDD_HHMMSS`) order backups; the newest reflects current
   hardware state. Keep older backups rather than overwriting — they are the change history.
-- All boards are manufacturer `BEFH`, MSP API 1.46. Across the **board-directory CLI backups**,
-  firmware is **Betaflight 4.5.0** except `BETAFPVG473_V2`, which is on **4.5.3** (the `OEM/`
-  firmware packages carry their own versions — see *OEM firmware* above). The `# version` line in
+- All boards are manufacturer `BEFH`. Across the **board-directory CLI backups**, firmware is
+  **Betaflight 4.5.0** (MSP API 1.46) except `BETAFPVG473_V2`, which is on **4.5.3** (the `OEM/`
+  firmware packages carry their own versions — see *OEM firmware* above, and the
+  Betaflight-mule Pavo Pico II flies **2026.6.1** / MSP API 1.48 — see *Upgrade campaigns*). The `# version` line in
   each file records the exact firmware build; preserve it when editing. (4.5.3 falls in the 4.5.2–4.5.4 window of the G4
   ESC-passthrough bug documented in `configs/BETAFPVG473_GIT_TRACE.md` — but that affects only
   esc-configurator reading, not flight, and is unconfirmed on the V2 target; it does not affect

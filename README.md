@@ -4,14 +4,17 @@ Archive of **factory (OEM) Betaflight configurations** for BETAFPV flight contro
 These are the as-shipped settings captured from each board so they can be restored or
 compared after tuning, flashing, or a full chip erase.
 
-Boards run **Betaflight 4.5.x** (manufacturer `BEFH`, MSP API 1.46); see the table below for
-the exact firmware per board.
+Boards were shipped on **Betaflight 4.5.x** (manufacturer `BEFH`, MSP API 1.46); see the table
+below for the exact firmware per board. The fleet includes **two Pavo Pico IIs**: the
+dRehmFlight test aircraft (backed up in `BETAFPVF405/`, still 4.5.0) and a Betaflight mule
+upgraded to **2026.6.1** for CHIRP/sysid test flights — see
+[Upgrade campaigns](#upgrade-campaigns-pavo_pico_ii_bf2026_upgrade) below.
 
 ## Boards
 
 | Directory         | MCU       | Board name        | Product                            | Firmware |
 | ----------------- | --------- | ----------------- | ---------------------------------- | -------- |
-| `BETAFPVF405/`    | STM32F405 | `BETAFPVF405`     | Pavo Pico II                       | 4.5.0    |
+| `BETAFPVF405/`    | STM32F405 | `BETAFPVF405`     | Pavo Pico II (dRehmFlight test aircraft) | 4.5.0 |
 | `BETAFPVG473/`    | STM32G473 | `BETAFPVG473`     | Air Brushless 4in1 FC (bare board) | 4.5.0    |
 | `AIR75_G473/`     | STM32G473 | `BETAFPVG473`     | AIR75 (complete drone)             | 4.5.0    |
 | `BETAFPVG473_V2/` | STM32G473 | `BETAFPVG473_V2`  | Bare board                         | 4.5.3    |
@@ -159,6 +162,26 @@ people reading a chip's marking rotation off a photograph.
 `configs/BETAFPVF405_IMU_ORIENTATION.md` covers the Pavo Pico II, which needs both alignment
 layers: `GYRO_1_ALIGN CW270_DEG` from the target, plus `align_board_roll = 180` present only in
 the CLI dumps — the board is installed inverted, so the sensor's Z axis points down in flight.
+
+## Upgrade campaigns (`Pavo_Pico_II_BF2026_Upgrade/`)
+
+This folder archives the migration of the fleet's **second Pavo Pico II — the Betaflight
+mule** (`mcu_id 0036003f…`, a different physical unit from the dRehmFlight test aircraft
+backed up in `BETAFPVF405/`, `mcu_id 0037004c…`) — from Betaflight **4.5.0 to 2026.6.1**
+(Aug 2026), done to support CHIRP test flights for system identification. It is a
+self-contained campaign record, not a board backup directory:
+
+- `UPGRADE.md` — the full two-phase procedure (Phase 1: rebuild config and prove airworthy;
+  Phase 2: CHIRP system-identification flights and Autotune review), including rollback paths.
+- `4.5.0/` — the complete pre-upgrade record (CLI transcript, `diff all`/`dump all`, Modes
+  screenshots) plus the OEM rollback `.hex` (duplicate of the `OEM/` copy, kept here so the
+  folder works standalone).
+- 2026.6.1 CLI captures from each campaign step, a Phase 1 blackbox log (`.BBL`), and the
+  hand-written CLI paste blocks used for the migration.
+
+Notable migration gotcha documented there: 4.5's `dshot_idle_value` was renamed `motor_idle`
+in 2026.x, and pasting the old name fails silently — the BetaFPV factory idle (1150) had to be
+restored after the loss was found in the post-flash dump.
 
 ## Scratch log
 
