@@ -13,7 +13,7 @@ setting values — only transcribe what comes from an actual FC dump.
 
 ## Layout
 
-Three kinds of artifact live here, and they must not be confused:
+Four kinds of artifact live here, and they must not be confused:
 
 1. **CLI config backups** — one directory per board (`BETAFPV<board>/`), holding Betaflight
    CLI text that *tunes* a board.
@@ -22,6 +22,8 @@ Three kinds of artifact live here, and they must not be confused:
 3. **Upgrade campaign archives** — self-contained directories recording a firmware migration
    on one aircraft (procedure doc + before/after captures + flight logs). Currently one:
    `Pavo_Pico_II_BF2026_Upgrade/`. See "Upgrade campaigns" below.
+4. **Vendor page archives** — `vendor_pages/`, snapshots of BetaFPV's product listings.
+   Marketing copy, not configuration. See "Vendor page archives" below.
 
 ### CLI config backups
 
@@ -154,6 +156,31 @@ Phase 2 (chirp) flight testing was completed in the **Arduino workspace repo**
 `test_logs/blackbox/`) — see the "Campaign outcome" section in the folder's `UPGRADE.md`. The
 `20260812` capture is the post-campaign flown state (default idle, chirp config aboard, Aug 9
 rebuild of the same 2026.6.1 commit).
+
+### Vendor page archives
+
+`vendor_pages/` holds captures of BetaFPV's own product listings for the boards and aircraft
+archived here, taken because BetaFPV revises and retires listings without notice. Each
+`vendor_pages/<shopify-handle>/` contains `product.json` (the canonical Shopify record — the
+diffable artifact, so a re-capture's `git diff` shows exactly what the vendor edited),
+`SPECS.md` (generated from it; regenerate rather than hand-edit), `images/`, and `page.mhtml`
+(a full rendered-page snapshot). Regenerate with `node vendor_pages/capture.mjs` and
+`node vendor_pages/capture_mhtml.mjs`; see `vendor_pages/README.md` for the full policy.
+
+`page.mhtml` files are MHTML (RFC 2557) written by Chromium's `Page.captureSnapshot` — read
+them in a Chromium-family browser (this machine has Microsoft Edge); **Firefox cannot open
+MHTML**. They are the fidelity backup; `product.json` remains the primary, greppable,
+diffable archive. Being one large binary-ish blob each, they do not diff usefully — when
+checking what BetaFPV changed, diff `product.json`, not the snapshot.
+
+**These are vendor claims, not configuration.** Nothing in `vendor_pages/` is restorable to a
+flight controller, and where a page disagrees with a CLI dump or a `configs/*/config.h`, the
+dump or target wins. Product pages describe a *family* ("4IN1/5IN1", "V1/V2") without
+identifying which revision a physical board is, and are not updated when a target changes
+upstream. Only two mappings are confirmed by hardware identifiers rather than by name — the
+AIR75 (0802SE 23000KV motors matching its OEM package) and the Pavo Pico II (STM32F405 in the
+description). The four `matrix-1s-*` pages are captured as G473 family context and are **not**
+confirmed against any `board_name`; do not use them to decide which target a board needs.
 
 ### Scratch log
 

@@ -184,6 +184,37 @@ in 2026.x, and pasting the old name fails silently — the loss was only found i
 dump. The campaign was then flown at the 2026.6 default idle (550) without issue, making that
 the adopted value (BetaFPV's factory 4.5 config used 1150).
 
+## Vendor page archives (`vendor_pages/`)
+
+Snapshots of BetaFPV's own product listings for the boards and aircraft archived here, taken
+because BetaFPV revises and retires listings without notice and these pages are the only
+public record of some hardware detail (VTX power tables, motor/prop specs, pinout diagrams).
+Nine products are captured: the Air 1S and F4 20A AIO flight controllers, the four Matrix 1S
+G473 listings, and the AIR75, Meteor75 Pro P1, and Pavo Pico II aircraft.
+
+Each `vendor_pages/<shopify-handle>/` holds:
+
+- `product.json` — the canonical Shopify record, and the artifact that matters. It is the
+  diffable one: a re-capture's `git diff` shows exactly which spec BetaFPV edited.
+- `SPECS.md` — generated from `product.json`, with source URL and capture date. Regenerate
+  it rather than hand-editing.
+- `images/` — gallery and inline spec images at ≤1600px.
+- `page.mhtml` — a full rendered-page snapshot (MHTML, RFC 2557) written by Chromium's
+  `Page.captureSnapshot`. Readable in a Chromium-family browser (Edge or Chrome);
+  **Firefox cannot open MHTML.**
+
+Regenerate with `node vendor_pages/capture.mjs` and `node vendor_pages/capture_mhtml.mjs`
+(the latter needs `npm install ws` and a Chromium-family browser). See
+`vendor_pages/README.md` for the full policy.
+
+**These are vendor claims, not configuration.** Nothing here is restorable to a flight
+controller, and where a page disagrees with a CLI dump or a `configs/*/config.h`, the dump or
+target wins. Only two product-to-board mappings are confirmed by hardware identifiers rather
+than by name — the AIR75 (0802SE 23000KV motors matching its OEM package) and the Pavo Pico II
+(STM32F405 in the description). The four `matrix-1s-*` pages are captured as G473 family
+context and are **not** confirmed against any `board_name`; read `board_name` off the board
+with the CLI instead of inferring a target from a product page.
+
 ## Scratch log
 
 `betafpv_75mm.txt` at the repo root is a raw, unstructured CLI session log — six `version` +

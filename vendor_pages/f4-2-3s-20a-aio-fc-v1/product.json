@@ -1,0 +1,146 @@
+{
+  "id": 6890369646726,
+  "title": "F4 2-3S 20A AIO FC V1",
+  "body_html": "<div style=\"text-align: start;\">F4 2-3S 20A AIO FC V1 is specifically designed for HD VTX, utilizing 2-3S batteries for enhancing the flight experience. It features a dual BEC solution that delivers stable power outputs of <span>9V@2A for DJI O3</span> and <span>5V@3A for external devices</span>. With a 20A ESC, it enables agile flight and increases dynamic. And connector for DJI O3 HD VTX and USB port for easy installation and maintenance. Ideal for HD VTX whoop enthusiasts, offering a heightened level of professionalism and convenience with this FC option.<br>\n</div>\n<div style=\"text-align: left;\"><img alt=\"F4 2-3S 20A AIO FC V1\" src=\"https://cdn.shopify.com/s/files/1/1778/6615/files/F4_2-3S_20A_AIO_FC_V1.jpg?v=1777366599\"></div>\n<h2>Bullet Point</h2>\n<ul>\n<li>Designed for HD VTX, it features a dual 9V@2A for DJI O3 and 5V@3A for external device BEC solution to prevent screen blackout on the DJI O3 due to low voltage during throttle increase.</li>\n<li>It includes a new DJI O3 6<span>-pin</span> PMU for easy installation without soldering, reducing assembly complexity. Newbie friendly.</li>\n<li><span>The power range of 2-3S provides increased thrust and improved control with a 20A ESC featuring a single NMOS for continuous current capability.</span></li>\n<li><span>The upgraded onboard receiver allows selective power cutoff for saving power and offers additional UART TX3 and RX3 ports for connecting the external device.</span></li>\n<li><span>Redesigned solder pad layout ensures larger, more secure pads for easy and reliable soldering, while the relocated USB port at the rear facilitates computer tuning.</span></li>\n<li><span>It features an STM32F405RGT6 chip, Integrate Serial ELRS 2.4G receiver, 16M black box, barometer, current meter, reserve 3 complete serial ports and a standard SBUS, support GPS, HD VTX, external receiver, and other equipment.</span></li>\n</ul>\n<p><img src=\"https://cdn.shopifycdn.net/s/files/1/1778/6615/files/eb44cfd418bd0c3f52fdcc9a83ae49e0_244e407d-1a29-41c8-92b7-254c14da261c_600x600.jpg?v=1691997239\" alt=\"\"><br></p>\n<ul></ul>\n<h2>Specification</h2>\n<ul>\n<li>Weight: 5.58g (without motor connectors and power cable),5.92g (with motor connectors)<br>\n</li>\n<li>Mounting Hole Size<span>: </span>26mm x 26mm</li>\n<li>CPU*<span>: </span>STM32F405RGT6 (168MHz)</li>\n<li>Six-Axis<span>: </span>ICM42688P/ICM42605 (SPI connection)</li>\n<li>RX<span>: </span>Serial ELRS 2.4G Receiver</li>\n<li>RX firmware version<span>: </span>BETAFPV AIO 2400 RX ELRS V3.3.0</li>\n<li>Antenna<span>: </span>Enameled wire</li>\n<li>Blackbox Memory<span>: </span>16MB</li>\n<li>Sensor<span>: </span>Barometer (BMP280/DSP310),  Voltage &amp; Current</li>\n<li>5V BEC*<span>: </span>5V 3A@8V supply</li>\n<li>9V BEC*<span>: </span>9V 2A@8V supply<br>\n</li>\n<li>USB Port<span>: </span>SH1.0 4-Pin</li>\n<li>Built-in ESC with 20A continuous and peak 25A current</li>\n<li>ESC input voltage: 2-3S</li>\n<li>FC firmfware version<span>: </span>Betaflight_4.4.1_BETAFPVF405</li>\n<li>ESC firmware: C_X_70_48_V0.19.2.hex for BB51 Bluejay hardware</li>\n<li>Signal support: D-shot300, D-shot600</li>\n</ul>\n<ul></ul>\n<article data-identifier-application__slash__x-doc-key=\"av9kqD6XgbxZlVxe\" data-identifier-application__slash__x-cangjie-fragment=\"JTdCJTIya2xhc3MlMjIlM0ElMjJkb2N1bWVudCUyMiUyQyUyMmRhdGElMjIlM0ElN0IlN0QlMkMlMjJub2RlcyUyMiUzQSU1QiU3QiUyMmtsYXNzJTIyJTNBJTIyYmxvY2slMjIlMkMlMjJ0eXBlJTIyJTNBJTIycGFyYWdyYXBoJTIyJTJDJTIyZGF0YSUyMiUzQSU3QiUyMnV1aWQlMjIlM0ElMjJsZ3cweXA0ejc1bHRrNmN2dmZtJTIyJTJDJTIyaW5kJTIyJTNBJTdCJTIybGVmdCUyMiUzQTAlN0QlN0QlMkMlMjJub2RlcyUyMiUzQSU1QiU3QiUyMmtsYXNzJTIyJTNBJTIydGV4dCUyMiUyQyUyMmxlYXZlcyUyMiUzQSU1QiU3QiUyMmtsYXNzJTIyJTNBJTIybGVhZiUyMiUyQyUyMnRleHQlMjIlM0ElMjIqJTIyJTJDJTIybWFya3MlMjIlM0ElNUIlNUQlN0QlMkMlN0IlMjJrbGFzcyUyMiUzQSUyMmxlYWYlMjIlMkMlMjJ0ZXh0JTIyJTNBJTIyVGhlJTIwb3V0cHV0JTIwY3VycmVudCUyMG9mJTIwQkVDJTIwd2lsbCUyMGRlY3JlYXNlJTIwYXMlMjB0aGUlMjB0ZW1wZXJhdHVyZSUyMGluY3JlYXNlcyUyMiUyQyUyMm1hcmtzJTIyJTNBJTVCJTdCJTIya2xhc3MlMjIlM0ElMjJtYXJrJTIyJTJDJTIydHlwZSUyMiUzQSUyMml0YWxpYyUyMiUyQyUyMmRhdGElMjIlM0ElN0IlN0QlN0QlNUQlN0QlNUQlN0QlNUQlN0QlNUQlN0Q=\" data-clipboard-cangjie='[\"root\",{\"copyFrom\":1329378339},[\"p\",{\"uuid\":\"lgw0yp4z75ltk6cvvfm\",\"ind\":{\"left\":0}},[\"span\",{\"data-type\":\"text\"},[\"span\",{\"data-type\":\"leaf\"},\"*\"],[\"span\",{\"italic\":true,\"data-type\":\"leaf\"},\"The output current of BEC will decrease as the temperature increases\"]]]]' class=\"4ever-article\">\n<p><span style=\"color: #808080;\"><em>*The output current of BEC will decrease as the temperature increases</em></span></p>\n</article>\n<h2>Diagram</h2>\n<div style=\"text-align: left;\">Below is the diagram for F4 2-3S 20A AIO FC V1.</div>\n<div style=\"text-align: left;\"><img style=\"margin-bottom: 16px; float: none;\" alt=\"F4 2-3S 20A AIO FC V1 top front\" src=\"https://cdn.shopify.com/s/files/1/1778/6615/files/F4_2-3S_20A_AIO_FC_V1_top_front_600x600.jpg?v=1777366614\"></div>\n<div style=\"text-align: left;\"><img src=\"https://cdn.shopifycdn.net/s/files/1/1778/6615/files/0cb3583415a4558d6c5d6ffb43f91be0_06e2f3a4-5d5b-4e3c-bc73-2bd2a9194826_600x600.jpg?v=1691997111\" alt=\"F4 2-3S 20A AIO FC V1\"></div>\n<h2>Comparison</h2>\n<p>We upgraded the FC from<span> </span><a href=\"https://betafpv.com/products/f4-1s-12a-aio-brushless-flight-controller-v3-0\">F4 1S 12A AIO FC V3</a><span> </span>to<span> </span><a href=\"https://betafpv.com/products/f4-2-3s-20a-aio-fc-v1\">F4 2-3S 20A AIO FC V1</a>. The upgraded FC features an ESC with a <span>pulse </span>overcurrent capacity of 25A,<span> </span><span>ensuring stable operation of the flight controller even in the event of motor stalling. </span>The addition of a 9V 2A BEC power supply ensures the stable operation of the DJI O3 HD VTX when the battery voltage is low. It also includes a DJI O3 6-pin PMU allowing for connection to HD VTX without soldering. It integrates features such as a 16MB black box, with support for GPS, external receivers, and other devices. The redesigned solder pad layout and USB connector make installation and maintenance easier and more convenient.</p>\n<table height=\"309\" width=\"553\">\n<tbody>\n<tr>\n<td style=\"width: 16.2248%;\"></td>\n<td style=\"width: 34.7752%;\"><a href=\"https://betafpv.com/products/f4-1s-12a-aio-brushless-flight-controller-v3-0\">F4 1S 12A AIO FC V3</a></td>\n<td style=\"width: 40%;\"><a href=\"https://betafpv.com/products/f4-2-3s-20a-aio-fc-v1\">F4 2-3S 20A AIO FC V1</a></td>\n</tr>\n<tr>\n<td style=\"width: 16.2248%;\">Weight</td>\n<td style=\"width: 34.7752%;\">4.23g</td>\n<td style=\"width: 40%;\">5.58g</td>\n</tr>\n<tr>\n<td style=\"width: 16.2248%;\">BEC<br>\n</td>\n<td style=\"width: 34.7752%;\">5V@3A for External RX</td>\n<td style=\"width: 40%;\">\n<p><span>5V@3A for External RX</span></p>\n<p><span>9V@2A for DJI O3</span></p>\n</td>\n</tr>\n<tr>\n<td style=\"width: 16.2248%;\">Connector for DJI O3</td>\n<td style=\"width: 34.7752%;\">Not support</td>\n<td style=\"width: 40%;\">Support<br>\n</td>\n</tr>\n<tr>\n<td style=\"width: 16.2248%;\">ESC Current</td>\n<td style=\"width: 34.7752%;\">12A</td>\n<td style=\"width: 40%;\">20A</td>\n</tr>\n<tr>\n<td style=\"width: 16.2248%;\">ESC Input Voltage<br>\n</td>\n<td style=\"width: 34.7752%;\">1-2S</td>\n<td style=\"width: 40%;\">2-3S</td>\n</tr>\n<tr>\n<td style=\"width: 16.2248%;\">Number of Serial Ports</td>\n<td style=\"width: 34.7752%;\">2*UART, 1*SBUS</td>\n<td style=\"width: 40%;\">4*UART, 1*SBUS</td>\n</tr>\n</tbody>\n</table>\n<p><span style=\"color: #808080;\"><em>Note: <em style=\"font-size: 0.875rem;\">I</em>f you use the F4 2-3S 20A AIO FC V1, the serial port of the SBUS receiver is UART5 while F4 1S 12A AIO Brushless FC V3 is UART6.</em></span></p>\n<p><span>F4 2-3S 20A AIO FC V1 also has extended the USB port to the end for easier parameter adjustment and wiring. And a new DJI O3 6-pin PMU has been added for convenient installation and maintenance.</span></p>\n<p><img src=\"https://cdn.shopifycdn.net/s/files/1/1778/6615/files/1_093a7451-0864-4b39-9e47-4dd208e49b82_1024x1024.jpg?v=1691720109\" alt=\"\"></p>\n<h2>FAQ</h2>\n<p><span style=\"font-size: 0.875rem;\"></span><span>Power cutoff: Removing the chip bead disconnects the power supply, and to reuse the onboard ELRS receiver, soldering the solder pads together restores power.</span></p>\n<p>UART3 release: Removing two resistors on the solder pads releases UART3. The left side is TX3, and the right side is RX3. To reconnect, solder the solder pads together when reusing the onboard ELRS receiver.</p>\n<p><img src=\"https://cdn.shopifycdn.net/s/files/1/1778/6615/files/2_45522700-9e0a-4899-b2da-7872cc929a5c_1024x1024.jpg?v=1692099574\" alt=\"F4 2-3S 20A AIO FC V1\"></p>\n<p>Voltage Switch: The HD VTX connector defaults to 9V. The chip bead is soldered between the 9V pad and the middle pad. To use WalkSnail Avatar HD mini 1s and Lite, please ensure the power supply voltage is 5V. Remove the chip bead first from the 9V pad and solder it between the middle pad and the 5V pad. Alternatively, you can use solder instead the chip bead to switch between the 5V and 9V pads.<br></p>\n<p><img alt=\"F4 2-3S 20A AIO FC V1\" src=\"https://cdn.shopifycdn.net/s/files/1/1778/6615/files/3_76128d97-b00a-4014-a614-b4ba7dccf02a_1024x1024.jpg?v=1692080785\"></p>\n<p>Motor choice: Avoid selecting motors with excessively high KV ratings, as motors above 20,000KV are prone to burn.</p>\n<h2>Betaflight Firmware and CLI </h2>\n<article class=\"4ever-article\" data-clipboard-cangjie='[\"root\",{},[\"p\",{\"jc\":\"left\",\"keepLines\":false,\"keepNext\":false,\"numPr\":{},\"rPr\":{\"bold\":true,\"color\":\"#0E101A\"},\"spacing\":{\"after\":\"0pt\",\"afterAutospacing\":false,\"before\":\"0pt\",\"beforeAutospacing\":false},\"styleId\":\"4\",\"windowControl\":true},[\"span\",{\"data-type\":\"text\"},[\"span\",{\"bold\":true,\"color\":\"#0E101A\",\"data-type\":\"leaf\"},\"For STM32F405 Version\"]]],[\"p\",{\"keepLines\":false,\"keepNext\":false,\"numPr\":{},\"rPr\":{\"color\":\"#0E101A\"},\"spacing\":{\"after\":\"0pt\",\"afterAutospacing\":false,\"before\":\"0pt\",\"beforeAutospacing\":false},\"styleId\":\"4\",\"windowControl\":true},[\"span\",{\"data-type\":\"text\"},[\"span\",{\"color\":\"#0E101A\",\"data-type\":\"leaf\"},\"FC firmware: Betaflight_4.4.1_BETAFVF405 \"]]],[\"p\",{\"keepLines\":false,\"keepNext\":false,\"numPr\":{},\"rPr\":{\"color\":\"#0E101A\",\"fonts\":{\"hint\":\"eastAsia\"}},\"spacing\":{\"after\":\"0pt\",\"afterAutospacing\":false,\"before\":\"0pt\",\"beforeAutospacing\":false},\"styleId\":\"4\",\"windowControl\":true},[\"span\",{\"data-type\":\"text\"},[\"span\",{\"color\":\"#0E101A\",\"data-type\":\"leaf\"},\"Reference link: \"]],[\"field\",{\"sentence\":[{\"fldChar\":{\"fldCharType\":\"begin\"}},{\"instr\":\"HYPERLINK \\\"https://github.com/betaflight/betaflight/releases/tag/4.4.1\\\"\"},{\"fldChar\":{\"fldCharType\":\"end\"}}],\"syntax\":[\"HYPERLINK\"]},[\"span\",{\"data-type\":\"text\"},[\"span\",{\"fonts\":{\"hint\":\"eastAsia\"},\"styleId\":\"9\",\"data-type\":\"leaf\"},\"https://github.com/betaflight/betaflight/releases/tag/4.4.1\"]]],[\"span\",{\"data-type\":\"text\"},[\"span\",{\"data-type\":\"leaf\"},\"\"]]]]'>\n<p>FC firmware: Betaflight_4.4.1_BETAFVF405 </p>\n<p><a href=\"https://support.betafpv.com/hc/en-us/articles/21884915967513-CLI-for-F4-2-3S-20A-Flight-Controller-ELRS-V1-0-\">Download the firmware and CLI dump file</a></p>\n<p><span>Reference link:</span></p>\n<p><a href=\"https://github.com/betaflight/betaflight/releases/tag/4.4.1\"><span data-path=\"2,1\">https://github.com/betaflight/betaflight/releases/tag/4.4.1</span></a> </p>\n</article>\n<article data-clipboard-cangjie='[\"root\",{},[\"p\",{},[\"a\",{\"href\":\"https://preview.esc-configurator.com/\"},[\"span\",{\"data-type\":\"text\"},[\"span\",{\"bold\":false,\"color\":\"rgba(23, 26, 29, 0.6)\",\"fonts\":{\"ascii\":\"Microsoft YaHei\",\"hAnsi\":\"Microsoft YaHei\",\"cs\":\"Microsoft YaHei\",\"eastAsia\":\"Microsoft YaHei\"},\"sz\":9,\"szUnit\":\"pt\",\"data-type\":\"leaf\"},\"https://preview.esc-configurator.com/\"]]]]]' class=\"4ever-article\"></article>\n<h2>ESC Firmware</h2>\n<p><span>With BB51 ESC solution, F4 2-3S 20A AIO FC V1 is based on BLHeliSuite16714903 with Bluejay ESC firmware, it supports bidirectional D-shot and RPM filtering in Betaflight, offers 24KHz, 48KHz, and 96KHz fixed PWM frequency for options, and custom start-up melodies. F4 2-3S 20A AIO FC V1</span><span> default factory setting is <strong>48KHz</strong> and it doesn’t recommend upgrading the 96KHz, or it might cause an error in the motor idle setting, not spinning when disarmed.</span></p>\n<p><span><a href=\"https://github.com/bird-sanctuary/bluejay\" target=\"_blank\"><img src=\"https://cdn.shopifycdn.net/s/files/1/1778/6615/files/1_f1e8c5ed-49a0-488e-8ba6-74c3ff08aa56_160x160.png?v=1668162831\" alt=\"\"></a></span></p>\n<p><span><strong>DO NOT flash the firmware with a shorter interval, </strong>otherwise, there will be a certain chance of stalling and burning the flight controller.<br></span></p>\n<ul>\n<li>ESC-Configurator:<span> </span><a href=\"https://preview.esc-configurator.com/\">https://preview.esc-configurator.com/</a>\n</li>\n<li><a href=\"https://github.com/4712/BLHeliSuite/releases/tag/16714903\"><span>Download BLHeliSuite16714903</span></a></li>\n<li><a href=\"https://github.com/bird-sanctuary/bluejay/releases\"><span>Download the Bluejay ESC firmware. Please choose C_X_70.HEX</span></a></li>\n</ul>\n<p style=\"padding-left: 30px;\"><img alt=\"\" src=\"https://cdn.shopifycdn.net/s/files/1/1778/6615/files/lQLPJxTnULfHybJjzMOwUJ_ThDZUXdIEUYcD0sDOAA_195_99_240x240.png?v=1683621261\"></p>\n<h2>Serial ELRS 2.4G RX</h2>\n<p>Serial ELRS 2.4G RX uses the Crossfire serial protocol (CRSF protocol) to communicate between the receiver and the flight controller board. So the Serial ELRS 2.4G RX is available to support upgrading to ELRS V3 with no need to flash Betaflight flight controller firmware. </p>\n<ul>\n<li>Enter binding status by power on/off three times.</li>\n<li>Plugin and unplug the flight controller three times;</li>\n<li>Make sure the RX LED is doing a quick double blink, which indicates the receiver is in bind mode;</li>\n<li>Make sure the RF TX module or radio transmitter enters binding status, which sends out a binding pulse;</li>\n<li>If the receiver has a solid light, it's bound.</li>\n</ul>\n<p>The Serial ELRS 2.4G RX can be updated via Wi-Fi or Betaflight serial passthrough. Here is the way to update the Serial ELRS 2.4G RX firmware through passthrough.</p>\n<ul>\n<li>Plug in your FC to your computer, but do NOT connect to betaflight configurator.</li>\n<li>Choose target \"BETAFPV 2.4GHz AIO RX\". </li>\n<li>Flash using the B<span>etaflight</span><span>Passthrough option in ExpressLRS Configurator.</span>\n</li>\n</ul>\n<p><span style=\"color: #b3b3b3;\"><em><a style=\"color: #b3b3b3;\" href=\"https://support.betafpv.com/hc/en-us/articles/4404231679129-How-to-Flash-Firmware-of-ELRS-RX-TX\">How to flash firmware via Wi-Fi here.</a></em></span></p>\n<h2>Connecting External Devices</h2>\n<p>Please note that the board reserves two serial ports and a standard SBUS port, which is available for the external CRSF protocol receiver or GPS module, and SBUS protocol receiver. You can refer to the below picture.</p>\n<div style=\"text-align: start;\"><img height=\"1566\" width=\"596\" alt=\"F4 2-3S 20A AIO FC V1\" src=\"https://cdn.shopifycdn.net/s/files/1/1778/6615/files/f4b3da9554de4e60ffd11b8edcb16ff8_6ff533fa-d647-4c34-8ac3-d77d199b1202.jpg?v=1692080979\" style=\"margin-bottom: 16px; float: none;\"></div>\n<h2>Recommend Parts</h2>\n<ul>\n<li><span>Drones: <a href=\"https://betafpv.com/products/pavo20-pro-ii-brushless-whoop-quadcopter\">Pavo20 Pro II</a>, <a href=\"https://betafpv.com/products/pavo20-pro-brushless-whoop-quadcopter\">Pavo20 Pro</a>, <a href=\"https://betafpv.com/products/pavo-pico-brushless-whoop-quadcopter\">Pavo Pico</a>, <a href=\"https://betafpv.com/products/hx115-se-fpv-quadcopter\">HX115 SE Toothpick Drone</a></span></li>\n</ul>\n<h2>Package</h2>\n<ul>\n<li><span>1 * F4 2-3S 20A AIO FC V1</span></li>\n<li><span>4 * M2*10 Machine Screw </span></li>\n<li><span>4 * M2*10 Nylon Screw </span></li>\n<li><span>4 * M2 Nuts </span></li>\n<li><span>4 * Shock Absorbing Ball </span></li>\n<li><span>4 * JST1.25mm Angle Socket </span></li>\n<li><span>4 * JST1.25mm Straight Socket </span></li>\n<li><span>1 * SH1.0 4Pin Adapter Cable</span></li>\n<li><span>1 * Type-C to SH1.0 Adapter </span></li>\n<li><span>1 * XT30 Power Cord</span></li>\n<li><span>1 * Filter Capacitor </span></li>\n<li><span>1 * 30mm Double-head VTX connector wire </span></li>\n<li><span>1 * 60mm Single-head VTX connector wire</span></li>\n</ul>\n<div style=\"text-align: start;\"><img alt=\"F4 2-3S 20A AIO FC V1\" src=\"https://cdn.shopifycdn.net/s/files/1/1778/6615/files/3f89305fb1dabad87b9b93324e3c25cd_8e21555c-9d6c-4c25-9045-f50b44ff1407_480x480.jpg?v=1691997421\" style=\"margin-bottom: 16px; float: none;\"></div>",
+  "vendor": "BETAFPV",
+  "product_type": "Brushless FC",
+  "created_at": "2023-08-07T23:15:33-11:00",
+  "handle": "f4-2-3s-20a-aio-fc-v1",
+  "updated_at": "2026-08-13T23:34:02-11:00",
+  "published_at": "2023-08-24T23:53:57-11:00",
+  "template_suffix": "",
+  "published_scope": "web",
+  "tags": "2-3s brushless fc, brushless fc, fc",
+  "variants": [
+    {
+      "id": 44067799924870,
+      "product_id": 6890369646726,
+      "title": "ICM42688",
+      "price": "54.99",
+      "sku": "01040015_1",
+      "position": 1,
+      "compare_at_price": "",
+      "fulfillment_service": "manual",
+      "inventory_management": "shopify",
+      "option1": "ICM42688",
+      "option2": null,
+      "option3": null,
+      "created_at": "2026-06-14T20:06:11-11:00",
+      "updated_at": "2026-08-13T23:34:02-11:00",
+      "taxable": false,
+      "barcode": null,
+      "grams": 22,
+      "image_id": 31749059543174,
+      "weight": 22,
+      "weight_unit": "g",
+      "requires_shipping": true,
+      "quantity_rule": {
+        "min": 1,
+        "max": null,
+        "increment": 1
+      },
+      "price_currency": "USD",
+      "compare_at_price_currency": "",
+      "quantity_price_breaks": []
+    },
+    {
+      "id": 44067799957638,
+      "product_id": 6890369646726,
+      "title": "ICM42605",
+      "price": "54.99",
+      "sku": "01040015_2",
+      "position": 2,
+      "compare_at_price": "",
+      "fulfillment_service": "manual",
+      "inventory_management": null,
+      "option1": "ICM42605",
+      "option2": null,
+      "option3": null,
+      "created_at": "2026-06-14T20:06:11-11:00",
+      "updated_at": "2026-08-13T23:34:02-11:00",
+      "taxable": false,
+      "barcode": null,
+      "grams": 22,
+      "image_id": 31749059543174,
+      "weight": 22,
+      "weight_unit": "g",
+      "requires_shipping": true,
+      "quantity_rule": {
+        "min": 1,
+        "max": null,
+        "increment": 1
+      },
+      "price_currency": "USD",
+      "compare_at_price_currency": "",
+      "quantity_price_breaks": []
+    }
+  ],
+  "options": [
+    {
+      "id": 9808646766726,
+      "product_id": 6890369646726,
+      "name": "Gyro Version",
+      "position": 1,
+      "values": [
+        "ICM42688",
+        "ICM42605"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": 31749059543174,
+      "product_id": 6890369646726,
+      "position": 1,
+      "created_at": "2023-08-13T20:06:15-11:00",
+      "updated_at": "2023-08-13T20:06:17-11:00",
+      "alt": "F4 2-3S 20A AIO FC V1",
+      "width": 1600,
+      "height": 1600,
+      "src": "https://cdn.shopify.com/s/files/1/1778/6615/files/567042f830a15bcefdc659371169a57e_c3a729eb-80b1-4c32-a3f6-01c8ecf745cb.jpg?v=1691996777",
+      "variant_ids": [
+        44067799924870,
+        44067799957638
+      ]
+    },
+    {
+      "id": 31749059510406,
+      "product_id": 6890369646726,
+      "position": 2,
+      "created_at": "2023-08-13T20:06:15-11:00",
+      "updated_at": "2023-08-13T20:06:16-11:00",
+      "alt": "F4 2-3S 20A AIO FC V1",
+      "width": 1600,
+      "height": 1600,
+      "src": "https://cdn.shopify.com/s/files/1/1778/6615/files/c2831abc7349d543adb0b881462785d1_cda6f335-efb9-408d-b1d9-4cf494bb6172.jpg?v=1691996776",
+      "variant_ids": []
+    },
+    {
+      "id": 31749061869702,
+      "product_id": 6890369646726,
+      "position": 3,
+      "created_at": "2023-08-13T20:07:49-11:00",
+      "updated_at": "2023-08-13T20:07:50-11:00",
+      "alt": "F4 2-3S 20A AIO FC V1",
+      "width": 1600,
+      "height": 1600,
+      "src": "https://cdn.shopify.com/s/files/1/1778/6615/files/f1d3f2e934a7f7df4970562b60a46e3c_e0578357-a665-4814-a951-f9a7d07579b2.jpg?v=1691996870",
+      "variant_ids": []
+    }
+  ],
+  "image": {
+    "id": 31749059543174,
+    "product_id": 6890369646726,
+    "position": 1,
+    "created_at": "2023-08-13T20:06:15-11:00",
+    "updated_at": "2023-08-13T20:06:17-11:00",
+    "alt": "F4 2-3S 20A AIO FC V1",
+    "width": 1600,
+    "height": 1600,
+    "src": "https://cdn.shopify.com/s/files/1/1778/6615/files/567042f830a15bcefdc659371169a57e_c3a729eb-80b1-4c32-a3f6-01c8ecf745cb.jpg?v=1691996777",
+    "variant_ids": [
+      44067799924870,
+      44067799957638
+    ]
+  }
+}

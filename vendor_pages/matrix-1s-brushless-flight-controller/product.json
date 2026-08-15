@@ -1,0 +1,140 @@
+{
+  "id": 7286805463174,
+  "title": "Matrix 1S Brushless Flight Controller (5IN1)",
+  "body_html": "<div style=\"text-align: start;\">\n<p>The Matrix 1S Brushless Flight Controller is a highly integrated solution designed for beginners and FPV enthusiasts. Its robust 1mm-thick board ensures durability during intense training, while the built-in motor connectors simplify installation, eliminating welding. Upgraded with the G473 processor, it delivers a 55% performance boost over the F411 for more precise control in racing and freestyle. Plus, its premium 5.8GHz 400mWVTX ensures stable, high-quality video transmission.</p>\n</div>\n<div style=\"text-align: left;\"><img src=\"https://cdn.shopify.com/s/files/1/1778/6615/files/74b96dbb2d19db9758ba306fc55ad040_f2a23f7b-3e72-431a-a444-5d1374dbf300.jpg?v=1731669472\" alt=\"\"></div>\n<div style=\"text-align: left;\">\n<h2>Attention</h2>\n<ul>\n<li>The Matrix 1S Brushless Flight Controller is crafted for beginners and casual pilots, offering enhanced durability with its thicker board and no welding required—making it perfect for entry-level users. As a result, it is slightly heavier than the Air Brushless Flight Controller 5IN1 version. For advanced FPV pilots seeking a more responsive, race-oriented experience, the <a href=\"https://betafpv.com/products/air-brushless-flight-controller?variant=41142912745606\">Air Brushless FC 5IN1 version</a> is highly recommended. The Matrix 1S Brushless FC and Air Brushless FC 5IN1 Version have undergone rigorous testing and meet competition-grade standards.</li>\n</ul>\n<p><img alt=\"\" src=\"https://cdn.shopify.com/s/files/1/1778/6615/files/dca3527c75cbd6f4e37a2ed5c742b2e6_bf4e284f-b34c-4d22-9d00-496c0ebf8f67.jpg?v=1732006205\"></p>\n<ul>\n<li>Flight controllers are covered for manufacturer defects. Issues arising from user errors, physical crash damage, damage during installation or dismantling, modifications, power surges, electrical fires, or water exposure are not covered.</li>\n<li>VTX Power: Higher VTX power consumes more energy and generates more heat, reducing flight time. For better flight time in indoor scenarios, use 25~100mW power.<br>\n</li>\n<li>VTX Antenna: Connect and install the image transmission antenna before powering on the flight control. Alternatively, set transmission power to 0 to avoid burnout.</li>\n</ul>\n<ul></ul>\n</div>\n<h2>Bullet Points</h2>\n<ul>\n<li>Built Tough: The Matrix 1S Brushless FC features a robust 1mm-thick circuit board. While slightly heavier, this design enhances durability for everyday training. For advanced pilots, the <a rel=\"noopener\" href=\"https://betafpv.com/products/air-brushless-flight-controller?variant=41142912745606\" target=\"_blank\">Air Brushless FC 5IN1 Verion</a> provides a lighter alternative.</li>\n<li>Simplified Installation: The Matrix 1S Brushless FC is a true all-in-one flight controller with integrated FC+VTX+OSD+ESC+RX, plus standard motor connectors, making setup and maintenance remarkably easy. Ideal for FPV beginners, this design requires no welding and ensures a smooth installation experience.</li>\n<li>Upgraded Performance: Upgraded with the G473 processor, the Matrix 1S Brushless FC achieves a remarkable 55% increase in computing speed over the F411, delivering swift response for precise racing and complex freestyle maneuvers.<br>\n</li>\n<li>\n<p><span data-type=\"text\">Premium Video Transmission: Equipped with a high-quality 5.8GHz VTX supporting up to 400mW, the Matrix 1S ensures stable, accurate transmission for both daily flying and competitive racing.</span></p>\n</li>\n</ul>\n<div style=\"text-align: left;\"><img src=\"https://cdn.shopify.com/s/files/1/1778/6615/files/9d832a087b5c3abe61a3b0a137024b2b_bf8674c4-577c-4474-8a03-010e34248799.jpg?v=1731924925\" alt=\"\"></div>\n<h2>Specifications</h2>\n<h3>FC</h3>\n<ul>\n<li>\n<span data-type=\"text\">MCU: STM32G473C</span><span data-type=\"text\">EU6</span>\n</li>\n<li><span data-type=\"text\">Gyro: ICM42688P</span></li>\n<li><span data-type=\"text\">Blackbox memory: 16MB</span></li>\n<li><span data-type=\"text\">Sensor: Voltage &amp; Current</span></li>\n<li><span data-type=\"text\">BEC: 5V, Max. 3A</span></li>\n<li><span data-type=\"text\">UART: UART 1, UART 2 (For VTX), UART 3 (For RX), UART 4 </span></li>\n<li><span data-type=\"text\">BetaFlight OSD: AT7456E</span></li>\n<li><span data-type=\"text\">ESC: 5A continuous</span></li>\n<li><span data-type=\"text\">RX: Serial ELRS 2.4GHz (V3.4.3)</span></li>\n<li><span data-type=\"text\">VTX: 5.8GHz 48 channels, Max. 400mW</span></li>\n<li>\n<span data-type=\"text\">FC </span><span data-type=\"text\">firmware: Betaflight_4.5.0_BETAFPVG473</span>\n</li>\n<li><span data-type=\"text\">USB port: SH1.0-4Pin</span></li>\n<li><span data-type=\"text\">Motor Connector: JST1.25</span></li>\n<li><span data-type=\"text\">Battery connector: BT2.0</span></li>\n<li><span data-type=\"text\">Mounting hole size: 26mm x 26mm</span></li>\n<li>\n<span data-type=\"text\">Wei</span><span data-type=\"text\">ght: 3.92±0.1g</span>\n</li>\n</ul>\n<h3>ESC</h3>\n<ul>\n<li>\n<span data-type=\"text\">Power inpu</span><span data-type=\"text\">t: 1S Only</span>\n</li>\n<li><span data-type=\"text\">Current: 5A continuous, 8A peak</span></li>\n<li><span data-type=\"text\">ESC firmware: A_X_5_96KHz_V0.19.hex for BB51 Bluejay firmware</span></li>\n<li><span data-type=\"text\">Digital signal protocol: DShot300, DShot600</span></li>\n</ul>\n<h3>VTX</h3>\n<ul>\n<li><span data-type=\"text\">Output power: 25/100/200/400/PIT</span></li>\n<li><span data-type=\"text\">Frequency: 5.8GHz 48 channels, with Raceband: 5658~5917MHz</span></li>\n<li><span data-type=\"text\">Channel SEL: SmartAudio2.0</span></li>\n<li><span data-type=\"text\">Modulation type: FM</span></li>\n<li><span data-type=\"text\">Frequency control: PLL</span></li>\n<li><span data-type=\"text\">All harmonic: Max -50dBm</span></li>\n<li><span data-type=\"text\">Frequency stability: ±100KHz (Typ.)</span></li>\n<li><span data-type=\"text\">Frequency precision: ±200KHz (Typ.)</span></li>\n<li><span data-type=\"text\">Channel carrier error: ±1.5dB</span></li>\n<li><span data-type=\"text\">Antenna port: 50 Ω</span></li>\n<li><span data-type=\"text\">Operating temperature: -10℃~+80℃</span></li>\n</ul>\n<h2>Diagram</h2>\n<div style=\"text-align: left;\"><img src=\"https://cdn.shopify.com/s/files/1/1778/6615/files/8b1760d60771bc56e3f18490d57f3c36_7a172f29-f7e2-4b85-915e-cde36c23c725_600x600.jpg?v=1731642476\" style=\"margin-bottom: 16px; float: none;\"></div>\n<div style=\"text-align: left;\"><img src=\"https://cdn.shopify.com/s/files/1/1778/6615/files/0cb3583415a4558d6c5d6ffb43f91be0_f1a10373-01d9-40ff-9a0a-590158be35e6_600x600.jpg?v=1731642494\" style=\"margin-bottom: 16px; float: none;\"></div>\n<h2>Comparison Between Matrix 1S, F4 1S 5A AIO &amp; Air 5IN1</h2>\n<p>The Matrix 1S Brushless FC is designed with beginners in mind, offering enhanced durability and performance compared to the original F4 1S 5A AIO FC. With a 1mm-thick board, it’s more rugged than the 0.8mm-thick F4 1S 5A AIO board, and its built-in motor connectors simplify installation, eliminating the need for welding. With the advanced G473 processor and 5IN1 configuration, including a <span>5.8GHz </span>400mW VTX, the Matrix 1S is a better choice for beginners. For advanced pilots seeking a extremely lightweight, race-focused experience, the <a href=\"https://betafpv.com/products/air-brushless-flight-controller?variant=41142912745606\" rel=\"noopener\" target=\"_blank\">Air Brushless FC 5IN1 version</a> is the best choice.</p>\n<div align=\"center\">\n<table style=\"width: 100%; height: 505.5px;\" cellspacing=\"0\" border=\"0\">\n<tbody>\n<tr style=\"height: 35.5938px;\">\n<td style=\"width: 19.4201%; height: 35.5938px;\" valign=\"center\">\n<p class=\"MsoNormal\"> </p>\n</td>\n<td style=\"width: 21.7609%; height: 35.5938px;\" valign=\"center\">\n<p align=\"center\" class=\"p\"><strong>Matrix 1S</strong><span></span></p>\n</td>\n<td style=\"width: 21.7609%; height: 35.5938px;\" valign=\"center\">\n<p align=\"center\" class=\"p\"><a rel=\"noopener\" href=\"https://betafpv.com/products/air-brushless-flight-controller?variant=41142912745606\" target=\"_blank\"><strong>Air 5IN1</strong></a><span></span></p>\n</td>\n<td style=\"width: 33.7734%; height: 35.5938px;\" valign=\"center\">\n<p align=\"center\" class=\"p\"><a rel=\"noopener\" href=\"https://betafpv.com//products/f4-1s-5a-aio-brushless-flight-controller-elrs-2-4g\" target=\"_blank\"><strong>F4 1S 5A AIO</strong></a><span></span></p>\n</td>\n</tr>\n<tr style=\"height: 35.5938px;\">\n<td style=\"width: 19.4201%; height: 35.5938px;\" valign=\"center\">\n<p class=\"p\"><span>MCU</span><span></span></p>\n</td>\n<td style=\"width: 43.5219%; height: 35.5938px;\" colspan=\"2\" valign=\"center\">\n<p align=\"center\" class=\"p\"><span>STM32G473CEU6</span><span></span></p>\n</td>\n<td style=\"width: 33.7734%; height: 35.5938px;\" valign=\"center\">\n<p align=\"center\" class=\"p\"><span>STM32F411CEU6</span><span></span></p>\n</td>\n</tr>\n<tr style=\"height: 35.5938px;\">\n<td style=\"width: 19.4201%; height: 35.5938px;\" valign=\"center\">\n<p class=\"p\"><span>MCU Frequency</span><span></span></p>\n</td>\n<td style=\"width: 43.5219%; height: 35.5938px;\" colspan=\"2\" valign=\"center\">\n<p align=\"center\" class=\"p\"><span>168MHz</span><span></span></p>\n</td>\n<td style=\"width: 33.7734%; height: 35.5938px;\" valign=\"center\">\n<p align=\"center\" class=\"p\"><span>108MHz</span><span></span></p>\n</td>\n</tr>\n<tr style=\"height: 55.1875px;\">\n<td style=\"width: 19.4201%; height: 55.1875px;\" valign=\"center\">\n<p class=\"p\"><span>Gyro, Max. Sampling Rate</span><span></span></p>\n</td>\n<td style=\"width: 43.5219%; height: 55.1875px;\" colspan=\"2\" valign=\"center\">\n<p align=\"center\" class=\"p\"><span>ICM42688P, 8KHz</span><span></span></p>\n</td>\n<td style=\"width: 33.7734%; height: 55.1875px;\" valign=\"center\">\n<p align=\"center\" class=\"p\"><span>BMI270, 3.2KHz</span><span></span></p>\n</td>\n</tr>\n<tr style=\"height: 55.1875px;\">\n<td style=\"width: 19.4201%; height: 55.1875px;\" valign=\"center\">\n<p class=\"p\"><span>Blackbox Memory</span><span></span></p>\n</td>\n<td style=\"width: 43.5219%; height: 55.1875px;\" colspan=\"2\" valign=\"center\">\n<p align=\"center\" class=\"p\"><span>16M</span><span></span></p>\n</td>\n<td style=\"width: 33.7734%; height: 55.1875px;\" valign=\"center\">\n<p align=\"center\" class=\"p\"><span>8M</span><span></span></p>\n</td>\n</tr>\n<tr style=\"height: 35.5938px;\">\n<td style=\"width: 19.4201%; height: 35.5938px;\" valign=\"center\">\n<p class=\"p\"><span>OSD</span><span></span></p>\n</td>\n<td style=\"width: 77.2953%; height: 35.5938px;\" colspan=\"3\" valign=\"center\">\n<p align=\"center\" class=\"p\"><span>BetaFlight OSD: AT7456E</span><span></span></p>\n</td>\n</tr>\n<tr style=\"height: 35.5938px;\">\n<td style=\"width: 19.4201%; height: 35.5938px;\" valign=\"center\">\n<p class=\"p\"><span>ESC</span><span></span></p>\n</td>\n<td style=\"width: 77.2953%; height: 35.5938px;\" colspan=\"3\" valign=\"center\">\n<p align=\"center\" class=\"p\"><span>1S, 5A</span><span></span></p>\n</td>\n</tr>\n<tr style=\"height: 35.5938px;\">\n<td style=\"width: 19.4201%; height: 35.5938px;\" valign=\"center\">\n<p class=\"p\"><span>RX</span><span></span></p>\n</td>\n<td style=\"width: 77.2953%; height: 35.5938px;\" colspan=\"3\" valign=\"center\">\n<p align=\"center\" class=\"p\"><span>Onboard serial ELRS 2.4GHz</span><span></span></p>\n</td>\n</tr>\n<tr style=\"height: 35.5938px;\">\n<td style=\"width: 19.4201%; height: 35.5938px;\" valign=\"center\">\n<p class=\"p\"><span>VTX</span><span></span></p>\n</td>\n<td style=\"width: 43.5219%; height: 35.5938px;\" colspan=\"2\" valign=\"center\">\n<p align=\"center\" class=\"p\"><span>Onboard 5.8GHz 48 channels, 400mW</span><span></span></p>\n</td>\n<td style=\"width: 33.7734%; height: 35.5938px;\" valign=\"center\">\n<p align=\"center\" class=\"p\"><span>-</span><span></span></p>\n</td>\n</tr>\n<tr style=\"height: 55.1875px;\">\n<td style=\"width: 19.4201%; height: 55.1875px;\" valign=\"top\">\n<p class=\"p\"><span>Circuit Board Thickness</span><span></span></p>\n</td>\n<td style=\"width: 21.7609%; height: 55.1875px;\" valign=\"center\">\n<p align=\"center\" class=\"p\"><span style=\"color: rgb(255, 42, 0);\">1.0mm</span><span></span></p>\n</td>\n<td style=\"width: 21.7609%; height: 55.1875px;\" valign=\"center\">\n<p align=\"center\" class=\"p\"><span style=\"color: rgb(255, 42, 0);\">0.8mm</span><span></span></p>\n</td>\n<td style=\"width: 33.7734%; height: 55.1875px;\" valign=\"center\">\n<p align=\"center\" class=\"p\"><span>0.8mm</span><span></span></p>\n</td>\n</tr>\n<tr style=\"height: 35.5938px;\">\n<td style=\"width: 19.4201%; height: 35.5938px;\" valign=\"top\">\n<p class=\"p\"><span>Motor Connector</span></p>\n</td>\n<td style=\"width: 21.7609%; height: 35.5938px;\" valign=\"center\">\n<p align=\"center\" class=\"p\"><span style=\"color: rgb(255, 42, 0);\">JST1.25</span><span></span></p>\n</td>\n<td style=\"width: 21.7609%; height: 35.5938px;\" valign=\"center\">\n<p align=\"center\" class=\"p\"><span style=\"color: rgb(255, 42, 0);\">Not support</span><span></span></p>\n</td>\n<td style=\"width: 33.7734%; height: 35.5938px;\" valign=\"center\">\n<p align=\"center\" class=\"p\"><span>JST1.25</span><span></span></p>\n</td>\n</tr>\n<tr style=\"height: 55.1875px;\">\n<td style=\"width: 19.4201%; height: 55.1875px;\" valign=\"center\">\n<p class=\"p\"><span>Weight</span><span></span></p>\n</td>\n<td style=\"width: 21.7609%; height: 55.1875px;\" valign=\"center\">\n<p align=\"center\" class=\"p\"><span style=\"color: rgb(255, 42, 0);\">3.92g (VTX antenna excluded)</span><span></span></p>\n</td>\n<td style=\"width: 21.7609%; height: 55.1875px;\" valign=\"center\">\n<p align=\"center\" class=\"p\"><span style=\"color: rgb(255, 42, 0);\">3.60g (VTX antenna excluded)</span><span></span></p>\n</td>\n<td style=\"width: 33.7734%; height: 55.1875px;\" valign=\"center\">\n<p align=\"center\" class=\"p\"><span>4.74g (FC+M03 VTX, VTX antenna excluded)</span><span></span></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<h2>Meteor75 Pro Now Powered By the Upgraded Matrix 1S Brushless FC</h2>\n<p>Starting November 20, the <a rel=\"noopener\" href=\"https://betafpv.com/products/meteor75-pro-brushless-whoop-quadcopter\" target=\"_blank\">Meteor75 Pro</a> will be upgraded with the Matrix 1S Brushless FC. This enhancement introduces a durable 1mm-thick board, a high-speed G473 processor with a 55% boost in computing power, and an integrated 5.8GHz 400mW VTX. Built-in motor connectors simplify installation, making it more beginner-friendly. These advancements deliver improved durability and performance while ensuring the Meteor75 Pro excels in both indoor and outdoor FPV racing and freestyle flying.</p>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1778/6615/files/3d702acb2237d1ba1052b2bc9845bdf1.jpg?v=1731669600\" alt=\"\"></p>\n<h2>Serial ELRS 2.4G RX</h2>\n<p>Serial ELRS 2.4G RX uses the Crossfire serial protocol (CRSF protocol) to communicate between the receiver and the flight controller board. So the Serial ELRS 2.4G RX is available to support upgrading to ELRS V3.0 with no need to flash Betaflight flight controller firmware. Enter binding status by power on/off three times.</p>\n<ul>\n<li>Plugin and unplug the flight controller three times;</li>\n<li>Make sure the RX LED is doing a quick double blink, which indicates the receiver is in bind mode;</li>\n<li>Make sure the RF TX module or radio transmitter enters binding status, which sends out a binding pulse;</li>\n<li>If the receiver has a solid light, it's bound.</li>\n</ul>\n<p>The Serial ELRS 2.4G RX can be updated via Wi-Fi or Betaflight serial passthrough. Here is the way to update the Serial ELRS 2.4G RX firmware through passthrough.</p>\n<ul>\n<li>Plug in your FC to your computer, connect to ExpressLRS Configurator instead of Betaflight Configurator;</li>\n<li>Choose target \"BETAFPV 2.4GHz AIO RX\";</li>\n<li>Flash using the Betaflight <span>Passthrough option in ExpressLRS Configurator.</span>\n</li>\n</ul>\n<p><span style=\"color: #b3b3b3;\"><em><a href=\"https://support.betafpv.com/hc/en-us/articles/4404231679129-How-to-Flash-Firmware-of-ELRS-RX-TX\" style=\"color: #b3b3b3;\">How to flash firmware via Wi-Fi here.</a></em></span></p>\n<h2>Betaflight Firmware and CLI</h2>\n<p><span style=\"color: rgb(64, 64, 64);\"><span data-path=\"2,1\">Betaflight official developers recommend using version 42688 of the gyroscope, and many issues with ICM42688 have been fixed in version 4.5.0. Please learn more from version 4.5.0.</span></span></p>\n<ul>\n<li>FC firmware: Betaflight_4.5.0_BETAFPVG473, <a href=\"https://support.betafpv.com/hc/en-us/articles/40131112129817-Firmware-for-Matrix-1S-Brushless-Flight-Controller\" rel=\"noopener\" target=\"_blank\">Download the firmware and CLI dump file</a>\n</li>\n<li>\n<span>Reference link: </span><a href=\"https://github.com/betaflight/betaflight/releases/tag/4.5.0\"><span data-path=\"2,1\">https://github.com/betaflight/betaflight/releases/tag/4.5.0</span></a>\n</li>\n</ul>\n<p><span style=\"color: rgb(255, 42, 0);\"><em>Note: Starting Jan 5, 2026, we will be shipping FC equipped with the BMI270 gyroscope. Before flashing firmware, please verify your gyroscope version to ensure compatibility.</em></span></p>\n<h2>Bluejay ESC Firmware</h2>\n<p><span>With BB51 ESC solution, Matrix 1S Brushless Flight Controller is based on A_X_5_96KHz_V0.19.hex for BB51 Bluejay hardware, it supports D-shot300, D-shot600, and even RPM filtering in Betaflight, offers 24KHz, 48KHz, and 96KHz fixed PWM frequency for options, and custom start-up melodies. </span></p>\n<p><span><a href=\"https://github.com/bird-sanctuary/bluejay\" target=\"_blank\"><img src=\"https://cdn.shopifycdn.net/s/files/1/1778/6615/files/1_f1e8c5ed-49a0-488e-8ba6-74c3ff08aa56_160x160.png?v=1668162831\" alt=\"\"></a></span></p>\n<p><span><strong>DO NOT flash the firmware with a shorter interval, </strong>otherwise, there will be a certain chance of stalling and burning the flight controller.<br></span></p>\n<ul>\n<li>ESC-Configurator:<span> </span><a href=\"https://preview.esc-configurator.com/\">https://preview.esc-configurator.com/</a>\n</li>\n<li><a href=\"https://github.com/4712/BLHeliSuite/releases/tag/16714903\"><span>Download BLHeliSuite16714903</span></a></li>\n<li><a href=\"https://github.com/bird-sanctuary/bluejay/releases\"><span>Download the Bluejay ESC firmware. Please choose A_X_5_96KHz_V0.19.hex</span></a></li>\n</ul>\n<p><span><img src=\"https://cdn.shopify.com/s/files/1/1778/6615/files/1_25da6bbc-08db-453a-b88a-6661e8912804.jpg?v=1719281251\" alt=\"\"></span></p>\n<h2>How to Use Serial Ports, Intergrated RX and VTX</h2>\n<p>Please note that by default, UART2 is connected to the VTX and UART3 is connected to the RX. To release UART3, please remove the resistor. Additionally, this FC reserves 2 complete full-featured serial ports that can be used for external CRSF/SBUS receivers, GPS, HD VTX, or other serial devices. You can refer to the below pictures. </p>\n<div style=\"text-align: start;\"><img src=\"https://cdn.shopify.com/s/files/1/1778/6615/files/f4b3da9554de4e60ffd11b8edcb16ff8_333b818f-86b5-4b7b-8e6c-009524674aab_1024x1024.jpg?v=1731489283\" style=\"margin-bottom: 16px; float: none;\"></div>\n<ul></ul>\n<h2>Recommended Parts</h2>\n<ul>\n<li><span>Drones:  <a href=\"https://betafpv.com/products/air65-brushless-whoop-quadcopter\">Meteor65 Pro</a>, <a href=\"https://betafpv.com/products/air75-brushless-whoop-quadcopter\">Meteor75 Pro</a></span></li>\n<li><span>Frames: <a href=\"https://betafpv.com/collections/frame/products/meteor65-pro-frame-kit\">Meteor65 Pro</a>, <a href=\"https://betafpv.com/collections/frame/products/meteor75-pro-brushless-whoop-frame\">Meteor75 Pro</a></span></li>\n<li><span>Motors: <a href=\"https://betafpv.com/collections/motors/products/0702-brushless-motors\">0702/0702SE</a>, <a href=\"https://betafpv.com/collections/motors/products/0802se-22000kv-brushless-motors\">0802/0802SE</a>, <a href=\"https://betafpv.com/collections/motors/products/1102-13500kv-brushless-motors\">1102</a></span></li>\n</ul>\n<h2>Package</h2>\n<ul>\n<li><span>1 * Matrix 1S Brushless Flight Controller</span></li>\n<li><span>1 * Type-C to SH1.0 Adapter</span></li>\n<li><span>1 * SH1.0-4Pin Adapter Cable</span></li>\n<li><span>4 * M1.2*4 Self-tapping Screws</span></li>\n<li><span>4 * M1.4*4 Self-tapping Screws</span></li>\n<li><span>4 * Shock Absorbing Balls</span></li>\n</ul>\n<div style=\"text-align: start;\"><img style=\"margin-bottom: 16px; float: none;\" src=\"https://cdn.shopify.com/s/files/1/1778/6615/files/3f89305fb1dabad87b9b93324e3c25cd_31853de8-d52c-44dd-9693-1afb4d2b5936_600x600.jpg?v=1732095849\"></div>",
+  "vendor": "BETAFPV",
+  "product_type": "Brushless FC",
+  "created_at": "2024-10-30T22:50:49-11:00",
+  "handle": "matrix-1s-brushless-flight-controller",
+  "updated_at": "2026-08-13T23:29:11-11:00",
+  "published_at": "2024-11-19T21:08:00-11:00",
+  "template_suffix": "",
+  "published_scope": "web",
+  "tags": "1s brushless fc, brushless fc, fc, recommendation",
+  "variants": [
+    {
+      "id": 42995716980870,
+      "product_id": 7286805463174,
+      "title": "5IN1 (BMI270)",
+      "price": "49.99",
+      "sku": "01040018_5",
+      "position": 1,
+      "compare_at_price": "0.00",
+      "fulfillment_service": "manual",
+      "inventory_management": "shopify",
+      "option1": "5IN1 (BMI270)",
+      "option2": null,
+      "option3": null,
+      "created_at": "2025-12-17T15:52:25-11:00",
+      "updated_at": "2026-08-13T23:29:11-11:00",
+      "taxable": false,
+      "barcode": null,
+      "grams": 4,
+      "image_id": null,
+      "weight": 3.99,
+      "weight_unit": "g",
+      "requires_shipping": true,
+      "quantity_rule": {
+        "min": 1,
+        "max": null,
+        "increment": 1
+      },
+      "price_currency": "USD",
+      "compare_at_price_currency": "USD",
+      "quantity_price_breaks": []
+    },
+    {
+      "id": 41442260025478,
+      "product_id": 7286805463174,
+      "title": "5IN1",
+      "price": "49.99",
+      "sku": "01040018_1",
+      "position": 2,
+      "compare_at_price": "0.00",
+      "fulfillment_service": "manual",
+      "inventory_management": "shopify",
+      "option1": "5IN1",
+      "option2": null,
+      "option3": null,
+      "created_at": "2024-11-17T19:30:55-11:00",
+      "updated_at": "2026-08-13T23:29:11-11:00",
+      "taxable": false,
+      "barcode": null,
+      "grams": 4,
+      "image_id": null,
+      "weight": 3.99,
+      "weight_unit": "g",
+      "requires_shipping": true,
+      "quantity_rule": {
+        "min": 1,
+        "max": null,
+        "increment": 1
+      },
+      "price_currency": "USD",
+      "compare_at_price_currency": "USD",
+      "quantity_price_breaks": []
+    }
+  ],
+  "options": [
+    {
+      "id": 9395064569990,
+      "product_id": 7286805463174,
+      "name": "Version",
+      "position": 1,
+      "values": [
+        "5IN1 (BMI270)",
+        "5IN1"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": 34301643194502,
+      "product_id": 7286805463174,
+      "position": 1,
+      "created_at": "2024-11-12T19:17:34-11:00",
+      "updated_at": "2024-11-12T19:17:36-11:00",
+      "alt": null,
+      "width": 1600,
+      "height": 1600,
+      "src": "https://cdn.shopify.com/s/files/1/1778/6615/files/c2831abc7349d543adb0b881462785d1_2cf5cc0d-a3ff-471e-b3b7-7c5cda7285f6.jpg?v=1731478656",
+      "variant_ids": []
+    },
+    {
+      "id": 34301658628230,
+      "product_id": 7286805463174,
+      "position": 2,
+      "created_at": "2024-11-12T19:19:07-11:00",
+      "updated_at": "2024-11-12T19:19:08-11:00",
+      "alt": null,
+      "width": 1600,
+      "height": 1600,
+      "src": "https://cdn.shopify.com/s/files/1/1778/6615/files/567042f830a15bcefdc659371169a57e_5aba3520-de98-408a-8bf5-ee164910427b.jpg?v=1731478748",
+      "variant_ids": []
+    },
+    {
+      "id": 34332245950598,
+      "product_id": 7286805463174,
+      "position": 3,
+      "created_at": "2024-11-17T21:21:07-11:00",
+      "updated_at": "2024-11-17T21:21:08-11:00",
+      "alt": null,
+      "width": 1600,
+      "height": 1600,
+      "src": "https://cdn.shopify.com/s/files/1/1778/6615/files/f1d3f2e934a7f7df4970562b60a46e3c_9fa1d38b-8e26-443f-acb6-84c7f5834e31.jpg?v=1731918068",
+      "variant_ids": []
+    }
+  ],
+  "image": {
+    "id": 34301643194502,
+    "product_id": 7286805463174,
+    "position": 1,
+    "created_at": "2024-11-12T19:17:34-11:00",
+    "updated_at": "2024-11-12T19:17:36-11:00",
+    "alt": null,
+    "width": 1600,
+    "height": 1600,
+    "src": "https://cdn.shopify.com/s/files/1/1778/6615/files/c2831abc7349d543adb0b881462785d1_2cf5cc0d-a3ff-471e-b3b7-7c5cda7285f6.jpg?v=1731478656",
+    "variant_ids": []
+  }
+}

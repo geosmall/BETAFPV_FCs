@@ -1,0 +1,216 @@
+{
+  "id": 7306921410694,
+  "title": "Matrix 1S Brushless Flight Controller (3IN1/4IN1)",
+  "body_html": "<div style=\"text-align: start;\">\n<p>The Matrix 1S Brushless Flight Controller redefines 1S whoop performance with two purpose-driven architectures: the 3IN1 for DJI O4 digital dominance (integrating FC, ESC, and ELRS 2.4G RX while omitting analog OSD), and the 4IN1 for analog mastery (adding built-in OSD + solder pads for external VTXs). Both feature the iconic cross-design architecture, newly developed BEC, 18A peak ESCs, and the STM32G473 MCU for 55% faster processing—delivering effortless setup, pro-tier control, and uncompromised flight dynamics that rewrite 1S standards.</p>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1778/6615/files/Matrix_1S_FC_4IN1_3IN1_-_Dual_DNA._One_Legend.jpg?v=1750673326\" alt=\"Matrix 1S FC 4IN1 &amp; 3IN1 - Dual DNA. One Legend\"></p>\n</div>\n<div style=\"text-align: left;\">\n<h2>Attention</h2>\n<ul>\n<li><span style=\"color: rgb(255, 42, 0);\">Crafted for newcomers and recreational pilots, the Matrix FC features a robust 1mm board for enhanced durability, a solder-free design for easy installation, and a beginner-friendly experience. For advanced pilots, the ultra-thin and lightweight <a href=\"https://betafpv.com/products/air-brushless-flight-controller\" rel=\"noopener\" target=\"_blank\">Air FC</a> is the definitive choice, engineered with race-winning agility to push the boundaries of FPV flight performance.</span></li>\n<li>Flight controllers are covered for manufacturer defects. Issues arising from user errors, physical crash damage, damage during installation or dismantling, modifications, power surges, electrical fires, or water exposure are not covered.</li>\n</ul>\n<ul></ul>\n</div>\n<h2>Bullet Points</h2>\n<ul>\n<li>Dual DNA: 3IN1 (FC, ESC, and ELRS 2.4G RX) for DJI O4 digital dominance (omits analog OSD), 4IN1 for analog mastery with OSD.<br>\n</li>\n<li>STM32G473 MCU: 55% faster processing than F411 for responsive tuning.</li>\n<li>Stable Video Transmission: Features a newly developed BEC to ensure consistent power delivery for seamless HD performance.</li>\n<li>Enhanced Overcurrent Capacity: Supports 12A continuous current and 18A peak ESC, providing robust performance for demanding flights.</li>\n<li>Reliable Precision: Includes an independent 3.3V LDO design to deliver stable, interference-free power directly to the IMU for accurate control.</li>\n<li>Whoop-ready Installation: The 3IN1 is equipped with motor plugs and a SH1.0-6Pin HD digital port for a hassle-free installation and maintenance experience, while the 4IN1 has external VTX soldering pads for protocol flexibility.</li>\n</ul>\n<h2>Specifications</h2>\n<h3>FC</h3>\n<ul>\n<li>MCU: STM32G473CEU6 (168MHz)</li>\n<li>Gyro: ICM42688P</li>\n<li>Blackbox Memory: 16MB</li>\n<li>Sensor: Voltage &amp; current</li>\n<li>BEC: 5V/3A</li>\n<li>UART (3IN1 Version): UART 1 (RX Only/SBUS), UART 2 (Free), UART 3 (For RX), UART 4 (Free/HD MSP)</li>\n<li>UART (4IN1 Version): UART 1 (For VTX), UART 2 (Free), UART 3 (For RX), UART 4 (NONE)</li>\n<li>ESC: 12A continuous</li>\n<li>RX: Serial ELRS 2.4GHz (V3.4.3)</li>\n<li>FC Firmware: <span style=\"color: rgb(255, 42, 0);\">Betaflight_4.5.1_BETAFPVG473 (3IN1 version), Betaflight_4.5.2_BETAFPVG473_V2 (4IN1 version)</span>\n</li>\n<li>USB Port: SH1.0-4Pin</li>\n<li>OSD: AT7456E (4IN1 version only)</li>\n<li>HD Digital VTX Port: SH1.0-6Pin (3IN1 version only)</li>\n<li>Motor Plug: JST1.25-3Pin</li>\n<li>Battery Connector: BT2.0</li>\n<li>Mounting Size: 25.5mm x 25.5mm</li>\n<li>Weight (3IN1 Version): 3.8±0.1g (battery connector excluded), 4.2±0.1g (battery connector included)</li>\n<li>Weight (4IN1 Version): 3.6±0.1g (battery connector excluded), 4.6±0.1g (battery connector included)</li>\n</ul>\n<h3>ESC</h3>\n<ul>\n<li>Power Input: 1S only </li>\n<li>Current: 12A continuous, 18A peak</li>\n<li>ESC Firmware: A_X_5_96_v0.19.2.hex for BB51 Bluejay firmware </li>\n<li>Digital Signal Protocol: DSHOT300, DSHOT600</li>\n</ul>\n<table border=\"0\" cellspacing=\"0\">\n<tbody>\n<tr>\n<td width=\"118\" valign=\"center\">\n<p class=\"MsoNormal\"> </p>\n</td>\n<td width=\"148\" valign=\"center\">\n<p class=\"p\" align=\"center\"><b><span>Matrix 1S 3IN1</span></b><b><span></span></b></p>\n</td>\n<td width=\"143\" valign=\"center\">\n<p class=\"p\" align=\"center\"><b><span>Matrix 1S 4IN1</span></b><b><span></span></b></p>\n</td>\n<td width=\"158\" valign=\"center\">\n<p class=\"p\" align=\"center\"><a rel=\"noopener\" href=\"https://betafpv.com/products/f4-1s-5a-aio-brushless-flight-controller-elrs-2-4g\" target=\"_blank\"><b><span>F4 1S 5A AIO</span></b></a><b><span></span></b></p>\n</td>\n</tr>\n<tr>\n<td width=\"118\" valign=\"center\">\n<p class=\"p\"><span>MCU</span><span></span></p>\n</td>\n<td width=\"292\" valign=\"center\" colspan=\"2\">\n<p class=\"p\" align=\"center\"><span>STM32G473CEU6</span><span></span></p>\n</td>\n<td width=\"158\" valign=\"center\">\n<p class=\"p\" align=\"center\"><span>STM32F411CEU6</span><span></span></p>\n</td>\n</tr>\n<tr>\n<td width=\"118\" valign=\"center\">\n<p class=\"p\"><span>MCU frequency</span></p>\n</td>\n<td width=\"292\" valign=\"center\" colspan=\"2\">\n<p class=\"p\" align=\"center\"><span>168MHz</span><span></span></p>\n</td>\n<td width=\"158\" valign=\"center\">\n<p class=\"p\" align=\"center\"><span>108MHz</span><span></span></p>\n</td>\n</tr>\n<tr>\n<td width=\"118\" valign=\"center\">\n<p class=\"p\"><span>Gyro, max. sampling rate</span><span></span></p>\n</td>\n<td width=\"292\" valign=\"center\" colspan=\"2\">\n<p class=\"p\" align=\"center\"><span>ICM42688P, 8KHz</span><span></span></p>\n</td>\n<td width=\"158\" valign=\"center\">\n<p class=\"p\" align=\"center\"><span>BMI270, 3.2KHz</span><span></span></p>\n</td>\n</tr>\n<tr>\n<td width=\"118\" valign=\"center\">\n<p class=\"p\"><span>ESC</span><span></span></p>\n</td>\n<td width=\"292\" valign=\"center\" colspan=\"2\">\n<p class=\"p\" align=\"center\"><span>12A continuous</span><span></span></p>\n</td>\n<td width=\"158\" valign=\"center\">\n<p class=\"p\" align=\"center\"><span>1S, 5A</span><span></span></p>\n</td>\n</tr>\n<tr>\n<td width=\"118\" valign=\"center\">\n<p class=\"p\"><span>Blackbox</span><span></span></p>\n<p class=\"p\"><span>memory</span><span></span></p>\n</td>\n<td width=\"292\" valign=\"center\" colspan=\"2\">\n<p class=\"p\" align=\"center\"><span>16M</span><span></span></p>\n</td>\n<td width=\"158\" valign=\"center\">\n<p class=\"p\" align=\"center\"><span>8M</span><span></span></p>\n</td>\n</tr>\n<tr>\n<td width=\"118\" valign=\"center\">\n<p class=\"p\"><span>OSD</span><span></span></p>\n</td>\n<td width=\"148\" valign=\"center\">\n<p class=\"p\" align=\"center\"><span>-</span><span></span></p>\n</td>\n<td width=\"302\" valign=\"center\" colspan=\"2\">\n<p class=\"p\" align=\"center\"><span>Betaflight OSD: AT7456E</span><span></span></p>\n</td>\n</tr>\n<tr>\n<td width=\"118\" valign=\"center\">\n<p class=\"p\"><span>RX</span><span></span></p>\n</td>\n<td width=\"451\" valign=\"center\" colspan=\"3\">\n<p class=\"p\" align=\"center\"><span>Onboard Serial ELRS 2.4GHz</span><span></span></p>\n</td>\n</tr>\n<tr>\n<td width=\"118\" valign=\"top\">\n<p class=\"p\"><span>Motor p</span><span>lug</span><span></span></p>\n</td>\n<td width=\"451\" valign=\"center\" colspan=\"3\">\n<p class=\"p\" align=\"center\"><span>JST1.25</span><span></span></p>\n</td>\n</tr>\n<tr>\n<td width=\"118\" valign=\"center\">\n<p class=\"p\"><span>Weight</span><span></span></p>\n</td>\n<td width=\"148\" valign=\"center\">\n<p class=\"p\" align=\"center\"><span>3.8g</span><span></span></p>\n</td>\n<td width=\"143\" valign=\"center\">\n<p class=\"p\" align=\"center\"><span>3.6g</span><span></span></p>\n</td>\n<td width=\"158\" valign=\"center\">\n<p class=\"p\" align=\"center\"><span>3.64g</span><span></span></p>\n</td>\n</tr>\n</tbody>\n</table>\n<h2><img src=\"https://cdn.shopify.com/s/files/1/1778/6615/files/Matrix_1S_FC_4IN1_3IN1_-_STM32G473_MCU.jpg?v=1750673386\" alt=\"Matrix 1S FC 4IN1 &amp; 3IN1 - STM32G473 MCU\"></h2>\n<h2>Diagram</h2>\n<p>Matrix 1S Brushless Flight Controller (3IN1):</p>\n<div style=\"text-align: left;\"><img style=\"margin-bottom: 16px; float: none;\" alt=\"Matrix 1S 3IN1 HD FC top front\" src=\"https://cdn.shopify.com/s/files/1/1778/6615/files/Matrix_1S_3IN1_HD_FC_top_front_600x600.jpg?v=1750833104\"></div>\n<div style=\"text-align: left;\"><img style=\"margin-bottom: 16px; float: none;\" alt=\"Matrix 1S 3IN1 HD FC\" src=\"https://cdn.shopify.com/s/files/1/1778/6615/files/Matrix_1S_3IN1_HD_FC_bottom_front_600x600.jpg?v=1750820016\"></div>\n<div style=\"text-align: left;\">Matrix 1S Brushless Flight Controller (4IN1):</div>\n<div style=\"text-align: left;\"><img style=\"margin-bottom: 16px; float: none;\" alt=\"Matrix 1S 4IN1 FC\" src=\"https://cdn.shopify.com/s/files/1/1778/6615/files/Matrix_1S_4IN1_FC_top_front_600x600.jpg?v=1750819988\"></div>\n<div style=\"text-align: left;\"><img style=\"margin-bottom: 16px; float: none;\" alt=\"Matrix 1S 4IN1 FC\" src=\"https://cdn.shopify.com/s/files/1/1778/6615/files/Matrix_1S_4IN1_FC_bottom_front_600x600.jpg?v=1750819916\"></div>\n<h2>Ultra-Resilient BEC</h2>\n<p>1S whoops often fly at voltages as low as 3.3V and digital image transmission requires higher current, placing significant demands on the BEC. To meet these challenges, an advanced BEC has been developed, capable of delivering over 3A of current at ultra-low voltages down to 2.85V. This ensures stable image transmission even in critical situations. While flying to such low voltages isn't recommended, this innovation provides pilots with a greater chance of safely recovering from unexpected situations.</p>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1778/6615/files/BEC_for_Matrix_1S_3IN1_HD_FC.jpg?v=1735545117\" alt=\"\"></p>\n<h2><span>Enhanced Continuous 12A ESC</span></h2>\n<p>Whether powering digital HD systems or high-performance analog builds, 1S whoops demand ESCs that won’t flinch. Our engineers exceeded expectations, delivering a robust ESC with 12A continuous output and 18A peak capacity on the iconic \"cross\" flight controller. This ensures optimal thrust-to-weight ratio, reliable performance, and worry-free high-definition flights.</p>\n<h2>Individual Power Supply for IMU</h2>\n<p>Unlike traditional shared power supply designs, the Matrix 1S FC features an independent 3.3V LDO power supply exclusively for the IMU. This innovation eliminates interference, creating a cleaner and more stable environment that enhances flight precision, improves sensitivity, and reduces the risk of performance issues—ensuring unmatched stability during every flight.</p>\n<h2>Whoop-ready Installation</h2>\n<p>Equipped with convenient motor plugs and a SH1.0-6Pin HD digital port, the 3IN1 version allows for a completely solder-free installation and maintenance process. Spend less time building and more time flying HD whoops.</p>\n<div style=\"text-align: start;\"><img style=\"margin-bottom: 16px; float: none;\" alt=\"Matrix 1S 3IN1 HD FC motor plug and HD digital port\" src=\"https://cdn.shopify.com/s/files/1/1778/6615/files/Matrix_1S_3IN1_HD_FC_motor_plug_and_HD_digital_port.jpg?v=1750832823\"></div>\n<p>The 4IN1 version retains soldering pads for external analog VTX, giving you protocol freedom while reducing voltage ripple interference for cleaner video signals.</p>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1778/6615/files/Matrix_1S_4IN1_FC_soldering_pads_for_external_analog_VTX.jpg?v=1752560267\" alt=\"Matrix 1S 4IN1 FC soldering pads for external analog VTX\"></p>\n<h2>Serial ELRS 2.4G RX</h2>\n<p>Serial ELRS 2.4G RX uses the Crossfire serial protocol (CRSF protocol) to communicate between the receiver and the flight controller board. So the Serial ELRS 2.4G RX is available to support upgrading to ELRS V3.0 with no need to flash Betaflight flight controller firmware. Enter binding status by power on/off three times.</p>\n<ul>\n<li>Plugin and unplug the flight controller three times;</li>\n<li>Make sure the RX LED is doing a quick double blink, which indicates the receiver is in bind mode;</li>\n<li>Make sure the RF TX module or radio transmitter enters binding status, which sends out a binding pulse;</li>\n<li>If the receiver has a solid light, it's bound.</li>\n</ul>\n<p>The Serial ELRS 2.4G RX can be updated via Wi-Fi or Betaflight serial passthrough. Here is the way to update the Serial ELRS 2.4G RX firmware through passthrough.</p>\n<ul>\n<li>Plug in your FC to your computer, connect to ExpressLRS Configurator instead of Betaflight Configurator;</li>\n<li>Choose target \"BETAFPV 2.4GHz AIO RX\";</li>\n<li>Flash using the B<span>etaflight</span><span>Passthrough option in ExpressLRS Configurator.</span>\n</li>\n</ul>\n<p><span style=\"color: #b3b3b3;\"><em><a style=\"color: #b3b3b3;\" href=\"https://support.betafpv.com/hc/en-us/articles/4404231679129-How-to-Flash-Firmware-of-ELRS-RX-TX\">How to flash firmware via Wi-Fi here.</a></em></span></p>\n<h2>Betaflight Firmware and CLI</h2>\n<p>Betaflight official developers recommend using version 42688 of the gyroscope, and many issues with ICM42688 have been fixed in version 4.5.0. Please learn more from version 4.5.1 and 4.5.2.</p>\n<p>Matrix 1S Brushless Flight Controller (3IN1):</p>\n<ul>\n<li>FC firmware: Betaflight_4.5.1_BETAFPVG473, download the <a href=\"https://support.betafpv.com/hc/en-us/articles/41037090524697-Firmware-for-Matrix-1S-Brushless-Flight-Controller-3IN1-HD\" rel=\"noopener\" target=\"_blank\"><strong>firmware and CLI dump file</strong></a>\n</li>\n<li>Reference link: <a href=\"https://github.com/betaflight/betaflight/releases/tag/4.5.1\" rel=\"noopener\" target=\"_blank\">https://github.com/betaflight/betaflight/releases/tag/4.5.1</a>\n</li>\n</ul>\n<p>Matrix 1S Brushless Flight Controller (4IN1):</p>\n<ul>\n<li>FC firmware: Betaflight_4.5.2_BETAFPVG473_V2, download the <a href=\"https://support.betafpv.com/hc/en-us/articles/48215862783769-Firmware-for-Matrix-1S-Brushless-Flight-Controller-4IN1\" rel=\"noopener\" target=\"_blank\"><strong>firmware and CLI dump file</strong></a>\n</li>\n<li>Reference link: <a href=\"https://github.com/betaflight/betaflight/releases/tag/4.5.2\" rel=\"noopener\" target=\"_blank\">https://github.com/betaflight/betaflight/releases/tag/4.5.2</a>\n</li>\n</ul>\n<p><em><span style=\"color: rgb(255, 42, 0);\">IMPORTANT: </span></em></p>\n<ul>\n<li><em><span style=\"color: rgb(255, 42, 0);\">Starting Jan 5, 2026, we will be shipping 3IN1 FC equipped with the BMI270 gyroscope. Before flashing firmware, please verify your gyroscope version to ensure compatibility.</span></em></li>\n<li><em style=\"font-size: 0.875rem;\">The Matrix 1S 3IN1 and 4IN1 require different firmware - always verify your version before flashing to avoid performance issues.</em></li>\n</ul>\n<h2>Bluejay ESC Firmware</h2>\n<p><span>With BB51 ESC solution, Matrix 1S 3IN1 HD Brushless Flight Controller is based on A_X_5_96_v0.19.2.hex for BB51 Bluejay firmware, it supports DSHOT300, DSHOT600, and even RPM filtering in Betaflight, offers 24KHz, 48KHz, and 96KHz fixed PWM frequency for options, and custom start-up melodies. </span></p>\n<p><span><a href=\"https://github.com/bird-sanctuary/bluejay\" target=\"_blank\"><img alt=\"\" src=\"https://cdn.shopifycdn.net/s/files/1/1778/6615/files/1_f1e8c5ed-49a0-488e-8ba6-74c3ff08aa56_160x160.png?v=1668162831\"></a></span></p>\n<p><span><strong>DO NOT flash the firmware with a shorter interval, </strong>otherwise, there will be a certain chance of stalling and burning the flight controller.<br></span></p>\n<ul>\n<li>ESC-Configurator:<span> </span><a href=\"https://preview.esc-configurator.com/\">https://preview.esc-configurator.com/</a>\n</li>\n<li>Download <a href=\"https://github.com/4712/BLHeliSuite/releases/tag/16714903\" rel=\"noopener\" target=\"_blank\">BLHeliSuite16714903</a>\n</li>\n<li>Download the <a href=\"https://github.com/bird-sanctuary/bluejay/releases\" rel=\"noopener\" target=\"_blank\">Bluejay ESC firmware,</a> please choose A_X_5_96_v0.19.2.hex.</li>\n</ul>\n<p><span><img><img src=\"https://cdn.shopify.com/s/files/1/1778/6615/files/bluejay_v0.19.2.png?v=1734950472\" alt=\"\"></span></p>\n<h2>How to Use Serial Ports, Intergrated RX and VTX</h2>\n<p>UART3 is connected to the built-in serial ELRS RX. To release UART3, please remove the resistor. Additionally, Matrix 1S FC reserves 2 complete full-featured serial ports that can be used for external serial receivers, GPS, HD VTX, or other serial devices. Refer to the pictures below.</p>\n<p>Matrix 1S Brushless Flight Controller (3IN1):</p>\n<div style=\"text-align: start;\"><img style=\"margin-bottom: 16px; float: none;\" src=\"https://cdn.shopify.com/s/files/1/1778/6615/files/Matrix_1S_3IN1_HD_FC_connection_guide.jpg?v=1735895822\"></div>\n<div style=\"text-align: start;\">Matrix 1S Brushless Flight Controller (4IN1):</div>\n<div style=\"text-align: start;\"><img src=\"https://cdn.shopify.com/s/files/1/1778/6615/files/Matrix_1S_4IN1_FC_connection_guide.jpg?v=1750318602\" alt=\"Matrix 1S 4IN1 FC connection guide\"></div>\n<ul></ul>\n<h2>Recommended Parts</h2>\n<p><span>Matrix 1S Brushless Flight Controller (3IN1)</span></p>\n<ul>\n<li>Drones: <a href=\"https://betafpv.com/products/meteor75-pro-ii-o4-brushless-whoop-quadcopter\">Meteor75 Pro II O4</a>, <a href=\"https://betafpv.com/products/meteor65-pro-ii-o4-brushless-whoop-quadcopter\">Meteor65 Pro II O4</a>, <a rel=\"noopener\" href=\"https://betafpv.com/products/meteor65-pro-o4-brushless-whoop-quadcopter\" target=\"_blank\">Meteor65 Pro O4</a>, <a rel=\"noopener\" href=\"https://betafpv.com/products/meteor75-pro-o4-brushless-whoop-quadcopter\" target=\"_blank\">Meteor75 Pro O4</a>\n</li>\n<li><span>Frames: <a href=\"https://betafpv.com/products/meteor75-pro-ii-brushless-whoop-frame\">Meteor75 Pro II Frame</a>, <a href=\"https://betafpv.com/products/meteor65-pro-ii-brushless-whoop-frame\">Meteor65 Pro II Frame</a>, <a rel=\"noopener\" href=\"https://betafpv.com/products/meteor75-pro-brushless-whoop-frame\" target=\"_blank\">Meteor75 Pro Frame</a>, <a rel=\"noopener\" href=\"https://betafpv.com/products/meteor65-pro-frame-kit\" target=\"_blank\">Meteor65 Pro Frame</a></span></li>\n<li><span>Motors: <a href=\"https://betafpv.com/products/1102-brushless-motors-2026\">1102 Motors (2026)</a>, <a rel=\"noopener\" href=\"https://betafpv.com/products/0802se-22000kv-brushless-motors\" target=\"_blank\">0802SE Motor</a>, <a rel=\"noopener\" href=\"https://betafpv.com/products/1102-13500kv-brushless-motors\" target=\"_blank\">1102 Motor</a></span></li>\n<li>Propellers: <a rel=\"noopener\" href=\"https://betafpv.com/products/gemfan-35mm-3-blade-propellers-1-0mm-shaft-4pcs\" target=\"_blank\">GF 35mm 3-Blade</a>, <a rel=\"noopener\" href=\"https://betafpv.com/products/gemfan-45mm-2-blade-3-blade-propellers-1-5mm-shaft-4pcs\" target=\"_blank\">GF 45mm 3-Blade</a>\n</li>\n</ul>\n<p><span>Matrix 1S Brushless Flight Controller (4IN1)</span></p>\n<ul>\n<li>Drones: <a href=\"https://betafpv.com/products/meteor65-pro-brushless-whoop-quadcopter-1s\" rel=\"noopener\" target=\"_blank\">Meteor65 Pro</a>, <a href=\"https://betafpv.com/products/meteor75-pro-brushless-whoop-quadcopter\" rel=\"noopener\" target=\"_blank\">Meteor75 Pro</a>, <a href=\"https://betafpv.com/products/air65-brushless-whoop-quadcopter\" rel=\"noopener\" target=\"_blank\">Air65</a>, <a href=\"https://betafpv.com/products/air75-brushless-whoop-quadcopter\" rel=\"noopener\" target=\"_blank\">Air75</a>\n</li>\n<li><span>Frames: <a rel=\"noopener\" href=\"https://betafpv.com/products/meteor65-pro-frame-kit\" target=\"_blank\">Meteor65 Pro Frame</a>, <a rel=\"noopener\" href=\"https://betafpv.com/products/meteor75-pro-brushless-whoop-frame\" target=\"_blank\">Meteor75 Pro Frame</a>, <a href=\"https://betafpv.com/products/air65-brushless-whoop-frame\" rel=\"noopener\" target=\"_blank\">Air65 Frame</a>, <a href=\"https://betafpv.com/products/air75-brushless-whoop-frame\" rel=\"noopener\" target=\"_blank\">Air75 Frame</a></span></li>\n<li><span>Motors: <a rel=\"noopener\" href=\"https://betafpv.com/products/0702-ii-brushless-motors\" target=\"_blank\">0702 II Motor</a>, <a rel=\"noopener\" href=\"https://betafpv.com/products/0802se-22000kv-brushless-motors\" target=\"_blank\">0802SE Motor</a>, <a rel=\"noopener\" href=\"https://betafpv.com/products/1102-13500kv-brushless-motors\" target=\"_blank\">1102 Motor</a></span></li>\n<li>Propellers: <a href=\"https://betafpv.com/products/gemfan-1219s-3-blade-propellers-1-0mm-shaft\" rel=\"noopener\" target=\"_blank\">GF 1219S 3-Blade</a>, <a rel=\"noopener\" href=\"https://betafpv.com/products/hq-31mm-ultralight-3-blade-propellers-1-0mm-shaft\" target=\"_blank\">HQ 31mm Ultralight 3-Blade</a>, <a href=\"https://betafpv.com/products/gemfan-35mm-3-blade-propellers-1-0mm-shaft-4pcs\" rel=\"noopener\" target=\"_blank\">GF 35mm 3-Blade</a>, <a href=\"https://betafpv.com/products/gemfan-45mm-2-blade-3-blade-propellers-1-5mm-shaft-4pcs\" rel=\"noopener\" target=\"_blank\">GF 45mm 3-Blade</a>\n</li>\n</ul>\n<h2>Package</h2>\n<ul>\n<li><span>1 * Matrix 1S Brushless Flight Controller (3IN1)</span></li>\n<li><span>1 * Type-C to SH1.0 Adapter</span></li>\n<li><span>1 * SH1.0-4Pin Adapter Cable</span></li>\n<li>\n<span>1 * SH1.0-6Pin Adapter Cable</span><span></span>\n</li>\n<li><span>4 * M1.2*4 Self-tapping Screws</span></li>\n<li><span>4 * M1.4*5 Self-tapping Screws</span></li>\n<li><span>4 * Shock Absorbing Balls</span></li>\n</ul>\n<div style=\"text-align: start;\"><img src=\"https://cdn.shopify.com/s/files/1/1778/6615/files/3f89305fb1dabad87b9b93324e3c25cd_1f741c55-549b-40a3-8eaf-0e01f1eb0426_600x600.jpg?v=1735037567\" alt=\"package for Matrix 1s brushless flight controller\" style=\"margin-bottom: 16px; float: none;\"></div>\n<div style=\"text-align: start;\">\n<ul>\n<li><span>1 * Matrix 1S Brushless Flight Controller (4IN1)</span></li>\n<li><span>1 * Type-C to SH1.0 Adapter</span></li>\n<li><span>1 * SH1.0-4Pin Adapter Cable</span></li>\n<li><span>4 * M1.2*4 Self-tapping Screws</span></li>\n<li><span>4 * M1.4*5 Self-tapping Screws</span></li>\n<li><span>4 * Shock Absorbing Balls</span></li>\n</ul>\n<div style=\"text-align: start;\"><img src=\"https://cdn.shopify.com/s/files/1/1778/6615/files/Matrix_1S_4IN1_FC_package_600x600.jpg?v=1750668072\" alt=\"Matrix 1S 4IN1 FC package\" style=\"margin-bottom: 16px; float: none;\"></div>\n</div>",
+  "vendor": "BETAFPV",
+  "product_type": "Brushless FC",
+  "created_at": "2024-12-08T19:37:44-11:00",
+  "handle": "matrix-1s-brushless-flight-controller-hd",
+  "updated_at": "2026-08-13T23:34:14-11:00",
+  "published_at": "2025-01-09T01:59:12-11:00",
+  "template_suffix": "",
+  "published_scope": "web",
+  "tags": "1s brushless fc, brushless fc, fc",
+  "variants": [
+    {
+      "id": 41501233184902,
+      "product_id": 7306921410694,
+      "title": "4IN1",
+      "price": "39.99",
+      "sku": "01040018_3",
+      "position": 1,
+      "compare_at_price": "0.00",
+      "fulfillment_service": "manual",
+      "inventory_management": "shopify",
+      "option1": "4IN1",
+      "option2": null,
+      "option3": null,
+      "created_at": "2025-01-01T20:18:44-11:00",
+      "updated_at": "2026-08-13T23:34:14-11:00",
+      "taxable": false,
+      "barcode": null,
+      "grams": 25,
+      "image_id": 35897390760070,
+      "weight": 25.43,
+      "weight_unit": "g",
+      "requires_shipping": true,
+      "quantity_rule": {
+        "min": 1,
+        "max": null,
+        "increment": 1
+      },
+      "price_currency": "USD",
+      "compare_at_price_currency": "USD",
+      "quantity_price_breaks": []
+    },
+    {
+      "id": 42995716096134,
+      "product_id": 7306921410694,
+      "title": "3IN1 (BMI270)",
+      "price": "39.99",
+      "sku": "01040018_4",
+      "position": 2,
+      "compare_at_price": "0.00",
+      "fulfillment_service": "manual",
+      "inventory_management": null,
+      "option1": "3IN1 (BMI270)",
+      "option2": null,
+      "option3": null,
+      "created_at": "2025-12-17T15:47:49-11:00",
+      "updated_at": "2026-08-13T23:34:14-11:00",
+      "taxable": false,
+      "barcode": null,
+      "grams": 25,
+      "image_id": 35939316039814,
+      "weight": 25.43,
+      "weight_unit": "g",
+      "requires_shipping": true,
+      "quantity_rule": {
+        "min": 1,
+        "max": null,
+        "increment": 1
+      },
+      "price_currency": "USD",
+      "compare_at_price_currency": "USD",
+      "quantity_price_breaks": []
+    },
+    {
+      "id": 41474014150790,
+      "product_id": 7306921410694,
+      "title": "3IN1 (ICM42688P)",
+      "price": "39.99",
+      "sku": "01040018_2",
+      "position": 3,
+      "compare_at_price": "0.00",
+      "fulfillment_service": "manual",
+      "inventory_management": "shopify",
+      "option1": "3IN1 (ICM42688P)",
+      "option2": null,
+      "option3": null,
+      "created_at": "2024-12-08T19:37:44-11:00",
+      "updated_at": "2026-08-13T23:34:14-11:00",
+      "taxable": false,
+      "barcode": null,
+      "grams": 25,
+      "image_id": 35939316039814,
+      "weight": 25.43,
+      "weight_unit": "g",
+      "requires_shipping": true,
+      "quantity_rule": {
+        "min": 1,
+        "max": null,
+        "increment": 1
+      },
+      "price_currency": "USD",
+      "compare_at_price_currency": "USD",
+      "quantity_price_breaks": []
+    }
+  ],
+  "options": [
+    {
+      "id": 9409892515974,
+      "product_id": 7306921410694,
+      "name": "Version",
+      "position": 1,
+      "values": [
+        "4IN1",
+        "3IN1 (BMI270)",
+        "3IN1 (ICM42688P)"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": 35939316039814,
+      "product_id": 7306921410694,
+      "position": 1,
+      "created_at": "2025-06-24T19:25:24-11:00",
+      "updated_at": "2025-06-24T19:33:41-11:00",
+      "alt": "Matrix 1S 3IN1 HD FC front view",
+      "width": 1600,
+      "height": 1600,
+      "src": "https://cdn.shopify.com/s/files/1/1778/6615/files/Matrix_1S_3IN1_HD_FC_front_view.jpg?v=1750833221",
+      "variant_ids": [
+        41474014150790,
+        42995716096134
+      ]
+    },
+    {
+      "id": 34566100746374,
+      "product_id": 7306921410694,
+      "position": 2,
+      "created_at": "2024-12-29T20:49:19-11:00",
+      "updated_at": "2025-06-24T19:33:41-11:00",
+      "alt": null,
+      "width": 1600,
+      "height": 1600,
+      "src": "https://cdn.shopify.com/s/files/1/1778/6615/files/Matrix_1S_3IN1_HD_FC_back.jpg?v=1750833221",
+      "variant_ids": []
+    },
+    {
+      "id": 35939318104198,
+      "product_id": 7306921410694,
+      "position": 3,
+      "created_at": "2025-06-24T19:28:55-11:00",
+      "updated_at": "2025-06-24T19:33:41-11:00",
+      "alt": "Matrix 1S 3IN1 HD FC weight",
+      "width": 1600,
+      "height": 1600,
+      "src": "https://cdn.shopify.com/s/files/1/1778/6615/files/Matrix_1S_3IN1_HD_FC_weight.jpg?v=1750833221",
+      "variant_ids": []
+    },
+    {
+      "id": 35897390760070,
+      "product_id": 7306921410694,
+      "position": 4,
+      "created_at": "2025-06-18T20:25:06-11:00",
+      "updated_at": "2025-06-24T19:33:41-11:00",
+      "alt": "Matrix 1S 4IN1 FC",
+      "width": 1600,
+      "height": 1600,
+      "src": "https://cdn.shopify.com/s/files/1/1778/6615/files/Matrix_1S_4IN1_FC_front_view.jpg?v=1750833221",
+      "variant_ids": [
+        41501233184902
+      ]
+    },
+    {
+      "id": 35897390825606,
+      "product_id": 7306921410694,
+      "position": 5,
+      "created_at": "2025-06-18T20:25:06-11:00",
+      "updated_at": "2025-06-24T19:33:41-11:00",
+      "alt": "Matrix 1S 4IN1 FC",
+      "width": 1600,
+      "height": 1600,
+      "src": "https://cdn.shopify.com/s/files/1/1778/6615/files/Matrix_1S_4IN1_FC_back_view.jpg?v=1750833221",
+      "variant_ids": []
+    },
+    {
+      "id": 35897390891142,
+      "product_id": 7306921410694,
+      "position": 6,
+      "created_at": "2025-06-18T20:25:06-11:00",
+      "updated_at": "2025-06-24T19:33:41-11:00",
+      "alt": "Matrix 1S 4IN1 FC weight",
+      "width": 1600,
+      "height": 1600,
+      "src": "https://cdn.shopify.com/s/files/1/1778/6615/files/Matrix_1S_4IN1_FC_weight.jpg?v=1750833221",
+      "variant_ids": []
+    }
+  ],
+  "image": {
+    "id": 35939316039814,
+    "product_id": 7306921410694,
+    "position": 1,
+    "created_at": "2025-06-24T19:25:24-11:00",
+    "updated_at": "2025-06-24T19:33:41-11:00",
+    "alt": "Matrix 1S 3IN1 HD FC front view",
+    "width": 1600,
+    "height": 1600,
+    "src": "https://cdn.shopify.com/s/files/1/1778/6615/files/Matrix_1S_3IN1_HD_FC_front_view.jpg?v=1750833221",
+    "variant_ids": [
+      41474014150790,
+      42995716096134
+    ]
+  }
+}

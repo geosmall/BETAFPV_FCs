@@ -1,0 +1,182 @@
+{
+  "id": 7397519065222,
+  "title": "Matrix 1S Brushless Flight Controller (5IN1 II)",
+  "body_html": "<div style=\"text-align: start;\">\n<p>The Matrix 1S 5IN1 II Brushless Flight Controller is the next-generation flight controller engineered for pilots who refuse to compromise. Building on the proven all-in-one design, it delivers a substantial leap in both performance and durability. Experience the raw power of a 12A continuous ESC, the crash-proof confidence of 3-point mounting, and the build flexibility of Plug &amp; Play or DIY versions. This is the durable, high-output core for your most demanding 1S whoop builds.</p>\n<p><em><span style=\"color: rgb(255, 42, 0);\">Note: <span data-type=\"text\"><span data-type=\"leaf\">Due to the shortage of IMU chip ICM42688, BETAFPV team has found new IMU chips including ICM42622, BMI270,</span></span><span data-type=\"text\"><span data-type=\"leaf\"> and LSM6DSK320X, </span></span><span data-type=\"text\"><span data-type=\"leaf\">and built <a href=\"https://support.betafpv.com/hc/en-us/articles/54655791332761-Firmware-for-Matrix-1S-Brushless-Flight-Controller-5IN1-II\" rel=\"noopener\" target=\"_blank\">compatible firmwares</a>. Extensive testing confirms they all meet our strict quality standards.</span></span></span></em></p>\n<p><span style=\"color: rgb(255, 42, 0);\"><em><span data-type=\"text\"><span data-type=\"leaf\">Betaflight has not yet released official firmwares compatible with some of the IMU chips, so please do not flash the official Betaflight firmware and pay attention to future support updates.</span></span></em></span></p>\n<p><img alt=\"Matrix 1S 5IN1 II Brushless Flight Controller\" src=\"https://cdn.shopify.com/s/files/1/1778/6615/files/Matrix_1S_5IN1_II_Brushless_Flight_Controller.jpg?v=1769766804\"></p>\n</div>\n<h2 style=\"text-align: left;\"> Attention</h2>\n<div style=\"text-align: left;\">\n<ul>\n<li>Flight controllers are covered for manufacturer defects. Issues arising from user errors, physical crash damage, damage during installation or dismantling, modifications, power surges, electrical fires, or water exposure are not covered.</li>\n<li>VTX Power: Higher VTX power consumes more energy and generates more heat, reducing flight time. For better flight time in indoor scenarios, use 25~100mW power.<br>\n</li>\n<li>VTX Antenna: Connect and install the image transmission antenna before powering on the flight control. Alternatively, set transmission power to 0 to avoid burnout.</li>\n</ul>\n<ul></ul>\n</div>\n<h2>Bullet Points</h2>\n<ul>\n<li>All-in-One Integration: Combines the FC, ESC, OSD, Serial ELRS 2.4GHz RX, and a 5.8GHz 400mW VTX into a single, compact unit.</li>\n<li>Upgraded 12A Continuous ESC: Delivers 12A continuous current (18A peak) for powerful propulsion.</li>\n<li>Enhanced Durability: Features a robust 3-point mounting system and a 1.0mm thick PCB to absorb crash impacts and protect core components.</li>\n<li>Flexible Build Options: Available in both Solder-free and Solder-required versions to suit any skill level or weight preference. Features larger solder pads for easier, more reliable custom wiring.</li>\n<li>Advanced Core Components: Built around a powerful G473 processor for precise racing and complex freestyle maneuvers.</li>\n<li>Optimized Layout: A refined component arrangement improves durability and overall reliability.</li>\n</ul>\n<h2>Specifications</h2>\n<h3>FC</h3>\n<ul>\n<li>\n<span data-type=\"text\">MCU: STM32G473C</span><span data-type=\"text\">EU6</span>\n</li>\n<li><span data-type=\"text\">Gyro: ICM42688P / ICM42622 / BMI270 / LSM6DSK320X</span></li>\n<li><span data-type=\"text\">Blackbox memory: 16MB</span></li>\n<li><span data-type=\"text\">Sensor: Voltage &amp; Current</span></li>\n<li><span data-type=\"text\">BEC: 5V, Max 3A</span></li>\n<li><span data-type=\"text\">UART: UART 1, UART 2 (For VTX), UART 3 (For RX), UART 4 </span></li>\n<li><span data-type=\"text\">BetaFlight OSD: AT7456E</span></li>\n<li><span data-type=\"text\">ESC: 12A continuous</span></li>\n<li><span data-type=\"text\">RX: Serial ELRS 2.4GHz (V3.4.3)</span></li>\n<li><span data-type=\"text\">VTX: 5.8GHz 48 channels, Max 400mW</span></li>\n<li>\n<span data-type=\"text\">FC </span><span data-type=\"text\">firmware: Betaflight_4.5.3_BETAFPVG473_V2</span>\n</li>\n<li><span data-type=\"text\">USB port: SH1.0-4Pin</span></li>\n<li><span data-type=\"text\">Motor connector: JST1.25</span></li>\n<li><span data-type=\"text\">Battery connector: BT2.0</span></li>\n<li><span data-type=\"text\">Mounting hole size: 26mm x 26mm</span></li>\n<li>\n<span data-type=\"text\">Wei</span><span data-type=\"text\">ght: 4.1±0.1g (solder-free), 3.76g (soldered-required)</span>\n</li>\n</ul>\n<h3>ESC</h3>\n<ul>\n<li>\n<span data-type=\"text\">Power inpu</span><span data-type=\"text\">t: 1S Only</span>\n</li>\n<li><span data-type=\"text\">Current: 12A continuous, 18A peak</span></li>\n<li><span data-type=\"text\">ESC firmware: A_X_5_96KHz_V0.19.hex for BB51 Bluejay firmware</span></li>\n<li><span data-type=\"text\">Digital signal protocol: DShot300, DShot600</span></li>\n</ul>\n<h3>VTX</h3>\n<ul>\n<li><span data-type=\"text\">Output power: 25/100/200/400/PIT</span></li>\n<li><span data-type=\"text\">Frequency: 5.8GHz 48 channels, with Raceband: 5658~5917MHz</span></li>\n<li><span data-type=\"text\">Channel SEL: SmartAudio2.0</span></li>\n<li><span data-type=\"text\">Modulation type: FM</span></li>\n<li><span data-type=\"text\">Frequency control: PLL</span></li>\n<li><span data-type=\"text\">All harmonic: Max -50dBm</span></li>\n<li><span data-type=\"text\">Frequency stability: ±100KHz (Typ.)</span></li>\n<li><span data-type=\"text\">Frequency precision: ±200KHz (Typ.)</span></li>\n<li><span data-type=\"text\">Channel carrier error: ±1.5dB</span></li>\n<li><span data-type=\"text\">Antenna port: 50 Ω</span></li>\n<li><span data-type=\"text\">Operating temperature: -10℃~80℃</span></li>\n</ul>\n<h2>Diagram</h2>\n<div style=\"text-align: left;\"><img style=\"margin-bottom: 16px; float: none;\" alt=\"Matrix 1S 5IN1 II Brushless Flight Controller top front gyro update\" src=\"https://cdn.shopify.com/s/files/1/1778/6615/files/Matrix_1S_5IN1_II_Brushless_Flight_Controller_top_front_gyro_update_600x600.jpg?v=1777532692\"></div>\n<div style=\"text-align: left;\"><img src=\"https://cdn.shopify.com/s/files/1/1778/6615/files/Matrix_1S_5IN1_II_Brushless_Flight_Controller_bottom_front_600x600.jpg?v=1769053662\" alt=\"Matrix 1S 5IN1 II Brushless Flight Controller bottom front\" style=\"float: none;\"></div>\n<h2>Upgraded 12A Continuous ESC</h2>\n<p>The Matrix 5IN1 II features a significantly more powerful ESC, upgraded from 5A to a robust 12A continuous current (18A peak) to meet the high surge demands of 1S whoops. This increase was achieved by integrating 12 MOS tubes directly onto the board through rigorous testing. Paired with gold-plated motor connectors, it ensures superior conductivity and power delivery, providing stronger, more responsive propulsion.</p>\n<p><img alt=\"Matrix 1S 5IN1 II Brushless Flight Controller 12A ESC\" src=\"https://cdn.shopify.com/s/files/1/1778/6615/files/Matrix_1S_5IN1_II_Brushless_Flight_Controller_12A_ESC.jpg?v=1769766842\"></p>\n<h2>Enhanced Durability &amp; Crash Protection</h2>\n<p>Developed in response to community feedback on crash reliability, the board now features a 3-point mounting system. This design creates essential cushioning space during impacts, reducing stress on core components and lowering the damage rate by up to 80%. Combined with a 1.0mm thickened PCB and an optimized component layout, the Matrix 5IN1 II is built to survive hard crashes.</p>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1778/6615/files/Matrix_1S_5IN1_II_Brushless_Flight_Controller_durability.jpg?v=1769580703\" alt=\"Matrix 1S 5IN1 II Brushless Flight Controller durability\"></p>\n<h2>Two Build Options: Solder-free Or Solder-required</h2>\n<p>To suit different builders, the Matrix 5IN1 II is available in two versions: solder-free and solder-required. The solder-free version has motor connectors and power cable pre-soldered for quick and easy installation, while the solder-required version includes the gold-plated JST1.25 connectors and BT2.0 U cable in the package for custom wiring. Larger solder pads allows direct soldering to save weight.</p>\n<p><img src=\"https://cdn.shopify.com/s/files/1/1778/6615/files/Matrix_1S_5IN1_II_Brushless_Flight_Controller_solder-free_and_solder_required.jpg?v=1769580748\" alt=\"Matrix 1S 5IN1 II Brushless Flight Controller solder-free and solder required\"></p>\n<h2>Matrix 5IN1 II vs. Matrix 5IN1 vs. Air 5IN1</h2>\n<p>All three flight controllers share the same core MCU, OSD, RX, and VTX. The Matrix 5IN1 II is the next-generation balance, blending the durable 1mm-thick board and larger solder pads of the Matrix series with a remarkably lightweight design—adding only 0.16g compared to the Air 5IN1. It stands out with its 12A continuous (18A peak) ESC, gold-plated connectors, and three-point mounting, delivering superior power and the most robust crash protection for high-performance builds.</p>\n<div align=\"center\">\n<table border=\"0\" cellspacing=\"0\" style=\"width: 100%; height: 680.985px;\">\n<tbody>\n<tr style=\"height: 64.5469px;\">\n<td valign=\"center\" style=\"width: 25.0896%; height: 64.5469px;\">\n<p class=\"MsoNormal\"> </p>\n</td>\n<td valign=\"center\" style=\"width: 25.9857%; height: 64.5469px;\">\n<p class=\"p\" align=\"center\"><strong>Matrix 5IN1 II</strong></p>\n</td>\n<td valign=\"center\" style=\"width: 26.1649%; height: 64.5469px;\">\n<p class=\"p\" align=\"center\"><a href=\"https://betafpv.com/products/matrix-1s-brushless-flight-controller\"><strong>Matrix 5IN1</strong></a></p>\n</td>\n<td valign=\"center\" style=\"width: 22.7599%; height: 64.5469px;\">\n<p class=\"p\" align=\"center\"><a href=\"https://betafpv.com/products/air-brushless-flight-controller?variant=41142912745606\" rel=\"noopener\" target=\"_blank\"><strong>Air 5IN1</strong></a></p>\n</td>\n</tr>\n<tr style=\"height: 41.8594px;\">\n<td style=\"width: 25.0896%; height: 41.8594px;\">\n<p class=\"p\"><span>MCU</span></p>\n</td>\n<td style=\"width: 74.9104%; height: 41.8594px;\" colspan=\"3\">\n<p class=\"p\" align=\"center\"><span>STM32G473CEU6</span></p>\n</td>\n</tr>\n<tr style=\"height: 77.2188px;\">\n<td style=\"width: 25.0896%; height: 77.2188px;\">\n<p class=\"p\"><span>OSD</span></p>\n</td>\n<td colspan=\"3\" style=\"width: 74.9104%; height: 77.2188px;\">\n<p class=\"p\" align=\"center\"><span>BetaFlight OSD: AT7456E</span></p>\n</td>\n</tr>\n<tr style=\"height: 77.2188px;\">\n<td style=\"width: 25.0896%; height: 77.2188px;\">\n<p class=\"p\"><span>Blackbox Memory</span></p>\n</td>\n<td colspan=\"3\" style=\"width: 74.9104%; height: 77.2188px;\">\n<p class=\"p\" align=\"center\"><span>16M</span></p>\n</td>\n</tr>\n<tr style=\"height: 41.8594px;\">\n<td valign=\"center\" style=\"width: 25.0896%; height: 41.8594px;\">\n<p class=\"p\"><span>RX</span><span></span></p>\n</td>\n<td valign=\"center\" colspan=\"3\" style=\"width: 74.9104%; height: 41.8594px;\">\n<p class=\"p\" align=\"center\"><span>Onboard serial ELRS 2.4GHz</span><span></span></p>\n</td>\n</tr>\n<tr style=\"height: 41.8594px;\">\n<td style=\"width: 25.0896%; height: 41.8594px;\">\n<p class=\"p\"><span>VTX</span></p>\n</td>\n<td style=\"height: 41.8594px; width: 74.9104%;\" colspan=\"3\">\n<p class=\"p\" align=\"center\"><span>Onboard 5.8GHz 48 channels, 400mW</span></p>\n</td>\n</tr>\n<tr style=\"height: 64.5469px;\">\n<td valign=\"center\" style=\"width: 25.0896%; height: 64.5469px;\">\n<p class=\"p\"><span>Circuit Board Thickness</span></p>\n</td>\n<td valign=\"center\" colspan=\"2\" style=\"width: 52.1505%; height: 64.5469px;\">\n<p class=\"p\" align=\"center\">1.0mm</p>\n</td>\n<td valign=\"center\" style=\"width: 22.7599%; height: 64.5469px;\">\n<p class=\"p\" align=\"center\"><span>0.8mm</span><span></span></p>\n</td>\n</tr>\n<tr style=\"height: 77.2188px;\">\n<td style=\"width: 25.0896%; height: 77.2188px;\">\n<p class=\"p\">ESC</p>\n</td>\n<td style=\"width: 25.9857%; height: 77.2188px;\">\n<p class=\"p\" align=\"center\">1S, 12A</p>\n</td>\n<td style=\"width: 26.1649%; height: 77.2188px;\">\n<p class=\"p\" align=\"center\">1S, 5A</p>\n</td>\n<td style=\"width: 22.7599%; height: 77.2188px;\">\n<p class=\"p\" align=\"center\"><span>1S, 5A</span></p>\n</td>\n</tr>\n<tr style=\"height: 77.2188px;\">\n<td style=\"width: 25.0896%; height: 77.2188px;\">\n<p class=\"p\"><span>Motor Connector</span></p>\n</td>\n<td style=\"width: 25.9857%; height: 77.2188px;\">\n<p class=\"p\" align=\"center\">Gold plated JST1.25</p>\n</td>\n<td style=\"width: 26.1649%; height: 77.2188px;\">\n<p class=\"p\" align=\"center\"><span>JST1.25</span></p>\n</td>\n<td style=\"width: 22.7599%; height: 77.2188px;\">\n<p class=\"p\" align=\"center\"><span>-</span></p>\n</td>\n</tr>\n<tr style=\"height: 117.438px;\">\n<td style=\"width: 25.0896%; height: 117.438px;\">\n<p class=\"p\"><span>Weight (VTX antenna excluded)</span></p>\n</td>\n<td style=\"width: 25.9857%; height: 117.438px;\">\n<div>4.13g (solder-free)</div>\n<p class=\"p\" align=\"center\">3.76g (solder-required)</p>\n</td>\n<td style=\"width: 26.1649%; height: 117.438px;\">\n<p class=\"p\" align=\"center\"><span>3.92g</span></p>\n</td>\n<td style=\"width: 22.7599%; height: 117.438px;\">\n<p class=\"p\" align=\"center\"><span>3.60g</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<h2>Serial ELRS 2.4G RX</h2>\n<p>Serial ELRS 2.4G RX uses the Crossfire serial protocol (CRSF protocol) to communicate between the receiver and the flight controller board. So the Serial ELRS 2.4G RX is available to support upgrading to ELRS V3.0 with no need to flash Betaflight flight controller firmware. Enter binding status by power on/off three times.</p>\n<ul>\n<li>Plugin and unplug the flight controller three times;</li>\n<li>Make sure the RX LED is doing a quick double blink, which indicates the receiver is in bind mode;</li>\n<li>Make sure the RF TX module or radio transmitter enters binding status, which sends out a binding pulse;</li>\n<li>If the receiver has a solid light, it's bound.</li>\n</ul>\n<p>The Serial ELRS 2.4G RX can be updated via Wi-Fi or Betaflight serial passthrough. Here is the way to update the Serial ELRS 2.4G RX firmware through passthrough.</p>\n<ul>\n<li>Plug in your FC to your computer, connect to ExpressLRS Configurator instead of Betaflight Configurator;</li>\n<li>Choose target \"BETAFPV 2.4GHz AIO RX\";</li>\n<li>Flash using the B<span>etaflight</span><span>Passthrough option in ExpressLRS Configurator.</span>\n</li>\n</ul>\n<p><span style=\"color: #b3b3b3;\"><em><a style=\"color: #b3b3b3;\" href=\"https://support.betafpv.com/hc/en-us/articles/4404231679129-How-to-Flash-Firmware-of-ELRS-RX-TX\">How to flash firmware via Wi-Fi here.</a></em></span></p>\n<h2>Betaflight Firmware and CLI</h2>\n<p><span style=\"color: rgb(64, 64, 64);\"><span data-path=\"2,1\">Betaflight official developers recommend using version 42688 of the gyroscope, and many issues with ICM42688 have been fixed in version 4.5.3. Please learn more from version 4.5.3.</span></span></p>\n<ul>\n<li>FC firmware: <a href=\"https://support.betafpv.com/hc/en-us/articles/54655791332761-Firmware-for-Matrix-1S-Brushless-Flight-Controller-5IN1-II\">Betaflight_4.5.3_BETAFPVG473_V2, download the firmware and CLI dump file</a>\n</li>\n<li>\n<span>Reference link: </span><a href=\"https://github.com/betaflight/betaflight/releases/tag/4.5.3\"><span data-path=\"2,1\">https://github.com/betaflight/betaflight/releases/tag/4.5.3</span></a>\n</li>\n</ul>\n<h2>Bluejay ESC Firmware</h2>\n<p><span>With BB51 ESC solution, Matrix 1S Brushless Flight Controller is based on A_X_5_96KHz_V0.19.hex for BB51 Bluejay hardware, it supports D-shot300, D-shot600, and even RPM filtering in Betaflight, offers 24KHz, 48KHz, and 96KHz fixed PWM frequency for options, and custom start-up melodies. </span></p>\n<p><span><a href=\"https://github.com/bird-sanctuary/bluejay\" target=\"_blank\"><img alt=\"\" src=\"https://cdn.shopifycdn.net/s/files/1/1778/6615/files/1_f1e8c5ed-49a0-488e-8ba6-74c3ff08aa56_160x160.png?v=1668162831\"></a></span></p>\n<p><span><strong>DO NOT flash the firmware with a shorter interval, </strong>otherwise, there will be a certain chance of stalling and burning the flight controller.<br></span></p>\n<ul>\n<li>ESC-Configurator:<span> </span><a href=\"https://preview.esc-configurator.com/\">https://preview.esc-configurator.com/</a>\n</li>\n<li><a href=\"https://github.com/4712/BLHeliSuite/releases/tag/16714903\"><span>Download BLHeliSuite16714903</span></a></li>\n<li><a href=\"https://github.com/bird-sanctuary/bluejay/releases\"><span>Download the Bluejay ESC firmware. Please choose A_X_5_96KHz_V0.19.hex</span></a></li>\n</ul>\n<p><span><img alt=\"\" src=\"https://cdn.shopify.com/s/files/1/1778/6615/files/1_25da6bbc-08db-453a-b88a-6661e8912804.jpg?v=1719281251\"></span></p>\n<h2>How to Use Serial Ports, Intergrated RX and VTX</h2>\n<p>Please note that by default, UART2 is connected to the VTX and UART3 is connected to the RX. To release UART3, please remove the resistor. Additionally, this FC reserves 2 complete full-featured serial ports that can be used for external CRSF/SBUS receivers, GPS, HD VTX, or other serial devices. You can refer to the below pictures. </p>\n<div style=\"text-align: start;\"><img src=\"https://cdn.shopify.com/s/files/1/1778/6615/files/Matrix_1S_5IN1_II_Brushless_Flight_Controller_connection_diagram_1024x1024.jpg?v=1769569778\" alt=\"Matrix 1S 5IN1 II Brushless Flight Controller connection diagram\" style=\"margin-bottom: 16px; float: none;\"></div>\n<ul></ul>\n<h2>Recommended Parts</h2>\n<ul>\n<li><span>Drones: <a href=\"https://betafpv.com/products/air65-ii-brushless-whoop-quadcopter\">Air65 II</a>, <a href=\"https://betafpv.com/products/air75-ii-brushless-whoop-quadcopter\">Air75 II</a>,  <a href=\"https://betafpv.com/products/air65-brushless-whoop-quadcopter\">Meteor65 Pro</a>, <a href=\"https://betafpv.com/products/air75-brushless-whoop-quadcopter\">Meteor75 Pro</a></span></li>\n<li><span>Frames: <a href=\"https://betafpv.com/products/air65-champion-brushless-whoop-frame\">Air65 Champion Frame</a>, <a href=\"https://betafpv.com/products/air65-ii-brushless-whoop-frame\">Air65 II Frame</a>, <a href=\"https://betafpv.com/products/air75-ii-brushless-whoop-frame\">Air75 II Frame</a>, <a href=\"https://betafpv.com/collections/frame/products/meteor65-pro-frame-kit\">Meteor65 Pro Frame</a>, <a href=\"https://betafpv.com/collections/frame/products/meteor75-pro-brushless-whoop-frame\">Meteor75 Pro Frame</a></span></li>\n<li><span>Motors: <a href=\"https://betafpv.com/collections/motors/products/0702-brushless-motors\">0702/0702SE Motors</a>, <a href=\"https://betafpv.com/collections/motors/products/0802se-22000kv-brushless-motors\">0802/0802SE Motors</a>, <a href=\"https://betafpv.com/collections/motors/products/1102-13500kv-brushless-motors\">1102 Motors</a></span></li>\n<li><span>Camera: <a href=\"https://betafpv.com/products/c03-fpv-micro-camera\">C03 Micro Camera</a></span></li>\n</ul>\n<h2>Package</h2>\n<p><span>Matrix 1S 5IN1 II Brushless Flight Controller (Solder-free Version)</span></p>\n<ul>\n<li><span>1 * Matrix 1S 5IN1 II Brushless Flight Controller (Solder-free Version)</span></li>\n<li><span>1 * Type-C to SH1.0 Adapter</span></li>\n<li><span>1 * SH1.0-4Pin Adapter Cable</span></li>\n<li>\n<span>1 * 5.8G Antenna</span><span></span>\n</li>\n<li><span>4 * M1.2*4 Self-tapping Screws</span></li>\n<li><span>4 * M1.4*5 Self-tapping Screws</span></li>\n<li><span>4 * Shock Absorbing Balls</span></li>\n</ul>\n<div style=\"text-align: start;\"><span><img src=\"https://cdn.shopify.com/s/files/1/1778/6615/files/Matrix_1S_5IN1_II_Brushless_Flight_Controller_soldered_package_600x600.jpg?v=1769053599\" alt=\"Matrix 1S 5IN1 II Brushless Flight Controller soldered package\" style=\"margin-bottom: 16px; float: none;\"></span></div>\n<div style=\"text-align: start;\"><span>Matrix 1S 5IN1 II Brushless Flight Controller (Solder-required Version)</span></div>\n<div style=\"text-align: start;\">\n<ul>\n<li><span>1 * Matrix 1S 5IN1 II Brushless Flight Controller (Solder-required Version)</span></li>\n<li><span>4 * JST 1.25mm Gold Plated Connectors</span></li>\n<li>\n<span>1 * BT2.0 U Cable</span><span></span>\n</li>\n<li><span>1 * Type-C to SH1.0 Adapter</span></li>\n<li><span>1 * SH1.0-4Pin Adapter Cable</span></li>\n<li>\n<span>1 * 5.8G Antenna</span><span></span>\n</li>\n<li><span>4 * M1.2*4 Self-tapping Screws</span></li>\n<li><span>4 * M1.4*5 Self-tapping Screws</span></li>\n<li><span>4 * Shock Absorbing Balls</span></li>\n</ul>\n<p><span><img src=\"https://cdn.shopify.com/s/files/1/1778/6615/files/Matrix_1S_5IN1_II_Brushless_Flight_Controller_unsoldered_package_600x600.jpg?v=1769053619\" alt=\"Matrix 1S 5IN1 II Brushless Flight Controller unsoldered package\" style=\"margin-bottom: 16px; float: none;\"></span></p>\n</div>",
+  "vendor": "BETAFPV",
+  "product_type": "Brushless FC",
+  "created_at": "2025-05-21T15:08:09-11:00",
+  "handle": "matrix-1s-5in1-ii-brushless-flight-controller",
+  "updated_at": "2026-08-13T23:34:08-11:00",
+  "published_at": "2026-01-29T23:01:58-11:00",
+  "template_suffix": "",
+  "published_scope": "web",
+  "tags": "1s brushless fc, brushless fc, fc",
+  "variants": [
+    {
+      "id": 41894793773190,
+      "product_id": 7397519065222,
+      "title": "Solder-free",
+      "price": "54.99",
+      "sku": "01040020_1",
+      "position": 1,
+      "compare_at_price": "0.00",
+      "fulfillment_service": "manual",
+      "inventory_management": null,
+      "option1": "Solder-free",
+      "option2": null,
+      "option3": null,
+      "created_at": "2025-05-21T15:08:09-11:00",
+      "updated_at": "2026-08-13T23:34:08-11:00",
+      "taxable": false,
+      "barcode": null,
+      "grams": 26,
+      "image_id": 37139562627206,
+      "weight": 26.35,
+      "weight_unit": "g",
+      "requires_shipping": true,
+      "quantity_rule": {
+        "min": 1,
+        "max": null,
+        "increment": 1
+      },
+      "price_currency": "USD",
+      "compare_at_price_currency": "USD",
+      "quantity_price_breaks": []
+    },
+    {
+      "id": 43063766909062,
+      "product_id": 7397519065222,
+      "title": "Solder-required",
+      "price": "54.99",
+      "sku": "01040020_2",
+      "position": 2,
+      "compare_at_price": "0.00",
+      "fulfillment_service": "manual",
+      "inventory_management": null,
+      "option1": "Solder-required",
+      "option2": null,
+      "option3": null,
+      "created_at": "2026-01-18T22:33:18-11:00",
+      "updated_at": "2026-08-13T23:34:08-11:00",
+      "taxable": false,
+      "barcode": null,
+      "grams": 26,
+      "image_id": 37152811221126,
+      "weight": 26.35,
+      "weight_unit": "g",
+      "requires_shipping": true,
+      "quantity_rule": {
+        "min": 1,
+        "max": null,
+        "increment": 1
+      },
+      "price_currency": "USD",
+      "compare_at_price_currency": "USD",
+      "quantity_price_breaks": []
+    }
+  ],
+  "options": [
+    {
+      "id": 9517507608710,
+      "product_id": 7397519065222,
+      "name": "Version",
+      "position": 1,
+      "values": [
+        "Solder-free",
+        "Solder-required"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": 37139562627206,
+      "product_id": 7397519065222,
+      "position": 1,
+      "created_at": "2026-01-21T16:45:45-11:00",
+      "updated_at": "2026-01-22T20:44:37-11:00",
+      "alt": "Matrix 1S 5IN1 II Brushless Flight Controller soldered front",
+      "width": 1600,
+      "height": 1600,
+      "src": "https://cdn.shopify.com/s/files/1/1778/6615/files/Matrix_1S_5IN1_II_Brushless_Flight_Controller_soldered_front.jpg?v=1769154277",
+      "variant_ids": [
+        41894793773190
+      ]
+    },
+    {
+      "id": 37139562659974,
+      "product_id": 7397519065222,
+      "position": 2,
+      "created_at": "2026-01-21T16:45:45-11:00",
+      "updated_at": "2026-01-22T20:44:54-11:00",
+      "alt": "Matrix 1S 5IN1 II Brushless Flight Controller soldered back",
+      "width": 1600,
+      "height": 1600,
+      "src": "https://cdn.shopify.com/s/files/1/1778/6615/files/Matrix_1S_5IN1_II_Brushless_Flight_Controller_soldered_back.jpg?v=1769154294",
+      "variant_ids": []
+    },
+    {
+      "id": 37139562561670,
+      "product_id": 7397519065222,
+      "position": 3,
+      "created_at": "2026-01-21T16:45:45-11:00",
+      "updated_at": "2026-01-22T20:54:28-11:00",
+      "alt": "Matrix 1S 5IN1 II Brushless Flight Controller soldered weight",
+      "width": 1600,
+      "height": 1600,
+      "src": "https://cdn.shopify.com/s/files/1/1778/6615/files/Matrix_1S_5IN1_II_Brushless_Flight_Controller_soldered_weight.jpg?v=1769154868",
+      "variant_ids": []
+    },
+    {
+      "id": 37152811221126,
+      "product_id": 7397519065222,
+      "position": 4,
+      "created_at": "2026-01-22T20:45:33-11:00",
+      "updated_at": "2026-01-22T20:54:28-11:00",
+      "alt": "Matrix 1S 5IN1 II Brushless Flight Controller unsoldered front",
+      "width": 1600,
+      "height": 1600,
+      "src": "https://cdn.shopify.com/s/files/1/1778/6615/files/Matrix_1S_5IN1_II_Brushless_Flight_Controller_unsoldered_front.jpg?v=1769154868",
+      "variant_ids": [
+        43063766909062
+      ]
+    },
+    {
+      "id": 37152811253894,
+      "product_id": 7397519065222,
+      "position": 5,
+      "created_at": "2026-01-22T20:45:33-11:00",
+      "updated_at": "2026-01-22T20:54:28-11:00",
+      "alt": "Matrix 1S 5IN1 II Brushless Flight Controller unsoldered back",
+      "width": 1600,
+      "height": 1600,
+      "src": "https://cdn.shopify.com/s/files/1/1778/6615/files/Matrix_1S_5IN1_II_Brushless_Flight_Controller_unsoldered_back.jpg?v=1769154868",
+      "variant_ids": []
+    },
+    {
+      "id": 37152884916358,
+      "product_id": 7397519065222,
+      "position": 6,
+      "created_at": "2026-01-22T20:53:46-11:00",
+      "updated_at": "2026-01-22T20:54:04-11:00",
+      "alt": "Matrix 1S 5IN1 II Brushless Flight Controller unsoldered weight",
+      "width": 1600,
+      "height": 1600,
+      "src": "https://cdn.shopify.com/s/files/1/1778/6615/files/Matrix_1S_5IN1_II_Brushless_Flight_Controller_unsoldered_weight.jpg?v=1769154844",
+      "variant_ids": []
+    }
+  ],
+  "image": {
+    "id": 37139562627206,
+    "product_id": 7397519065222,
+    "position": 1,
+    "created_at": "2026-01-21T16:45:45-11:00",
+    "updated_at": "2026-01-22T20:44:37-11:00",
+    "alt": "Matrix 1S 5IN1 II Brushless Flight Controller soldered front",
+    "width": 1600,
+    "height": 1600,
+    "src": "https://cdn.shopify.com/s/files/1/1778/6615/files/Matrix_1S_5IN1_II_Brushless_Flight_Controller_soldered_front.jpg?v=1769154277",
+    "variant_ids": [
+      41894793773190
+    ]
+  }
+}
